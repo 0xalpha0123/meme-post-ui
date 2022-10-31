@@ -1,7 +1,23 @@
 import React from "react";
 import Avatar from "../Avatar/Avatar";
 
-import { AvatarGroupProps } from "../../Interfaces/AvatarGroup";
+interface AvatarGroupProps {
+  size?: 64 | 48 | 40 | 36 | 32 | 28 | 24 | 20 | 16;
+  limit?: number;
+  users: AvatarGroupItemProps[];
+  space?: string;
+  className?: string;
+  overflow?: string;
+}
+
+interface AvatarGroupItemProps {
+  style: string;
+  type: string;
+  avatar?: string;
+  username?: string;
+  status?: true | false;
+  className?: string;
+}
 
 const AvatarGroup = (props: AvatarGroupProps) => {
   const space = props.space || "-space-x-8";

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
-import { SocialLinkItemProps } from "../../Interfaces/SocialLinks";
+interface SocialLinkItemProps {
+  icon: ReactElement;
+  link: string;
+}
 
 const SocialLinkItem = (props: SocialLinkItemProps) => {
   return (

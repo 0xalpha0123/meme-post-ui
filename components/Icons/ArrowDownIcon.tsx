@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IconProps } from "../../Interfaces/Icon";
+import { IconProps } from ".";
 
 const ArrowDownIcon = (props: IconProps) => {
   const size = props.size || "w-4 h-4";

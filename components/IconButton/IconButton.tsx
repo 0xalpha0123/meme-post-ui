@@ -1,6 +1,15 @@
-import React from "react";
+import React, { ReactElement, MouseEventHandler } from "react";
 
-import { IconButtonProps } from "../../Interfaces/IconButton";
+interface IconButtonProps {
+  component: ReactElement | string;
+  size?: "default" | "large" | "small";
+  type?: "default" | "dim" | "ghost";
+  className?: string;
+  disabled?: true | false;
+  customClass?: string;
+  rounded?: true | false;
+  onClick?: MouseEventHandler;
+}
 
 const IconButton = (props: IconButtonProps) => {
   const size = props.size || "default";

@@ -1,8 +1,17 @@
-import React from "react";
-
-import { AvatarProps } from "../../Interfaces/Avatar";
+import React, { MouseEventHandler } from "react";
 
 import { getInitName } from "../../helpers/stringUtils";
+
+interface AvatarProps {
+  style?: string;
+  size?: 64 | 48 | 40 | 36 | 32 | 28 | 24 | 20 | 16;
+  type?: string;
+  avatar?: string;
+  username?: string;
+  status?: true | false;
+  className?: string;
+  onClick?: MouseEventHandler;
+}
 
 const Avatar = (props: AvatarProps) => {
   const size = props.size || 48;

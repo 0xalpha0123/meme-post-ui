@@ -7,7 +7,14 @@ import {
 } from "../Icons";
 import SocialLinkItem from "./SocialLinkItem";
 
-import { SocialLinksProps } from "../../Interfaces/SocialLinks";
+interface SocialLinksProps {
+  socials: {
+    facebook: string;
+    instagram: string;
+    twitter: string;
+    linked_in: string;
+  };
+}
 
 const SocialLinks = (props: SocialLinksProps) => {
   return (

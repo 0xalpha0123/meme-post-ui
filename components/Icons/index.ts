@@ -53,6 +53,11 @@ import UserSquareIcon from "./UserSquareIcon";
 import VerifyIcon from "./VerifyIcon";
 import VideoIcon from "./VideoIcon";
 
+export interface IconProps {
+  size?: string;
+  className?: string;
+}
+
 export {
   ArrowCircleDownIcon,
   ArrowDownIcon,

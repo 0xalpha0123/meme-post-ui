@@ -1,6 +1,15 @@
-import React from "react";
+import React, { ReactElement, MouseEventHandler } from "react";
 
-import { ButtonProps } from "../../Interfaces/Button";
+interface ButtonProps {
+  component: ReactElement | string;
+  size?: "default" | "large" | "small";
+  type?: "default" | "dim" | "ghost";
+  className?: string;
+  disabled?: true | false;
+  customClass?: string;
+  rounded?: true | false;
+  onClick?: MouseEventHandler;
+}
 
 const Button = (props: ButtonProps) => {
   const size = props.size || "default";

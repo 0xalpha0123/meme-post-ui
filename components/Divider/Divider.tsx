@@ -1,5 +1,8 @@
 import React from "react";
-import { DividerProps } from "../../Interfaces/Divider";
+
+interface DividerProps {
+  className?: string;
+}
 
 const Divider = (props: DividerProps) => {
   const className = props.className || "";

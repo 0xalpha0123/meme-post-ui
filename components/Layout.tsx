@@ -6,11 +6,30 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Breadcrumb from "./Breadcrumb";
 
-import { LayoutProps } from "../Interfaces/Layout";
 import Sidebar from "./Sidebar";
 import FundManageCard from "./FundManageCard";
 import TopCreatorsCard from "./TopCreatorsCard";
 import RecentActivitiesCard from "./RecentActivitiesCard";
+
+import type { ReactElement } from "react";
+
+interface LayoutProps {
+  children: ReactElement;
+  metaInfo: MetaInfo;
+  layoutConfig: LayoutConfig;
+}
+
+interface MetaInfo {
+  title: string | undefined;
+  description?: string | undefined;
+  keywords?: string | undefined;
+}
+
+interface LayoutConfig {
+  header?: boolean;
+  footer?: boolean;
+  breadcrumb?: boolean;
+}
 
 const Layout = (props: LayoutProps) => {
   const { title, keywords, description } = props.metaInfo;

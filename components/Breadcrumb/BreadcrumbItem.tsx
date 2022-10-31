@@ -1,7 +1,12 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Link from "next/link";
 
-import { BreadcrumbItemProps } from "../../Interfaces/Breadcrumb";
+interface BreadcrumbItemProps {
+  children: ReactElement | string;
+  href: string;
+  className?: string;
+  isCurrent?: boolean;
+}
 
 const BreadcrumbItem = (props: BreadcrumbItemProps) => {
   const className = props.className || "";

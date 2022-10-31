@@ -1,6 +1,9 @@
-import React, { Children } from "react";
+import React, { Children, ReactElement } from "react";
 
-import { BreadcrumbGroupProps } from "../../Interfaces/Breadcrumb";
+interface BreadcrumbGroupProps {
+  children: ReactElement;
+  className?: string;
+}
 
 const BreadcrumbGroup = (props: BreadcrumbGroupProps) => {
   const childrenArray = Children.toArray(props.children);
