@@ -8,6 +8,7 @@ import CategoryIcon from "./CategoryIcon";
 import ChartIcon from "./ChartIcon";
 import Chart2Icon from "./Chart2Icon";
 import CloseIcon from "./CloseIcon";
+import ComputingIcon from "./ComputingIcon";
 import DiscountCircleIcon from "./DiscountCircleIcon";
 import DocumentTextIcon from "./DocumentTextIcon";
 import DotsHorizondalIcon from "./DotsHorizondalIcon";
@@ -69,6 +70,7 @@ export {
   ChartIcon,
   Chart2Icon,
   CloseIcon,
+  ComputingIcon,
   DiscountCircleIcon,
   DocumentTextIcon,
   DotsHorizondalIcon,

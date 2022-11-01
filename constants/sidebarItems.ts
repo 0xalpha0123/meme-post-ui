@@ -1,0 +1,96 @@
+import {
+  CategoryIcon,
+  ChartIcon,
+  ComputingIcon,
+  DiscountCircleIcon,
+  DocumentTextIcon,
+  HomeIcon,
+  LayerIcon,
+  MaskIcon,
+  SunIcon,
+} from "../components/Icons";
+
+export const sidebarItems = [
+  {
+    name: "Menu",
+    items: [
+      {
+        id: "home",
+        title: "Home",
+        breadcrumbText: "Home",
+        icon: HomeIcon,
+        isValiable: true,
+        url: "/",
+      },
+      {
+        id: "dashboard",
+        title: "Dashboard",
+        breadcrumbText: "Dashboard",
+        icon: CategoryIcon,
+        isValiable: false,
+        url: "/dashboard",
+      },
+      {
+        id: "analytics",
+        title: "Analytics",
+        breadcrumbText: "Analytics",
+        icon: ChartIcon,
+        isValiable: false,
+        url: "/analytics",
+      },
+      {
+        id: "stake",
+        title: "Stake",
+        breadcrumbText: "Stake",
+        icon: LayerIcon,
+        isValiable: false,
+        url: "/stake",
+      },
+      {
+        id: "wrap",
+        title: "Wrap",
+        breadcrumbText: "Wrap",
+        icon: MaskIcon,
+        isValiable: false,
+        url: "/wrap",
+      },
+      {
+        id: "bond",
+        title: "Bond",
+        breadcrumbText: "Bond",
+        icon: DiscountCircleIcon,
+        isValiable: false,
+        url: "/bond",
+      },
+      {
+        id: "tracker",
+        title: "Tracker",
+        breadcrumbText: "Tax Tracker",
+        icon: ComputingIcon,
+        isValiable: true,
+        url: "/tracker",
+      },
+    ],
+  },
+  {
+    name: "Account",
+    items: [
+      {
+        id: "preference",
+        title: "Preference",
+        breadcrumbText: "Preference",
+        icon: SunIcon,
+        isValiable: false,
+        url: "/account",
+      },
+      {
+        id: "docs",
+        title: "Docs",
+        breadcrumbText: "Documents",
+        icon: DocumentTextIcon,
+        isValiable: false,
+        url: "/docs",
+      },
+    ],
+  },
+];

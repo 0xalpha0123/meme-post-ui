@@ -7,7 +7,7 @@ import TrendingMemes from "../components/TrendingMemes";
 
 const Home: NextPage = () => {
   const metaInfo = {
-    title: "Meme DAO",
+    title: "Tax Tracker",
   };
 
   const layoutConfig = {

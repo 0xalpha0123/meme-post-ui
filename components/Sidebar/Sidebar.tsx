@@ -1,64 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import {
-  CategoryIcon,
-  ChartIcon,
-  DiscountCircleIcon,
-  DocumentTextIcon,
-  HomeIcon,
-  LayerIcon,
-  LoginIcon,
-  MaskIcon,
-  SunIcon,
-} from "../Icons";
+import { useTheme } from "next-themes";
+import Link from "next/link";
 import Divider from "../Divider";
 import TrialCard from "../TrialCard";
-import { useTheme } from "next-themes";
-
-const data = [
-  {
-    name: "Menu",
-    items: [
-      {
-        title: "Home",
-        icon: HomeIcon,
-      },
-      {
-        title: "Dashboard",
-        icon: CategoryIcon,
-      },
-      {
-        title: "Analytics",
-        icon: ChartIcon,
-      },
-      {
-        title: "Stake",
-        icon: LayerIcon,
-      },
-      {
-        title: "Wrap",
-        icon: MaskIcon,
-      },
-      {
-        title: "Bond",
-        icon: DiscountCircleIcon,
-      },
-    ],
-  },
-  {
-    name: "Account",
-    items: [
-      {
-        title: "Preference",
-        icon: SunIcon,
-      },
-      {
-        title: "Docs",
-        icon: DocumentTextIcon,
-      },
-    ],
-  },
-];
+import { LoginIcon } from "../Icons";
+import useBreadcrumbs from "../../hooks/useBreadcrumbs";
+import { sidebarItems } from "../../constants/sidebarItems";
 
 const Sidebar = () => {
   const { theme } = useTheme();
@@ -69,6 +17,7 @@ const Sidebar = () => {
   const controlLogo = useAnimation();
   const controlDivider = useAnimation();
   const controlFreeTrial = useAnimation();
+  const breadcrumbs = useBreadcrumbs();
 
   const showMore = () => {
     controls.start({
@@ -168,7 +117,7 @@ const Sidebar = () => {
       ></motion.img>
 
       <div className="grow mb-10">
-        {data.map((group, index) => (
+        {sidebarItems.map((group, index) => (
           <div key={index} className="my-2">
             <motion.p
               animate={controlTitleText}
@@ -181,25 +130,35 @@ const Sidebar = () => {
             </motion.div>
 
             {group.items.map((item, index2) => (
-              <div
-                key={index2}
-                className={`my-3 flex px-4 py-1 cursor-pointer hover:text-primary_dark-200 dark:hover:text-primary_white-200 ${
-                  index2 === 3 && "border-l-4 border-secondary"
-                }`}
-              >
-                <item.icon
-                  className={`text-lg w-5 h-5 ${
-                    index2 === 3 && "text-secondary"
+              <Link href={item.url} key={index2}>
+                <div
+                  className={`my-3 flex px-4 py-1 cursor-pointer hover:text-primary_dark-200 dark:hover:text-primary_white-200 ${
+                    ((breadcrumbs.length === 0 &&
+                      item.breadcrumbText === "Home") ||
+                      (breadcrumbs.length !== 0 &&
+                        breadcrumbs[0].label === item.breadcrumbText)) &&
+                    "border-l-4 border-secondary"
                   }`}
-                />
-                <motion.p
-                  animate={controlText}
-                  className="ml-4 text-sm font-bold"
                 >
-                  {" "}
-                  {item.title}
-                </motion.p>
-              </div>
+                  <item.icon
+                    className={`text-lg w-5 h-5 ${
+                      ((breadcrumbs.length === 0 &&
+                        item.breadcrumbText === "Home") ||
+                        (breadcrumbs.length !== 0 &&
+                          breadcrumbs[0].label === item.breadcrumbText)) &&
+                      "text-secondary"
+                    }`}
+                  />
+                  <motion.p
+                    animate={controlText}
+                    className="ml-4 text-sm font-bold"
+                  >
+                    {" "}
+                    {item.title}
+                    {!item.isValiable && " (Soon)"}
+                  </motion.p>
+                </div>
+              </Link>
             ))}
           </div>
         ))}
