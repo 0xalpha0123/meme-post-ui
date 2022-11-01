@@ -51,6 +51,7 @@ const MemeCard = (props: MemeCardProps) => {
                   key={index}
                   text={keyword}
                   textColor="text-primary_white-300 dark:text-primary_dark-300"
+                  className="bg-blue-200 dark:bg-primary_dark-100 rounded-lg px-3 py-2"
                 />
               ))}
             </div>
