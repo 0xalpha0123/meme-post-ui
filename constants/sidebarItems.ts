@@ -59,7 +59,7 @@ export const sidebarItems = [
         title: "Bond",
         breadcrumbText: "Bond",
         icon: DiscountCircleIcon,
-        isValiable: false,
+        isValiable: true,
         url: "/bond",
       },
       {

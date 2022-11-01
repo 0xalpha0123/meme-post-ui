@@ -109,7 +109,7 @@ const TaxTracker = () => {
   };
 
   return (
-    <div className="flex flex-col w-full rounded-lg p-3 gap-8 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col w-full rounded-lg p-6 gap-8 bg-white dark:bg-bg_dark">
       <Typography
         text="Estimate Your Tax"
         textColor="text-primary_white-400 dark:text-primary_dark-400"
@@ -119,7 +119,7 @@ const TaxTracker = () => {
         text="Tax Tracker"
         textColor="text-primary_white-800 dark:text-primary_dark-800"
         className="-mt-4"
-        size="h7"
+        size="h6"
       />
       <div className="w-full grid grid-cols-3 gap-6">
         {statuses.map((status, index) => (
