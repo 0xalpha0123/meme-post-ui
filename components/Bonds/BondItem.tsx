@@ -42,11 +42,11 @@ const BondItem = (props: BondItemProps) => {
               component={
                 <Typography
                   text={`${props.discount} %`}
-                  textColor="text-primary_white-800 dark:text-primary_dark-800"
+                  textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
                   size="button"
                 />
               }
-              className="bg-inherit hover:bg-inherit border-2 border-secondary"
+              className="bg-transparent dark:bg-transparent border-2 border-secondary"
             />
           )}
         </div>

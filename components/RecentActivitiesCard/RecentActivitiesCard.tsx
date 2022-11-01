@@ -63,7 +63,7 @@ const RecentActivitiesCard = () => {
           />
           <Typography
             text={item.times}
-            textColor="text-primary_white-400 dark:text-primary_dark-400 hover:text-primary_white-800 hover:dark:text-primary_dark-800"
+            textColor="text-primary_white-800 dark:text-primary_dark-800"
             size="miniDescription"
           />
         </div>

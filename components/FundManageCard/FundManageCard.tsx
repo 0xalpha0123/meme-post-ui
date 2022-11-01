@@ -106,21 +106,21 @@ const FundManageCard = () => {
           component={
             <Typography
               text="Add Funds"
-              textColor="text-primary_white-400 dark:text-primary_dark-400 hover:text-primary_white-800 hover:dark:text-primary_dark-800"
+              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
               size="textBold"
             />
           }
-          className="bg-inherit hover:bg-inherit border-2 border-secondary"
+          className="bg-transparent dark:bg-transparent border-2 border-secondary"
         />
         <Button
           component={
             <Typography
               text="Withdraw"
-              textColor="text-primary_white-400 dark:text-primary_dark-400 hover:text-primary_white-800 hover:dark:text-primary_dark-800"
+              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
               size="textBold"
             />
           }
-          className="bg-inherit hover:bg-inherit"
+          className="bg-transparent dark:bg-transparent border-2 border-secondary"
         />
       </div>
     </div>
