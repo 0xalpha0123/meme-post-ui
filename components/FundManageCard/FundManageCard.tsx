@@ -120,7 +120,7 @@ const FundManageCard = () => {
               size="textBold"
             />
           }
-          className="bg-transparent dark:bg-transparent border-2 border-secondary"
+          className="bg-transparent dark:bg-transparent"
         />
       </div>
     </div>
