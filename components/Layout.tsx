@@ -40,7 +40,7 @@ const Layout = (props: LayoutProps) => {
   return (
     <div className="flex animate duration-300 bg-primary_white-50 dark:bg-primary_dark-50 text-primary_white-400 dark:text-primary_dark-400">
       <Head>
-        <title>{`${title} | Meme DAO`}</title>
+        <title>{title}</title>
         {!!description && <meta name="description" content={description} />}
         {!!keywords && <meta name="keywords" content={keywords} />}
       </Head>

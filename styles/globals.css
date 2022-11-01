@@ -39,6 +39,44 @@ body {
     background: #dedede;
   }
 
+  .slider-horizontal .rangeslider-horizontal {
+    height: 10px;
+  }
+  .slider-horizontal .rangeslider__fill {
+    background-color: #1e88e5;
+  }
+
+  .custom-slider .rangeslider-horizontal .rangeslider__handle {
+    width: 34px;
+    height: 25px;
+    border-radius: 30px;
+    text-align: center;
+    color: #26a64a;
+  }
+  .custom-slider .rangeslider-horizontal .rangeslider__handle:after {
+    position: initial;
+  }
+  .custom-slider .rangeslider-horizontal .rangeslider__label {
+    top: 18px;
+  }
+  .custom-slider .rangeslider-horizontal .rangeslider__handle-tooltip {
+    width: 60px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+  .custom-slider .rangeslider-horizontal .rangeslider__handle-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  .custom-slider .rangeslider__fill {
+    background-color: #26a64a !important;
+  }
+  .custom-slider .rangeslider {
+    margin: 10px 0;
+  }
+
   @media (prefers-color-scheme: dark) {
     .scrollbar::-webkit-scrollbar {
       width: 5px;

@@ -1,11 +1,9 @@
 import React from "react";
 import type { NextPage } from "next";
-
 import Layout from "../components/Layout";
-import HeroCarousel from "../components/HeroCarousel";
-import TrendingMemes from "../components/TrendingMemes";
+import TaxTracker from "../components/TaxTracker";
 
-const Home: NextPage = () => {
+const Tracker: NextPage = () => {
   const metaInfo = {
     title: "Tax Tracker",
   };
@@ -19,11 +17,13 @@ const Home: NextPage = () => {
   return (
     <Layout metaInfo={metaInfo} layoutConfig={layoutConfig}>
       <div className="p-3 flex flex-col gap-3">
-        <HeroCarousel />
-        <TrendingMemes />
+        <TaxTracker />
+        <div className="w-full">
+          <img src="/images/advertises/advertise_1.png" className="w-full" />
+        </div>
       </div>
     </Layout>
   );
 };
 
-export default Home;
+export default Tracker;

@@ -21,7 +21,7 @@ const Sidebar = () => {
 
   const showMore = () => {
     controls.start({
-      minWidth: "250px",
+      minWidth: "275px",
       transition: { duration: 0.001 },
     });
     controlText.start({
@@ -91,7 +91,7 @@ const Sidebar = () => {
   return (
     <motion.div
       animate={controls}
-      className="min-w-[250px] animate duration-300 relative flex flex-col py-10 min-h-screen group border-r bg-white dark:bg-bg_dark border-bg_white_secondary dark:border-bg_dark_secondary"
+      className="min-w-[275px] animate duration-300 relative flex flex-col py-10 min-h-screen group border-r bg-white dark:bg-bg_dark border-bg_white_secondary dark:border-bg_dark_secondary"
     >
       {active && (
         <div
@@ -104,7 +104,7 @@ const Sidebar = () => {
       {!active && (
         <div
           onClick={showMore}
-          className=" animate duration-300 rounded-full p-1 absolute text-2xl cursor-pointer -right-[14px] top-4 border-[1px] border-bg_white_secondary dark:border-bg_dark_secondary hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
+          className="animate duration-300 rounded-full p-1 absolute text-2xl cursor-pointer -right-[14px] top-4 border-[1px] border-bg_white_secondary dark:border-bg_dark_secondary hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
         >
           <LoginIcon />
         </div>
