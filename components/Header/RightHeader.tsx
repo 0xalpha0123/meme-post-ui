@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-// import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Avatar from "../Avatar";
 import Divider from "../Divider";
@@ -7,16 +7,17 @@ import {
   ArrowDownIcon,
   LogOutIcon,
   MessagesIcon,
-  // MoonIcon,
   NotificationBing,
-  // SunIcon,
 } from "../Icons";
 
 import { ProfileList } from "./profileList";
 import Typography from "../Typography";
 
+const ToggleThemeIcon = dynamic(() => import("./ToggleThemeIcon"), {
+  ssr: false,
+});
+
 const RightHeader = () => {
-  // const { systemTheme, theme, setTheme } = useTheme();
   const drop = useRef<HTMLDivElement>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -26,14 +27,6 @@ const RightHeader = () => {
       document.removeEventListener("click", handleClick);
     };
   });
-
-  // const handleThemeChange = () => {
-  //   if (theme === "dark") {
-  //     setTheme("light");
-  //   } else {
-  //     setTheme("dark");
-  //   }
-  // };
 
   const handleDropDown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -45,19 +38,6 @@ const RightHeader = () => {
       setDropdownOpen(false);
     }
   };
-
-  // const toggleThemeButton = () => {
-  //   return (
-  //     <button className="relative" onClick={handleThemeChange}>
-  //       <SunIcon
-  //         className={`w-6 h-6 ${theme === "light" ? "hidden" : "block"}`}
-  //       />
-  //       <MoonIcon
-  //         className={`w-6 h-6 ${theme !== "light" ? "hidden" : "block"}`}
-  //       />
-  //     </button>
-  //   );
-  // };
 
   return (
     <div className="flex my-auto gap-8">
@@ -110,7 +90,7 @@ const RightHeader = () => {
           </Link>
         </div>
       </div>
-      {/* {toggleThemeButton()} */}
+      <ToggleThemeIcon />
       <button className="relative">
         <MessagesIcon size="w-6 h-6" />
         <span className="top-2 left-4 absolute w-2.5 h-2.5 bg-custom-fuchsia border-2 border-primary_white-200 dark:border-primary_dark-200 rounded-full"></span>

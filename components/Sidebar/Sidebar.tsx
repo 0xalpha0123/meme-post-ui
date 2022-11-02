@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { motion, useAnimation } from "framer-motion";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import Divider from "../Divider";
 import TrialCard from "../TrialCard";
@@ -8,8 +8,11 @@ import { LoginIcon } from "../Icons";
 import useBreadcrumbs from "../../hooks/useBreadcrumbs";
 import { sidebarItems } from "../../constants/sidebarItems";
 
+const Logo = dynamic(() => import("./Logo"), {
+  ssr: false,
+});
+
 const Sidebar = () => {
-  const { theme } = useTheme();
   const [active, setActive] = useState(false);
   const controls = useAnimation();
   const controlText = useAnimation();
@@ -110,11 +113,9 @@ const Sidebar = () => {
         </div>
       )}
 
-      <motion.img
-        animate={controlLogo}
-        src={theme !== "dark" ? "/logo.png" : "/logo_dark.png"}
-        className="w-4/6 mx-auto mb-6"
-      ></motion.img>
+      <motion.div animate={controlLogo} className="w-4/6 mx-auto mb-6">
+        <Logo />
+      </motion.div>
 
       <div className="grow mb-10">
         {sidebarItems.map((group, index) => (

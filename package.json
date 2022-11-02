@@ -16,12 +16,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.0",
+    "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
-    "@mantine/core": "^5.2.3",
-    "@mantine/hooks": "^5.2.3",
-    "@mantine/next": "^5.2.3",
-    "@mantine/rte": "^5.2.3",
     "chart.js": "^3.9.1",
     "countries-list": "^2.6.1",
     "framer-motion": "^7.6.1",
