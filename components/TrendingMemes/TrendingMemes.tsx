@@ -142,7 +142,7 @@ const TrendingMemes = () => {
         />
       </div>
       <div className="flex justify-between">
-        <div className="flex justify-around grow">
+        <div className="flex flex-grow justify-around">
           {trendings.map((trending) => (
             <div key={trending.id} className="flex gap-1">
               <trending.icon />

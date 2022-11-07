@@ -12,6 +12,8 @@ import {
   Filler,
 } from "chart.js";
 import type { AppProps } from "next/app";
+import { Provider } from "react-redux";
+import { store } from "../store";
 
 import "../styles/globals.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -30,7 +32,9 @@ ChartJS.register(
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </ThemeProvider>
   );
 };

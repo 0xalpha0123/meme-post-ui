@@ -57,7 +57,7 @@ const RightHeader = () => {
             />
             <Typography
               text="Steve"
-              textColor="text-primary_white-400 dark:text-primary_dark-400"
+              textColor="text-primary_white-400 dark:text-primary_dark-400 hover:text-primary_white-800 dark:hover:text-primary_dark-800"
               size="textBold"
             />
           </div>
@@ -75,7 +75,7 @@ const RightHeader = () => {
         >
           {ProfileList.map((item, i) => (
             <Link key={i} href={item.url}>
-              <div className="whitespace-nowrap py-4 font-normal items-center text-sm text-body-color pl-6 pr-10 rounded-xl flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-1000 dark:hover:text-primary_dark-1000">
+              <div className="whitespace-nowrap py-4 pl-6 pr-10 font-normal items-center text-sm text-body-color rounded-lg flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-800 dark:hover:text-primary_dark-800">
                 <item.icon />
                 <div className="ml-4">{item.name}</div>
               </div>
@@ -83,7 +83,7 @@ const RightHeader = () => {
           ))}
           <Divider className="w-4/5 h-[1px] mx-auto my-1 bg-bg_white_secondary dark:bg-bg_dark_secondary" />
           <Link href="/">
-            <div className="whitespace-nowrap py-4 font-normal items-center text-sm text-body-color pl-6 pr-10 rounded-xl flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-1000 dark:hover:text-primary_dark-1000">
+            <div className="whitespace-nowrap py-4 pl-6 pr-10 font-normal items-center text-sm text-body-color rounded-lg flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-800 dark:hover:text-primary_dark-800">
               <LogOutIcon />
               <div className="ml-4">Log out</div>
             </div>

@@ -5,10 +5,9 @@ import {
   Microphone2Icon,
   ExportIcon,
   ArrowDownIcon,
-  VerifyIcon,
 } from "../Icons";
 
-import { BrowserList } from "./browserList";
+import { categoryItems } from "../../constants/categoryItems";
 
 const LeftHeader = () => {
   const drop = useRef<HTMLDivElement>(null);
@@ -34,13 +33,13 @@ const LeftHeader = () => {
 
   return (
     <div className="flex">
-      <div className="relative flex">
+      <div className="relative flex max-w-[300px]">
         <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <SearchNormalIcon />
         </div>
         <input
           type="text"
-          className="border animate duration-300 text-sm rounded-lg block w-full px-10 py-2.5 bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none"
+          className="border text-sm rounded-lg block w-full px-10 py-2.5 bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none"
           placeholder="Search for meme, artworks ..."
         />
         <div className="flex absolute inset-y-0 right-0 items-center pr-3 cursor-pointer">
@@ -50,7 +49,7 @@ const LeftHeader = () => {
       <div className="relative flex my-auto mx-4" ref={drop} id="browser">
         <div
           onClick={handleDropDown}
-          className="h-8 ml-4 flex justify-center text-sm items-center hover:cursor-pointer font-semibold"
+          className="flex h-8 ml-4 justify-center text-sm items-center hover:cursor-pointer font-semibold hover:text-primary_white-800 dark:hover:text-primary_dark-800"
         >
           <ExportIcon className="mr-3" />
           Browse
@@ -59,18 +58,18 @@ const LeftHeader = () => {
         <div
           className={`${
             dropdownOpen ? `opacity-100 visible` : "invisible opacity-0"
-          } top-14 left-14 absolute h-0 w-0 border-x-8 border-x-transparent border-b-8 border-b-secondary transition-all`}
+          } top-14 left-14 absolute h-0 w-0 transition-all border-x-8 border-x-transparent border-b-8 border-b-white dark:border-b-bg_dark`}
         ></div>
         <div
           className={`${
             dropdownOpen ? `opacity-100 visible` : "invisible opacity-0"
-          } opacity-100 top-14 absolute pl-12 pr-16 z-40 mt-2 rounded-xl bg-secondary py-5 shadow-card transition-all text-white`}
+          } opacity-100 top-14 absolute z-40 mt-2 rounded-xl px-6 py-5 shadow-card transition-all bg-white dark:bg-bg_dark`}
         >
-          {BrowserList.map((item, i) => (
+          {categoryItems.map((item, i) => (
             <Link key={i} href={item.url}>
-              <div className="whitespace-nowrap py-4 font-normal items-center text-sm text-body-color hover:text-primary_white-200 flex cursor-pointer">
-                <VerifyIcon className="text-white mr-2" />
-                {item.name}
+              <div className="whitespace-nowrap py-4 pl-6 pr-10 rounded-lg font-normal items-center text-sm text-body-color flex gap-4 cursor-pointer hover:text-primary_white-800 dark:hover:text-primary_dark-800 hover:bg-primary_white-50 dark:hover:bg-primary_dark-50">
+                <item.icon className="w-5 h-5" />
+                {item.title}
               </div>
             </Link>
           ))}

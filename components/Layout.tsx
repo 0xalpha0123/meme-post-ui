@@ -46,7 +46,7 @@ const Layout = (props: LayoutProps) => {
       </Head>
       <ScrollToTop />
       <Sidebar />
-      <div className="flex-grow">
+      <div className="flex flex-grow flex-col">
         {header && <Header />}
         <main className="w-full flex gap-3 p-3">
           <div className="grow">

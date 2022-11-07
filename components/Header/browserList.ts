@@ -1,30 +1,24 @@
+import { Chart2Icon, FireIcon, TimerIcon, TrendUpIcon } from "../Icons";
+
 export const BrowserList = [
   {
     url: "/",
-    name: "All Brands",
+    name: "Hot",
+    icon: FireIcon,
   },
   {
     url: "/",
-    name: "News Reviews",
+    name: "Trending",
+    icon: TrendUpIcon,
   },
   {
     url: "/",
-    name: "Financial report",
+    name: "Fresh",
+    icon: TimerIcon,
   },
   {
     url: "/",
-    name: "Shipping",
-  },
-  {
-    url: "/",
-    name: "View Catalog",
-  },
-  {
-    url: "/",
-    name: "Revenue report",
-  },
-  {
-    url: "/",
-    name: "Refund requests",
+    name: "Top",
+    icon: Chart2Icon,
   },
 ];
