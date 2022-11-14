@@ -1,12 +1,15 @@
 import dynamic from "next/dynamic";
 import React from "react";
 import {
+  ArrowDownIcon,
   BitcoinIcon,
+  CategoryIcon,
   JoyStickIcon,
   KittyIcon,
   LolIcon,
   NftIcon,
   PopcornIcon,
+  SettingIcon,
 } from "../../icons";
 import Typography from "../Typography";
 const MemeCard = dynamic(() => import("./MemeCard"), { ssr: false });
@@ -48,7 +51,7 @@ const memes = [
   {
     id: 1,
     url: "/images/memes/meme_1.png",
-    isVideo: false,
+    mediaType: "picture",
     avatar: "/images/avatars/avatar_1.png",
     username: "Jerome",
     userId: "jeromelion",
@@ -61,7 +64,7 @@ const memes = [
   {
     id: 2,
     url: "/images/memes/meme_2.png",
-    isVideo: false,
+    mediaType: "gif",
     avatar: "/images/avatars/avatar_2.png",
     username: "Savannah",
     userId: "savaneo",
@@ -74,7 +77,7 @@ const memes = [
   {
     id: 3,
     url: "/images/memes/meme_3.png",
-    isVideo: false,
+    mediaType: "video",
     avatar: "/images/avatars/avatar_3.png",
     username: "Ronald",
     userId: "ronald54",
@@ -87,7 +90,7 @@ const memes = [
   {
     id: 4,
     url: "/images/memes/meme_4.png",
-    isVideo: false,
+    mediaType: "picture",
     avatar: "/images/avatars/avatar_1.png",
     username: "Jerome",
     userId: "jeromelion",
@@ -100,7 +103,7 @@ const memes = [
   {
     id: 5,
     url: "/images/memes/meme_5.png",
-    isVideo: false,
+    mediaType: "picture",
     avatar: "/images/avatars/avatar_2.png",
     username: "Savannah",
     userId: "savaneo",
@@ -113,7 +116,7 @@ const memes = [
   {
     id: 6,
     url: "/images/memes/meme_6.png",
-    isVideo: false,
+    mediaType: "picture",
     avatar: "/images/avatars/avatar_3.png",
     username: "Ronald",
     userId: "ronald54",
@@ -128,19 +131,6 @@ const memes = [
 const TrendingMemes = () => {
   return (
     <div className="mt-3 flex flex-col gap-6 rounded-lg">
-      <div className="flex justify-between">
-        <Typography
-          text="Trending Memes"
-          size="h5"
-          textColor="text-primary_white-400 dark:text-primary_dark-400"
-        />
-        <Typography
-          text="View All"
-          className="my-auto cursor-pointer"
-          textColor="text-secondary"
-          size="description"
-        />
-      </div>
       <div className="flex justify-between">
         <div className="flex flex-grow justify-around">
           {trendings.map((trending) => (
@@ -161,6 +151,27 @@ const TrendingMemes = () => {
           size="description"
           className="font-extrabold cursor-pointer"
         />
+      </div>
+      <div className="flex justify-between">
+        <div className="flex gap-3 items-center">
+          <Typography
+            text="Trending Memes"
+            size="textBold"
+            textColor="text-primary_white-400 dark:text-primary_dark-400"
+          />
+          <ArrowDownIcon />
+        </div>
+        <div className="flex gap-3 items-center">
+          <div className="flex gap-3 cursor-pointer">
+            <SettingIcon />
+            <Typography
+              text="Filters"
+              size="textBold"
+              textColor="text-primary_white-400 dark:text-primary_dark-400"
+            />
+          </div>
+          <CategoryIcon size="w-5 h-5" className="cursor-pointer" />
+        </div>
       </div>
       <div className="grid grid-cols-3 gap-6">
         {memes.map((meme) => (

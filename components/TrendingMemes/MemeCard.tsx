@@ -1,12 +1,17 @@
 import React from "react";
-import { ArrowCircleDownIcon, FrameIcon, MessageTextIcon } from "../../icons";
+import {
+  ArrowCircleDownIcon,
+  FrameIcon,
+  MessageTextIcon,
+  PlayIcon,
+} from "../../icons";
 import Typography from "../Typography";
 import UserAvatar from "../UserAvatar";
 import PriceCard from "./PriceCard";
 
 interface MemeProps {
   url: string;
-  isVideo: boolean;
+  mediaType: string;
   avatar: string;
   username: string;
   userId: string;
@@ -28,7 +33,24 @@ const MemeCard = (props: MemeCardProps) => {
       {meme && (
         <div className="cursor-pointer flex flex-col justify-between gap-6 p-4 bg-white dark:bg-bg_dark rounded-lg">
           <div className="flex flex-col gap-6">
-            <img src={meme.url} />
+            <div className="w-full relative items-center">
+              <img src={meme.url} className="w-full" />
+              {meme.mediaType === "gif" ? (
+                <div className="uppercase absolute w-full h-full flex justify-center items-center top-0 left-0">
+                  <p className="rounded-full p-3 bg-[#000000aa] text-white">
+                    GIF
+                  </p>
+                </div>
+              ) : (
+                meme.mediaType !== "picture" && (
+                  <div className="uppercase absolute w-full h-full flex justify-center items-center top-0 left-0">
+                    <p className="rounded-full p-3 bg-[#000000aa] text-white">
+                      <PlayIcon size="w-6 h-6" />
+                    </p>
+                  </div>
+                )
+              )}
+            </div>
             <div className="flex justify-between items-center">
               <UserAvatar
                 size={48}

@@ -1,4 +1,3 @@
-import { ChartOptions } from "chart.js";
 import React from "react";
 import { Line } from "react-chartjs-2";
 import { DocumentDownloadIcon } from "../../icons";
@@ -14,7 +13,7 @@ interface StakePanelProps {
   };
 }
 
-const options: ChartOptions = {
+const options = {
   plugins: {
     legend: {
       display: false,
@@ -22,7 +21,6 @@ const options: ChartOptions = {
     tooltip: {
       displayColors: false,
       backgroundColor: "#fff",
-      yAlign: "bottom",
       callbacks: {
         title: function () {
           return "";

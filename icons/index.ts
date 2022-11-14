@@ -42,6 +42,7 @@ import MoonIcon from "./MoonIcon";
 import NftIcon from "./NftIcon";
 import NotificationBing from "./NotificationBingIcon";
 import PeopleIcon from "./PeopleIcon";
+import PlayIcon from "./PlayIcon";
 import PopcornIcon from "./PopcornIcon";
 import SearchNormalIcon from "./SearchNormalIcon";
 import SettingIcon from "./SettingIcon";
@@ -108,6 +109,7 @@ export {
   NftIcon,
   NotificationBing,
   PeopleIcon,
+  PlayIcon,
   PopcornIcon,
   SearchNormalIcon,
   SettingIcon,
