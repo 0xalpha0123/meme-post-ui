@@ -27,7 +27,7 @@ const MemeCard = (props: MemeCardProps) => {
     <>
       {meme && (
         <div className="cursor-pointer flex flex-col justify-between gap-6 p-4 bg-white dark:bg-bg_dark rounded-lg">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-6">
             <img src={meme.url} />
             <div className="flex justify-between items-center">
               <UserAvatar
@@ -44,7 +44,7 @@ const MemeCard = (props: MemeCardProps) => {
               size="h6"
             />
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <div className="flex gap-3">
               {meme.keywords.map((keyword, index) => (
                 <Typography

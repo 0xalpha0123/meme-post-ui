@@ -23,6 +23,7 @@ import GalleryIcon from "./GalleryIcon";
 import GalleryFavoriteIcon from "./GalleryFavoriteIcon";
 import HomeIcon from "./HomeIcon";
 import Home2Icon from "./Home2Icon";
+import InfoCircleIcon from "./InfoCircleIcon";
 import InstagramIcon from "./InstagramIcon";
 import JoyStickIcon from "./JoyStickIcon";
 import KittyIcon from "./KittyIcon";
@@ -42,9 +43,11 @@ import NotificationBing from "./NotificationBingIcon";
 import PeopleIcon from "./PeopleIcon";
 import PopcornIcon from "./PopcornIcon";
 import SearchNormalIcon from "./SearchNormalIcon";
+import SettingIcon from "./SettingIcon";
 import Setting2Icon from "./Setting2Icon";
 import ShareIcon from "./ShareIcon";
 import SunIcon from "./SunIcon";
+import SwapIcon from "./SwapIcon";
 import ThumbUpIcon from "./ThumbUpIcon";
 import TimerIcon from "./TimerIcon";
 import TrendUpIcon from "./TrendUpIcon";
@@ -85,6 +88,7 @@ export {
   GalleryFavoriteIcon,
   HomeIcon,
   Home2Icon,
+  InfoCircleIcon,
   InstagramIcon,
   JoyStickIcon,
   KittyIcon,
@@ -104,9 +108,11 @@ export {
   PeopleIcon,
   PopcornIcon,
   SearchNormalIcon,
+  SettingIcon,
   Setting2Icon,
   ShareIcon,
   SunIcon,
+  SwapIcon,
   ThumbUpIcon,
   TimerIcon,
   TrendUpIcon,

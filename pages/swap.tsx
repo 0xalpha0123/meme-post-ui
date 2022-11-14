@@ -1,11 +1,11 @@
 import React from "react";
 import type { NextPage } from "next";
 
-import { HeroCarousel, Layout, TrendingMemes } from "../components";
+import { Layout, SwapPanel } from "../components";
 
-const Home: NextPage = () => {
+const Swap: NextPage = () => {
   const metaInfo = {
-    title: "Home",
+    title: "Swap",
   };
 
   const layoutConfig = {
@@ -17,13 +17,10 @@ const Home: NextPage = () => {
   return (
     <Layout metaInfo={metaInfo} layoutConfig={layoutConfig}>
       <div className="p-3 flex flex-col gap-3">
-        <div className="grow">
-          <HeroCarousel />
-        </div>
-        <TrendingMemes />
+        <SwapPanel />
       </div>
     </Layout>
   );
 };
 
-export default Home;
+export default Swap;

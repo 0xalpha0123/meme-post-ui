@@ -30,8 +30,8 @@ const IconButton = (props: IconButtonProps) => {
     : "";
   const focusClass =
     type === "default"
-      ? "focus:outline-none focus:ring-green-400"
-      : "focus:outline-none focus:ring-gray-500";
+      ? "focus:outline-none focus:ring-0"
+      : "focus:outline-none focus:ring-0";
   const hoverClass =
     type === "default"
       ? "bg-secondary hover:bg-secondary hover:bg-opacity-80"
@@ -42,7 +42,7 @@ const IconButton = (props: IconButtonProps) => {
     size === "default" ? "p-2.5" : size === "small" ? "p-2" : "p-3";
   const textColor = type !== "ghost" ? "text-white" : "text-primary_white-900";
   const textSize = size !== "large" ? "text-sm" : "text-base";
-  const roundedClass = rounded ? "rounded-full" : "";
+  const roundedClass = rounded ? "rounded-full" : "rounded-lg";
   const totalClass = `${roundedClass} ${textColor} ${focusClass} ${className} ${padding} ${textSize} ${
     customClass !== ""
       ? customClass
@@ -51,7 +51,7 @@ const IconButton = (props: IconButtonProps) => {
   return (
     <button
       type="button"
-      className={`font-medium text-center rounded-lg focus:ring-4 ${totalClass}`}
+      className={`font-medium text-center ${totalClass}`}
       onClick={callBack}
     >
       {props.component}

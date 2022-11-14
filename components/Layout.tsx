@@ -38,14 +38,14 @@ const Layout = (props: LayoutProps) => {
   return (
     <div className="flex animate duration-300 bg-primary_white-50 dark:bg-primary_dark-50 text-primary_white-400 dark:text-primary_dark-400">
       <Head>
-        <title>{title}</title>
+        <title>{`${title} | Meme DAO`}</title>
         {!!description && <meta name="description" content={description} />}
         {!!keywords && <meta name="keywords" content={keywords} />}
       </Head>
       <Sidebar />
       <div className="flex flex-grow flex-col">
         {header && <Header />}
-        <main className="w-full flex gap-3 p-3">
+        <main className="w-full flex gap-6 p-6">
           <div className="grow">
             {breadcrumb && <Breadcrumb />}
             {props.children}

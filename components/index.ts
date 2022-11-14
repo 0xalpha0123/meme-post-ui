@@ -13,6 +13,7 @@ import HeroCarousel from "./HeroCarousel";
 import IconButton from "./IconButton";
 import Input from "./Input";
 import JoinCommunity from "./JoinCommunity";
+import Layout from "./Layout";
 import MenuBar from "./MenuBar";
 import RecentActivitiesCard from "./RecentActivitiesCard";
 import ScrollToTop from "./ScrollToTop";
@@ -20,6 +21,7 @@ import Sidebar from "./Sidebar";
 import Slider from "./Slider";
 import SocialLinks from "./SocialLinks";
 import StatusCard from "./StatusCard";
+import SwapPanel from "./SwapPanel";
 import TabsPanel from "./TabsPanel";
 import TaxTracker from "./TaxTracker";
 import TopCreatorsCard from "./TopCreatorsCard";
@@ -44,6 +46,7 @@ export {
   IconButton,
   Input,
   JoinCommunity,
+  Layout,
   MenuBar,
   RecentActivitiesCard,
   ScrollToTop,
@@ -51,6 +54,7 @@ export {
   Slider,
   SocialLinks,
   StatusCard,
+  SwapPanel,
   TabsPanel,
   TaxTracker,
   TopCreatorsCard,

@@ -55,7 +55,7 @@ const BondCard = () => {
         size="description"
         className="-mt-4"
       />
-      <div className="w-[500px] mx-auto flex flex-col gap-2">
+      <div className="w-[500px] mx-auto flex flex-col gap-8">
         <div className="flex items-center gap-1">
           <span className="w-2 h-2 bg-secondary rounded-full"></span>
           <Typography
@@ -68,6 +68,7 @@ const BondCard = () => {
           text="$4,407.00"
           textColor="text-primary_white-800 dark:text-primary_dark-800"
           size="h4"
+          className="-mt-4"
         />
         <div className="flex justify-between mt-6 p-3">
           <Typography

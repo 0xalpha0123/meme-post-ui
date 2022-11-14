@@ -40,7 +40,7 @@ const RightHeader = () => {
   };
 
   return (
-    <div className="flex my-auto gap-8">
+    <div className="flex my-auto gap-6">
       <div className="relative" ref={drop} id="profile">
         <div className="flex cursor-pointer" onClick={handleDropDown}>
           <Avatar

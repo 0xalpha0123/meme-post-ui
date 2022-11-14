@@ -6,8 +6,8 @@ import {
   DocumentTextIcon,
   HomeIcon,
   LayerIcon,
-  MaskIcon,
   SunIcon,
+  SwapIcon,
 } from "../icons";
 
 export const sidebarItems = [
@@ -47,12 +47,12 @@ export const sidebarItems = [
         url: "/stake",
       },
       {
-        id: "wrap",
-        title: "Wrap",
-        breadcrumbText: "Wrap",
-        icon: MaskIcon,
-        isValiable: false,
-        url: "/wrap",
+        id: "swap",
+        title: "Swap",
+        breadcrumbText: "Swap Tokens",
+        icon: SwapIcon,
+        isValiable: true,
+        url: "/swap",
       },
       {
         id: "bond",

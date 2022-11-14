@@ -127,7 +127,7 @@ const memes = [
 
 const TrendingMemes = () => {
   return (
-    <div className="p-3 mt-3 flex flex-col gap-6 rounded-lg">
+    <div className="mt-3 flex flex-col gap-6 rounded-lg">
       <div className="flex justify-between">
         <Typography
           text="Trending Memes"
