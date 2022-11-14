@@ -109,7 +109,7 @@ const TaxTracker = () => {
   };
 
   return (
-    <div className="flex flex-col w-full rounded-lg p-6 gap-12 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col w-full rounded-lg py-6 px-12 gap-12 bg-white dark:bg-bg_dark">
       <Typography
         text="Estimate Your Tax"
         textColor="text-primary_white-400 dark:text-primary_dark-400"
@@ -127,8 +127,16 @@ const TaxTracker = () => {
         ))}
       </div>
       <div className="grid grid-cols-2 gap-6">
-        <Input label="MEME AMOUNT" placeHolder="Input your Meme amount" />
-        <Input label="FUTURE INDEX" placeHolder="Input future index" />
+        <Input
+          label="MEME AMOUNT"
+          placeHolder="Input your Meme amount"
+          endLabel="MAX"
+        />
+        <Input
+          label="FUTURE INDEX"
+          placeHolder="Input future index"
+          endLabel="CURRENT"
+        />
       </div>
       <div className="grid grid-cols-2 gap-6">
         <Slider

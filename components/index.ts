@@ -20,6 +20,7 @@ import ScrollToTop from "./ScrollToTop";
 import Sidebar from "./Sidebar";
 import Slider from "./Slider";
 import SocialLinks from "./SocialLinks";
+import StakePanel from "./StakePanel";
 import StatusCard from "./StatusCard";
 import SwapPanel from "./SwapPanel";
 import TabsPanel from "./TabsPanel";
@@ -53,6 +54,7 @@ export {
   Sidebar,
   Slider,
   SocialLinks,
+  StakePanel,
   StatusCard,
   SwapPanel,
   TabsPanel,

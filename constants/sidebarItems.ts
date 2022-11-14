@@ -43,7 +43,7 @@ export const sidebarItems = [
         title: "Stake",
         breadcrumbText: "Stake",
         icon: LayerIcon,
-        isValiable: false,
+        isValiable: true,
         url: "/stake",
       },
       {

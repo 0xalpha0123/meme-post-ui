@@ -46,7 +46,7 @@ const BondItem = (props: BondItemProps) => {
                   size="button"
                 />
               }
-              className="bg-transparent dark:bg-transparent border-2 border-secondary"
+              className="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
             />
           )}
         </div>

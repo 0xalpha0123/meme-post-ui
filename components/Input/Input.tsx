@@ -35,7 +35,7 @@ const Input = (props: InputProps) => {
           placeholder={placeHolder}
           onChange={callBack}
         />
-        <div className="flex absolute inset-y-0 right-0 items-center pr-3">
+        <div className="flex absolute inset-y-0 right-0 items-center pr-3 text-sm cursor-pointer">
           {endLabel}
         </div>
       </div>

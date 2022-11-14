@@ -45,23 +45,14 @@ const SwapPanel = () => {
           />
         </div>
       </div>
-      <div className="w-full grid grid-cols-2 justify-between">
+      <div className="w-full grid grid-cols-2 gap-3">
         <div className="flex gap-3">
-          <InfoCircleIcon size="w-6 h-6" className="text-custom-red" />
-          <div className="flex flex-col gap-1">
-            <Typography
-              text="Please note that due to exchange rate fluctuations,"
-              size="description"
-            />
-            <Typography
-              text="there may be a slight difference between the"
-              size="description"
-            />
-            <Typography
-              text="amount you recieve and the estimated amount."
-              size="description"
-            />
-          </div>
+          <InfoCircleIcon size="min-w-[24px] h-6" className="text-custom-red" />
+          <Typography
+            text="Please note that due to exchange rate fluctuations, there may be a slight difference between the amount you recieve and the estimated amount."
+            size="description"
+            textColor="text-primary_white-400 dark:text-primary_dark-400"
+          />
         </div>
         <Button component="Swap" />
       </div>

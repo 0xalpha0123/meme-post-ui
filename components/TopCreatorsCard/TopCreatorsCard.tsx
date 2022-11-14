@@ -68,7 +68,7 @@ const TopCreatorsCard = () => {
                 size="description"
               />
             }
-            className={`bg-transparent dark:bg-transparent px-3 ${
+            className={`bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent px-3 ${
               item.followed ? "" : "border-2 border-secondary"
             }`}
           />

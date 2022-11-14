@@ -12,7 +12,7 @@ interface SwapInputProps {
 
 const SwapInput = (props: SwapInputProps) => {
   return (
-    <div className="w-full grid grid-cols-2 py-6 justify-between">
+    <div className="w-full grid grid-cols-2 py-6 gap-3">
       <div className="flex flex-col justify-between gap-6">
         <Typography
           text={props.isFrom ? "Pay" : "Receive"}

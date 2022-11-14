@@ -10,6 +10,7 @@ import Chart2Icon from "./Chart2Icon";
 import CloseIcon from "./CloseIcon";
 import ComputingIcon from "./ComputingIcon";
 import DiscountCircleIcon from "./DiscountCircleIcon";
+import DocumentDownloadIcon from "./DocumentDownloadIcon";
 import DocumentTextIcon from "./DocumentTextIcon";
 import DotsHorizondalIcon from "./DotsHorizondalIcon";
 import EmojiHappyIcon from "./EmojiHappyIcon";
@@ -75,6 +76,7 @@ export {
   CloseIcon,
   ComputingIcon,
   DiscountCircleIcon,
+  DocumentDownloadIcon,
   DocumentTextIcon,
   DotsHorizondalIcon,
   EmojiHappyIcon,

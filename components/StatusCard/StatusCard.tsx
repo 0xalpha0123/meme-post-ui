@@ -18,7 +18,7 @@ const options = {
   },
   elements: {
     line: {
-      tension: 0,
+      tension: 0.4,
       borderWidth: 4,
       borderColor: "rgba(47, 97, 68, 1)",
       backgroundColor: "rgba(47, 97, 68, 0.3)",
@@ -53,7 +53,7 @@ const StatusCard = (props: StatusProps) => {
         <Typography
           text={props.currentValue}
           textColor="text-primary_white-800 dark:text-primary_dark-800"
-          size="h4"
+          size="h5"
         />
         {!!props.graphData && (
           <div>
