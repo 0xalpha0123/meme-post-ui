@@ -4,7 +4,6 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["i.postimg.cc"],
-    unoptimized: true,
     loader: "akamai",
     path: "",
   },
