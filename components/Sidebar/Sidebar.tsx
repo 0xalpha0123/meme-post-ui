@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import Divider from "../Divider";
 import TrialCard from "../TrialCard";
-import { LoginIcon } from "../Icons";
+import { LoginIcon } from "../../icons";
 import useBreadcrumbs from "../../hooks/useBreadcrumbs";
 import { sidebarItems } from "../../constants/sidebarItems";
 import useToggleSidebar from "../../hooks/useToggleSidebar";
@@ -18,8 +18,8 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`min-w-${
-        active ? "[275px]" : "[60px]"
+      className={`${
+        active ? "min-w-[275px]" : "min-w-[60px]"
       } relative flex flex-col py-10 min-h-screen group border-r bg-white dark:bg-bg_dark border-bg_white_secondary dark:border-bg_dark_secondary`}
     >
       {active && (
@@ -38,7 +38,6 @@ const Sidebar = () => {
           <LoginIcon />
         </div>
       )}
-
       {active && <Logo className="mx-auto mb-6" />}
 
       <div className="grow mb-10">

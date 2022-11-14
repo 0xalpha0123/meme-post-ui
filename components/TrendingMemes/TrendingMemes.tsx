@@ -7,7 +7,7 @@ import {
   LolIcon,
   NftIcon,
   PopcornIcon,
-} from "../Icons";
+} from "../../icons";
 import Typography from "../Typography";
 const MemeCard = dynamic(() => import("./MemeCard"), { ssr: false });
 

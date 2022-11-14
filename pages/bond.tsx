@@ -2,7 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 
 import Layout from "../components/Layout";
-import BondCard from "../components/Bonds";
+import { BondCard } from "../components";
 
 const Bonds: NextPage = () => {
   const metaInfo = {

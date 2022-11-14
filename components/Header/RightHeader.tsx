@@ -8,7 +8,7 @@ import {
   LogOutIcon,
   MessagesIcon,
   NotificationBing,
-} from "../Icons";
+} from "../../icons";
 
 import { ProfileList } from "./profileList";
 import Typography from "../Typography";

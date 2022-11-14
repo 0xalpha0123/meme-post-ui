@@ -3,7 +3,6 @@ import Head from "next/head";
 
 import ScrollToTop from "./ScrollToTop";
 import Header from "./Header";
-import Footer from "./Footer";
 import Breadcrumb from "./Breadcrumb";
 
 import Sidebar from "./Sidebar";
@@ -12,6 +11,7 @@ import TopCreatorsCard from "./TopCreatorsCard";
 import RecentActivitiesCard from "./RecentActivitiesCard";
 
 import type { ReactElement } from "react";
+import JoinCommunity from "./JoinCommunity";
 
 interface LayoutProps {
   children: ReactElement;
@@ -27,14 +27,12 @@ interface MetaInfo {
 
 interface LayoutConfig {
   header?: boolean;
-  footer?: boolean;
   breadcrumb?: boolean;
 }
 
 const Layout = (props: LayoutProps) => {
   const { title, keywords, description } = props.metaInfo;
   const header = props.layoutConfig.header;
-  const footer = props.layoutConfig.footer;
   const breadcrumb = props.layoutConfig.breadcrumb;
 
   return (
@@ -44,7 +42,6 @@ const Layout = (props: LayoutProps) => {
         {!!description && <meta name="description" content={description} />}
         {!!keywords && <meta name="keywords" content={keywords} />}
       </Head>
-      <ScrollToTop />
       <Sidebar />
       <div className="flex flex-grow flex-col">
         {header && <Header />}
@@ -53,14 +50,16 @@ const Layout = (props: LayoutProps) => {
             {breadcrumb && <Breadcrumb />}
             {props.children}
           </div>
-          <div className="min-w-[350px] gap-3 flex flex-col">
+          <div className="min-w-[350px] gap-6 flex flex-col">
             <FundManageCard />
             <TopCreatorsCard />
             <RecentActivitiesCard />
+            <JoinCommunity />
           </div>
         </main>
-        {footer && <Footer />}
+        {/* {footer && <Footer />} */}
       </div>
+      <ScrollToTop />
     </div>
   );
 };

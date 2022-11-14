@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "../Icons";
+import { MoonIcon, SunIcon } from "../../icons";
 
 const ToggleThemeIcon = () => {
   const { systemTheme, theme, setTheme } = useTheme();

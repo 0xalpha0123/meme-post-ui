@@ -4,7 +4,7 @@ import {
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
-} from "../Icons";
+} from "../../icons";
 import SocialLinkItem from "./SocialLinkItem";
 
 interface SocialLinksProps {

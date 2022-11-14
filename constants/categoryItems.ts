@@ -1,9 +1,4 @@
-import {
-  Chart2Icon,
-  FireIcon,
-  TimerIcon,
-  TrendUpIcon,
-} from "../components/Icons";
+import { Chart2Icon, FireIcon, TimerIcon, TrendUpIcon } from "../icons";
 
 export const categoryItems = [
   {

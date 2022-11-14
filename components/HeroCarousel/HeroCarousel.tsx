@@ -3,7 +3,13 @@ import { Carousel } from "react-responsive-carousel";
 
 const HeroCarousel = () => {
   return (
-    <Carousel autoPlay showArrows={false} showStatus={false} showThumbs={false}>
+    <Carousel
+      className="grow"
+      autoPlay
+      showArrows={false}
+      showStatus={false}
+      showThumbs={false}
+    >
       <div className="relative">
         <img alt="" src="/images/slides/slide_1.png" />
       </div>

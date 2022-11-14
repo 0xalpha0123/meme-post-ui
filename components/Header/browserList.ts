@@ -1,4 +1,4 @@
-import { Chart2Icon, FireIcon, TimerIcon, TrendUpIcon } from "../Icons";
+import { Chart2Icon, FireIcon, TimerIcon, TrendUpIcon } from "../../icons";
 
 export const BrowserList = [
   {

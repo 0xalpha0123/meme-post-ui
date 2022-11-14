@@ -5,7 +5,7 @@ import {
   Setting2Icon,
   ShareIcon,
   UserSquareIcon,
-} from "../Icons";
+} from "../../icons";
 
 export const MenuBarList = [
   {

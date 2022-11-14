@@ -5,7 +5,7 @@ import {
   Microphone2Icon,
   ExportIcon,
   ArrowDownIcon,
-} from "../Icons";
+} from "../../icons";
 
 import { categoryItems } from "../../constants/categoryItems";
 

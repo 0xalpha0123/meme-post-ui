@@ -1,7 +1,7 @@
 import React from "react";
 import BreadcrumbGroup from "./BreadcrumbGroup";
 import BreadcrumbItem from "./BreadcrumbItem";
-import { ArrowRightIcon, Home2Icon } from "../Icons";
+import { ArrowRightIcon, Home2Icon } from "../../icons";
 import useBreadcrumbs from "../../hooks/useBreadcrumbs";
 
 interface Breadcrumb {

@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowCircleDownIcon, FrameIcon, MessageTextIcon } from "../Icons";
+import { ArrowCircleDownIcon, FrameIcon, MessageTextIcon } from "../../icons";
 import Typography from "../Typography";
 import UserAvatar from "../UserAvatar";
 import PriceCard from "./PriceCard";
@@ -26,7 +26,7 @@ const MemeCard = (props: MemeCardProps) => {
   return (
     <>
       {meme && (
-        <div className="cursor-pointer w-full flex flex-col justify-between gap-6 p-4 bg-white dark:bg-bg_dark rounded-lg">
+        <div className="cursor-pointer flex flex-col justify-between gap-6 p-4 bg-white dark:bg-bg_dark rounded-lg">
           <div className="flex flex-col gap-3">
             <img src={meme.url} />
             <div className="flex justify-between items-center">

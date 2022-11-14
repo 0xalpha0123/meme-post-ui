@@ -1,7 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import Layout from "../components/Layout";
-import TaxTracker from "../components/TaxTracker";
+import { TaxTracker } from "../components";
 
 const Tracker: NextPage = () => {
   const metaInfo = {
