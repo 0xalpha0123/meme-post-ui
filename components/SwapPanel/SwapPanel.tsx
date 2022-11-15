@@ -21,7 +21,7 @@ const tokenLists = [
 
 const SwapPanel = () => {
   return (
-    <div className="flex flex-col gap-12 px-12 py-6 rounded-lg items-center bg-white dark:bg-bg_dark">
+    <div className="flex flex-col gap-12 px-12 py-6 rounded-lg items-center animate duration-300 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <SwapInput isFrom={true} tokenLists={tokenLists} token={tokenLists[0]} />
       <IconButton
         component={<SwapIcon />}

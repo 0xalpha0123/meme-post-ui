@@ -8,14 +8,8 @@ const Swap: NextPage = () => {
     title: "Swap",
   };
 
-  const layoutConfig = {
-    header: true,
-    footer: true,
-    breadcrumb: true,
-  };
-
   return (
-    <Layout metaInfo={metaInfo} layoutConfig={layoutConfig}>
+    <Layout metaInfo={metaInfo}>
       <div className="p-3 flex flex-col gap-3">
         <SwapPanel />
       </div>

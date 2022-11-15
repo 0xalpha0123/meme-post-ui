@@ -15,9 +15,8 @@ const Stake: NextPage = () => {
   };
 
   const layoutConfig = {
-    header: true,
-    footer: true,
-    breadcrumb: true,
+    hideTopCreator: true,
+    hideRecentActivity: true,
   };
 
   return (

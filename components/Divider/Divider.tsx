@@ -7,7 +7,7 @@ interface DividerProps {
 const Divider = (props: DividerProps) => {
   const className = props.className || "";
 
-  return <div className={className}></div>;
+  return <div className={`${className} animate duration-300`}></div>;
 };
 
 export default Divider;

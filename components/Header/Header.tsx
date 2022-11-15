@@ -5,7 +5,7 @@ import RightHeader from "./RightHeader";
 
 const Header = () => {
   return (
-    <div className="animate duration-300 h-14 flex w-full items-center bg-white dark:bg-bg_dark">
+    <div className="animate duration-300 h-14 flex w-full items-center border-b border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <div className="m-auto w-full px-6 flex justify-between">
         <LeftHeader />
         <CategoryHeader />

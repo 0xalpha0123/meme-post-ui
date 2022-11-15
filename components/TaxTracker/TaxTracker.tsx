@@ -109,7 +109,7 @@ const TaxTracker = () => {
   };
 
   return (
-    <div className="flex flex-col w-full rounded-lg py-6 px-12 gap-12 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col w-full rounded-lg py-6 px-12 gap-12 animate duration-300 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <Typography
         text="Estimate Your Tax"
         textColor="text-primary_white-400 dark:text-primary_dark-400"

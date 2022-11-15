@@ -47,7 +47,7 @@ const BondItem = (props: BondItemProps) => {
                   className="px-6"
                 />
               }
-              className="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+              customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
             />
           )}
         </div>

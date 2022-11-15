@@ -66,12 +66,12 @@ const RightHeader = () => {
         <div
           className={`${
             dropdownOpen ? `opacity-100 visible` : "invisible opacity-0"
-          } top-14 right-4 absolute h-0 w-0 border-x-8 border-x-transparent border-b-8 transition-all border-b-white dark:border-b-bg_dark`}
+          } top-[57px] right-4 absolute h-3 w-3 transition-all rotate-45 z-[999] border-t border-l border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark`}
         ></div>
         <div
           className={`${
             dropdownOpen ? `opacity-100 visible` : "invisible opacity-0"
-          } opacity-100 top-14 -right-3 absolute px-6 py-3 z-40 mt-2 rounded-xl shadow-card transition-all bg-white dark:bg-bg_dark border-x border-b border-bg_white_secondary dark:border-bg_dark_secondary`}
+          } opacity-100 top-14 -right-3 absolute px-6 py-3 z-40 mt-2 rounded-xl shadow-card transition-all bg-white dark:bg-bg_dark border border-primary_white-200 dark:border-primary_dark-200`}
         >
           {ProfileList.map((item, i) => (
             <Link key={i} href={item.url}>

@@ -19,7 +19,7 @@ const Input = (props: InputProps) => {
   const className = props.className || "";
   return (
     <div
-      className={`${className} flex w-full ${
+      className={`${className} animate duration-300 flex w-full ${
         direction === "col" && "flex-col"
       }`}
     >
@@ -29,7 +29,7 @@ const Input = (props: InputProps) => {
       <div className="relative flex">
         <input
           value={props.value}
-          className={`border text-sm rounded-lg block w-full p-2.5 ${
+          className={`border animate duration-300 text-sm rounded-lg block w-full p-2.5 ${
             props.endLabel && "pr-20"
           } bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none`}
           placeholder={placeHolder}

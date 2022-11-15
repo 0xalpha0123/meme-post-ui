@@ -34,7 +34,7 @@ const MemeCard = (props: MemeCardProps) => {
     <>
       {meme && (
         <div
-          className={`cursor-pointer flex flex-col justify-between gap-6 p-6 bg-white dark:bg-bg_dark rounded-lg ${
+          className={`cursor-pointer animate duration-300 flex flex-col justify-between gap-6 p-6 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark rounded-lg ${
             isWaterfall && "mt-6"
           }`}
         >

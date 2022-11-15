@@ -43,7 +43,7 @@ const bondArray = [
 
 const BondCard = () => {
   return (
-    <div className="flex flex-col gap-8 rounded-lg py-6 px-12 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col gap-8 rounded-lg py-6 px-12 animate duration-300 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <Typography
         text="Bond Carbon"
         textColor="text-primary_white-800 dark:text-primary_dark-800"

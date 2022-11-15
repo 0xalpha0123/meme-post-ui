@@ -114,7 +114,7 @@ const FundManageCard = () => {
     return gradient;
   }
   return (
-    <div className="flex flex-col bg-white dark:bg-bg_dark p-6 rounded-lg">
+    <div className="flex flex-col animate duration-300 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark p-6 rounded-lg">
       <Typography
         text="Main Balance"
         textColor="text-primary_white-400 dark:text-primary_dark-400"
@@ -140,11 +140,11 @@ const FundManageCard = () => {
           component={
             <Typography
               text="Add Funds"
-              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
+              textColor="text-secondary"
               size="textBold"
             />
           }
-          className="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+          customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
         />
         <Button
           component={
@@ -154,7 +154,7 @@ const FundManageCard = () => {
               size="textBold"
             />
           }
-          className="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
         />
       </div>
     </div>

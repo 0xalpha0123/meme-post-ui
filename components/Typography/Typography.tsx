@@ -45,7 +45,11 @@ const Typography = (props: TypographyProps) => {
   const textColor = props.textColor || "text-primary_dark-900";
   const size = props.size || "text";
   return (
-    <div className={`${className} ${textColor} ${fontSizes[size]}`}>{text}</div>
+    <div
+      className={`animate duration-300 ${className} ${textColor} ${fontSizes[size]}`}
+    >
+      {text}
+    </div>
   );
 };
 

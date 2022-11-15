@@ -159,7 +159,7 @@ const StakePanel = (props: StakePanelProps) => {
     return gradient;
   }
   return (
-    <div className="flex flex-col items-center justify-between gap-12 px-12 py-6 rounded-lg bg-white dark:bg-bg_dark">
+    <div className="flex flex-col items-center justify-between gap-12 px-12 py-6 rounded-lg animate duration-300 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <div className="w-full flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
           <Avatar style="circle" avatar={props.token.imgUrl} type="image" />
@@ -198,7 +198,7 @@ const StakePanel = (props: StakePanelProps) => {
             />
           }
           size="small"
-          className="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+          customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
         />
         <Button
           component={
@@ -209,7 +209,7 @@ const StakePanel = (props: StakePanelProps) => {
             />
           }
           size="small"
-          className="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
         />
         <Button
           component={
@@ -220,7 +220,7 @@ const StakePanel = (props: StakePanelProps) => {
             />
           }
           size="small"
-          className="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
         />
         <Button
           component={
@@ -231,7 +231,7 @@ const StakePanel = (props: StakePanelProps) => {
             />
           }
           size="small"
-          className="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
         />
         <Button
           component={
@@ -242,7 +242,7 @@ const StakePanel = (props: StakePanelProps) => {
             />
           }
           size="small"
-          className="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
         />
       </div>
       <Line
@@ -342,7 +342,7 @@ const StakePanel = (props: StakePanelProps) => {
                 size="h7"
               />
             }
-            className="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+            customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
           />
         </div>
       </div>

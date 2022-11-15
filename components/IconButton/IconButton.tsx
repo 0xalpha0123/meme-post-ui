@@ -51,7 +51,7 @@ const IconButton = (props: IconButtonProps) => {
   return (
     <button
       type="button"
-      className={`font-medium text-center ${totalClass}`}
+      className={`font-medium text-center animate duration-300 ${totalClass}`}
       onClick={callBack}
     >
       {props.component}

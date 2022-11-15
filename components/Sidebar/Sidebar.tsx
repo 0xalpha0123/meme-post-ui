@@ -20,12 +20,12 @@ const Sidebar = () => {
     <div
       className={`${
         active ? "min-w-[275px]" : "min-w-[60px]"
-      } relative flex flex-col py-10 min-h-screen group border-r bg-white dark:bg-bg_dark border-bg_white_secondary dark:border-bg_dark_secondary`}
+      } animate duration-300 relative flex flex-col py-10 min-h-screen group border-r border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark`}
     >
       {active && (
         <div
           onClick={handleTogglebar}
-          className="rounded-full p-1 absolute rotate-180 text-2xl cursor-pointer -right-[14px] top-4 border-[1px] border-bg_white_secondary dark:border-bg_dark_secondary hover:text-primary_dark-200 dark:hover:text-primary_white-200  bg-primary_white-50 dark:bg-primary_dark-50"
+          className="rounded-full p-1 animate duration-300 absolute rotate-180 text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
         >
           <LoginIcon />
         </div>
@@ -33,7 +33,7 @@ const Sidebar = () => {
       {!active && (
         <div
           onClick={handleTogglebar}
-          className="rounded-full p-1 absolute text-2xl cursor-pointer -right-[14px] top-4 border-[1px] border-bg_white_secondary dark:border-bg_dark_secondary hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
+          className="rounded-full p-1 animate duration-300 absolute text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
         >
           <LoginIcon />
         </div>

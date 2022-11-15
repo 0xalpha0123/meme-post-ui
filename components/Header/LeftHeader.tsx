@@ -39,7 +39,7 @@ const LeftHeader = () => {
         </div>
         <input
           type="text"
-          className="border text-sm rounded-lg block w-full px-10 py-2.5 bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none"
+          className="border animate duration-300 text-sm rounded-lg block w-full px-10 py-2.5 bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none"
           placeholder="Search for meme, artworks ..."
         />
         <div className="flex absolute inset-y-0 right-0 items-center pr-3 cursor-pointer">
@@ -58,12 +58,12 @@ const LeftHeader = () => {
         <div
           className={`${
             dropdownOpen ? `opacity-100 visible` : "invisible opacity-0"
-          } top-14 left-14 absolute h-0 w-0 transition-all border-x-8 border-x-transparent border-b-8 border-b-white dark:border-b-bg_dark`}
+          } top-[57px] left-14 absolute h-3 w-3 transition-all rotate-45 z-[999] border-t border-l border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark`}
         ></div>
         <div
           className={`${
             dropdownOpen ? `opacity-100 visible` : "invisible opacity-0"
-          } opacity-100 top-14 absolute z-40 mt-2 rounded-xl px-6 py-5 shadow-card transition-all bg-white dark:bg-bg_dark`}
+          } opacity-100 top-14 absolute z-40 mt-2 rounded-xl px-6 py-5 shadow-card transition-all border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark`}
         >
           {categoryItems.map((item, i) => (
             <Link key={i} href={item.url}>

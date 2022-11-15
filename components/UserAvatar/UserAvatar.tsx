@@ -54,7 +54,7 @@ const UserAvatar = (props: UserAvatarProps) => {
   const subtitleSize = props.subtitleSize || "miniButton";
 
   return (
-    <div className="flex cursor-pointer">
+    <div className="flex cursor-pointer animate duration-300">
       <Avatar
         username={username}
         type={!!imageUrl ? "image" : "initials"}
