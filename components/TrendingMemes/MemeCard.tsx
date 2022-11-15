@@ -24,17 +24,28 @@ interface MemeProps {
 
 interface MemeCardProps {
   meme: MemeProps;
+  isWaterfall: boolean;
 }
 
 const MemeCard = (props: MemeCardProps) => {
   const meme = props.meme;
+  const isWaterfall = props.isWaterfall;
   return (
     <>
       {meme && (
-        <div className="cursor-pointer flex flex-col justify-between gap-6 p-4 bg-white dark:bg-bg_dark rounded-lg">
+        <div
+          className={`cursor-pointer flex flex-col justify-between gap-6 p-6 bg-white dark:bg-bg_dark rounded-lg ${
+            isWaterfall && "mt-6"
+          }`}
+        >
           <div className="flex flex-col gap-6">
             <div className="w-full relative items-center">
-              <img src={meme.url} className="w-full" />
+              <img
+                src={meme.url}
+                className={`w-full ${
+                  !isWaterfall && "aspect-square object-cover"
+                } rounded-xl border`}
+              />
               {meme.mediaType === "gif" ? (
                 <div className="uppercase absolute w-full h-full flex justify-center items-center top-0 left-0">
                   <p className="rounded-full p-3 bg-[#000000aa] text-white">
@@ -64,6 +75,7 @@ const MemeCard = (props: MemeCardProps) => {
               text={meme.title}
               textColor="text-primary_white-700 dark:text-primary_dark-700"
               size="h6"
+              className={`${isWaterfall && "mb-6"}`}
             />
           </div>
           <div className="flex flex-col gap-3">

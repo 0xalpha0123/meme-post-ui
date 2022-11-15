@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
-import React from "react";
+import React, { useState } from "react";
+import Masonry2 from "react-masonry-css";
 import {
   ArrowDownIcon,
   BitcoinIcon,
@@ -105,8 +106,8 @@ const memes = [
     url: "/images/memes/meme_5.png",
     mediaType: "picture",
     avatar: "/images/avatars/avatar_2.png",
-    username: "Savannah",
-    userId: "savaneo",
+    username: "Moonbirds",
+    userId: "moonbirds",
     price: 0.2,
     title: "When you go all in with your last money and the market bounces",
     votesCount: "2.1K",
@@ -126,9 +127,49 @@ const memes = [
     commentsCount: "4.6K",
     keywords: ["Funny", "Animals "],
   },
+  {
+    id: 7,
+    url: "/images/memes/meme_7.png",
+    mediaType: "picture",
+    avatar: "/images/avatars/avatar_3.png",
+    username: "Savannah",
+    userId: "savaneo",
+    price: 0.2,
+    title: "Cats are liquid",
+    votesCount: "2.1K",
+    commentsCount: "4.6K",
+    keywords: ["Funny", "Animals "],
+  },
+  {
+    id: 8,
+    url: "/images/memes/meme_8.png",
+    mediaType: "video",
+    avatar: "/images/avatars/avatar_3.png",
+    username: "WHIKO",
+    userId: "whikoaz",
+    price: 0.2,
+    title: "It's Wednesday My Dudes ",
+    votesCount: "2.1K",
+    commentsCount: "4.6K",
+    keywords: ["Funny", "Animals "],
+  },
+  {
+    id: 9,
+    url: "/images/memes/meme_9.png",
+    mediaType: "video",
+    avatar: "/images/avatars/avatar_3.png",
+    username: "WHIKO",
+    userId: "whikoaz",
+    price: 0.2,
+    title: "It's Wednesday My Dudes ",
+    votesCount: "2.1K",
+    commentsCount: "4.6K",
+    keywords: ["Funny", "Animals "],
+  },
 ];
 
 const TrendingMemes = () => {
+  const [isWaterfall, setIsWaterfall] = useState(false);
   return (
     <div className="mt-3 flex flex-col gap-6 rounded-lg">
       <div className="flex justify-between">
@@ -152,8 +193,8 @@ const TrendingMemes = () => {
           className="font-extrabold cursor-pointer"
         />
       </div>
-      <div className="flex justify-between">
-        <div className="flex gap-3 items-center">
+      <div className="flex justify-between items-center mt-6">
+        <div className="flex gap-3 items-center cursor-pointer">
           <Typography
             text="Trending Memes"
             size="textBold"
@@ -170,14 +211,27 @@ const TrendingMemes = () => {
               textColor="text-primary_white-400 dark:text-primary_dark-400"
             />
           </div>
-          <CategoryIcon size="w-5 h-5" className="cursor-pointer" />
+          <div onClick={() => setIsWaterfall(!isWaterfall)}>
+            <CategoryIcon
+              size="w-5 h-5"
+              className={`cursor-pointer ${!isWaterfall && "text-secondary"}`}
+            />
+          </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-6">
-        {memes.map((meme) => (
-          <MemeCard key={meme.id} meme={meme} />
-        ))}
-      </div>
+      {!isWaterfall ? (
+        <div className="grid grid-cols-3 gap-6 mt-6">
+          {memes.map((meme) => (
+            <MemeCard key={meme.id} meme={meme} isWaterfall={isWaterfall} />
+          ))}
+        </div>
+      ) : (
+        <Masonry2 className="flex gap-6" columnClassName="" breakpointCols={3}>
+          {memes.map((meme) => (
+            <MemeCard key={meme.id} meme={meme} isWaterfall={isWaterfall} />
+          ))}
+        </Masonry2>
+      )}
     </div>
   );
 };
