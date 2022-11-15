@@ -19,13 +19,13 @@ const SwapInput = (props: SwapInputProps) => {
           size="h7"
           textColor="text-primary_white-400 dark:text-primary_dark-400"
         />
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6">
           <Avatar style="circle" avatar={props.token.imgUrl} type="image" />
-          <div className="flex gap-3 cursor-pointer">
+          <div className="flex gap-3 cursor-pointer items-center">
             <Typography
               text={props.token.symbol}
               textColor="text-primary_white-400 dark:text-primary_dark-400"
-              size="subtitleBold"
+              size="h7"
             />
             <ArrowDownIcon />
           </div>
@@ -42,7 +42,7 @@ const SwapInput = (props: SwapInputProps) => {
         </div>
       </div>
       <div className="flex flex-col justify-between gap-6">
-        <div className="w-full flex justify-between gap-10">
+        <div className="w-full flex justify-end gap-10">
           <div className="cursor-pointer">
             <Typography
               text="MIN"

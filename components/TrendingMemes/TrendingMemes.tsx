@@ -175,12 +175,12 @@ const TrendingMemes = () => {
       <div className="flex justify-between">
         <div className="flex flex-grow justify-around">
           {trendings.map((trending) => (
-            <div key={trending.id} className="flex gap-1">
-              <trending.icon />
+            <div key={trending.id} className="flex gap-2 items-center">
+              <trending.icon size="w-5 h-5" />
               <Typography
                 text={trending.title}
                 textColor="text-primary_white-800 dark:text-primary_dark-800 cursor-pointer"
-                size="description"
+                size="miniButton"
                 className="font-extrabold"
               />
             </div>
@@ -189,7 +189,7 @@ const TrendingMemes = () => {
         <Typography
           text="More"
           textColor="text-primary_white-800 dark:text-primary_dark-800"
-          size="description"
+          size="miniButton"
           className="font-extrabold cursor-pointer"
         />
       </div>

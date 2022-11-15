@@ -339,7 +339,7 @@ const StakePanel = (props: StakePanelProps) => {
               <Typography
                 text="Connect Wallet"
                 textColor="text-secondary"
-                size="textBold"
+                size="h7"
               />
             }
             className="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"

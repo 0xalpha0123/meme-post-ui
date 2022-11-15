@@ -55,7 +55,7 @@ const BondCard = () => {
         size="description"
         className="-mt-4"
       />
-      <div className="w-[500px] mx-auto flex flex-col gap-8">
+      <div className="w-4/5 mx-auto flex flex-col gap-8">
         <div className="flex items-center gap-1">
           <span className="w-2 h-2 bg-secondary rounded-full"></span>
           <Typography

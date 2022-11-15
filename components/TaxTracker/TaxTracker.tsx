@@ -147,7 +147,7 @@ const TaxTracker = () => {
           value={currentEpoch}
           onChange={handleEpochChange}
         />
-        <Button component={<Typography text="Calculate Tax" size="button" />} />
+        <Button component={<Typography text="Calculate Tax" size="h7" />} />
       </div>
       <div className="grid grid-cols-2 gap-6">
         <div className="flex justify-between items-center">

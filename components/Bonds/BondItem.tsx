@@ -44,6 +44,7 @@ const BondItem = (props: BondItemProps) => {
                   text={`${props.discount} %`}
                   textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
                   size="button"
+                  className="px-6"
                 />
               }
               className="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"

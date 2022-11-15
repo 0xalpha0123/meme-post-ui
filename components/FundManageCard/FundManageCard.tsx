@@ -114,7 +114,7 @@ const FundManageCard = () => {
     return gradient;
   }
   return (
-    <div className="flex flex-col bg-white dark:bg-bg_dark p-3 rounded-lg">
+    <div className="flex flex-col bg-white dark:bg-bg_dark p-6 rounded-lg">
       <Typography
         text="Main Balance"
         textColor="text-primary_white-400 dark:text-primary_dark-400"

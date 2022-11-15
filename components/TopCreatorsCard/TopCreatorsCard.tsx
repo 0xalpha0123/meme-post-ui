@@ -38,7 +38,7 @@ const creatorsList = [
 
 const TopCreatorsCard = () => {
   return (
-    <div className="flex flex-col items-center p-3 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
+    <div className="flex flex-col items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
       <div className="w-full flex justify-between mb-4">
         <Typography
           text="Top Creators"
@@ -65,7 +65,7 @@ const TopCreatorsCard = () => {
               <Typography
                 text={`${item.followed ? "Follow" : "Following"}`}
                 textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-                size="description"
+                size="miniButton"
               />
             }
             className={`bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent px-3 ${

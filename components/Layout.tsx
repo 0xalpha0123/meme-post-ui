@@ -50,7 +50,7 @@ const Layout = (props: LayoutProps) => {
             {breadcrumb && <Breadcrumb />}
             {props.children}
           </div>
-          <div className="min-w-[350px] gap-6 flex flex-col">
+          <div className="min-w-[375px] gap-6 flex flex-col">
             <FundManageCard />
             <TopCreatorsCard />
             <RecentActivitiesCard />
