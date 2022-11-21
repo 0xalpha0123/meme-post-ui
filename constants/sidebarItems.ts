@@ -28,7 +28,7 @@ export const sidebarItems = [
         breadcrumbText: "Dashboard",
         icon: CategoryIcon,
         isValiable: false,
-        url: "/dashboard",
+        url: "/test",
       },
       {
         id: "analytics",
