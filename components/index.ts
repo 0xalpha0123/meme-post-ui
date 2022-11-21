@@ -26,7 +26,7 @@ import SwapPanel from "./SwapPanel";
 import TabsPanel from "./TabsPanel";
 import TaxTracker from "./TaxTracker";
 import TopCreatorsCard from "./TopCreatorsCard";
-import TrendingMemes from "./TrendingMemes";
+import MemeList from "./MemeList";
 import TrialCard from "./TrialCard";
 import Typography from "./Typography";
 import UserAvatar from "./UserAvatar";
@@ -60,7 +60,7 @@ export {
   TabsPanel,
   TaxTracker,
   TopCreatorsCard,
-  TrendingMemes,
+  MemeList,
   TrialCard,
   Typography,
   UserAvatar,

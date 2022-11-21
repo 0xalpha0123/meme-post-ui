@@ -1,7 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 
-import { HeroCarousel, Layout, TrendingMemes } from "../components";
+import { HeroCarousel, Layout, MemeList } from "../components";
 
 const Home: NextPage = () => {
   const metaInfo = {
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <div className="grow">
           <HeroCarousel />
         </div>
-        <TrendingMemes />
+        <MemeList />
       </div>
     </Layout>
   );

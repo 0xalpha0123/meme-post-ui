@@ -7,6 +7,7 @@ import { LoginIcon } from "../../icons";
 import useBreadcrumbs from "../../hooks/useBreadcrumbs";
 import { sidebarItems } from "../../constants/sidebarItems";
 import useToggleSidebar from "../../hooks/useToggleSidebar";
+import { motion } from "framer-motion";
 
 const Logo = dynamic(() => import("./Logo"), {
   ssr: false,
@@ -14,18 +15,26 @@ const Logo = dynamic(() => import("./Logo"), {
 
 const Sidebar = () => {
   const breadcrumbs = useBreadcrumbs();
-  const { active, handleTogglebar } = useToggleSidebar();
+  const {
+    active,
+    handleTogglebar,
+    controls,
+    controlLogo,
+    controlDivider,
+    controlTitleText,
+  } = useToggleSidebar();
 
   return (
-    <div
+    <motion.div
+      animate={controls}
       className={`${
         active ? "min-w-[275px]" : "min-w-[60px]"
-      } animate duration-300 relative flex flex-col py-10 min-h-screen group border-r border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark`}
+      } relative flex flex-col py-10 min-h-screen group border-r border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark`}
     >
       {active && (
         <div
           onClick={handleTogglebar}
-          className="rounded-full p-1 animate duration-300 absolute rotate-180 text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
+          className="rounded-full p-1 absolute rotate-180 text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
         >
           <LoginIcon />
         </div>
@@ -33,12 +42,14 @@ const Sidebar = () => {
       {!active && (
         <div
           onClick={handleTogglebar}
-          className="rounded-full p-1 animate duration-300 absolute text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
+          className="rounded-full p-1 absolute text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
         >
           <LoginIcon />
         </div>
       )}
-      {active && <Logo className="mx-auto mb-6" />}
+      <motion.div animate={controlLogo} className="mb-6 mx-auto">
+        <Logo />
+      </motion.div>
 
       <div className="grow mb-10">
         {sidebarItems.map((group, index) => (
@@ -46,11 +57,9 @@ const Sidebar = () => {
             {active && (
               <p className="mt-4 ml-4 text-xs font-bold">{group.name}</p>
             )}
-            {!active && (
-              <div>
-                <Divider className="w-4/5 m-auto my-2 h-[2px] bg-bg_white_secondary dark:bg-bg_dark_secondary" />
-              </div>
-            )}
+            <motion.div animate={controlDivider}>
+              <Divider className="w-4/5 m-auto my-2 h-[2px] bg-bg_white_secondary dark:bg-bg_dark_secondary" />
+            </motion.div>
 
             {group.items.map((item, index2) => (
               <Link href={item.url} key={index2}>
@@ -72,25 +81,24 @@ const Sidebar = () => {
                       "text-secondary"
                     }`}
                   />
-                  {active && (
-                    <p className="ml-4 text-sm font-bold">
-                      {" "}
-                      {item.title}
-                      {!item.isValiable && " (Soon)"}
-                    </p>
-                  )}
+                  <motion.p
+                    animate={controlTitleText}
+                    className="ml-4 text-sm font-bold"
+                  >
+                    {" "}
+                    {item.title}
+                    {!item.isValiable && " (Soon)"}
+                  </motion.p>
                 </div>
               </Link>
             ))}
           </div>
         ))}
-        {active && (
-          <div className="mt-8">
-            <TrialCard />
-          </div>
-        )}
+        <motion.div animate={controlTitleText} className="mt-8">
+          <TrialCard />
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
