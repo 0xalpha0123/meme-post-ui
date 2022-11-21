@@ -25,11 +25,13 @@ import StatusCard from "./StatusCard";
 import SwapPanel from "./SwapPanel";
 import TabsPanel from "./TabsPanel";
 import TaxTracker from "./TaxTracker";
+import ToastTemplate from "./ToastTemplate";
 import TopCreatorsCard from "./TopCreatorsCard";
 import MemeList from "./MemeList";
 import TrialCard from "./TrialCard";
 import Typography from "./Typography";
 import UserAvatar from "./UserAvatar";
+import Web3Connect from "./Web3Connect";
 
 export {
   Avatar,
@@ -59,9 +61,11 @@ export {
   SwapPanel,
   TabsPanel,
   TaxTracker,
+  ToastTemplate,
   TopCreatorsCard,
   MemeList,
   TrialCard,
   Typography,
   UserAvatar,
+  Web3Connect,
 };

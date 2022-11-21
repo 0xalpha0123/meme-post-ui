@@ -5,7 +5,7 @@ import Divider from "../Divider";
 import TrialCard from "../TrialCard";
 import { LoginIcon } from "../../icons";
 import useBreadcrumbs from "../../hooks/useBreadcrumbs";
-import { sidebarItems } from "../../constants/sidebarItems";
+import { sidebarItems } from "../../constants/app/sidebarItems";
 import useToggleSidebar from "../../hooks/useToggleSidebar";
 import { motion } from "framer-motion";
 
@@ -34,7 +34,7 @@ const Sidebar = () => {
       {active && (
         <div
           onClick={handleTogglebar}
-          className="rounded-full p-1 absolute rotate-180 text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
+          className="transition-all duration-100 rounded-full p-1 absolute rotate-180 text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
         >
           <LoginIcon />
         </div>
@@ -42,7 +42,7 @@ const Sidebar = () => {
       {!active && (
         <div
           onClick={handleTogglebar}
-          className="rounded-full p-1 absolute text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
+          className="transition-all duration-100 rounded-full p-1 absolute text-2xl cursor-pointer -right-[14px] top-4 border border-primary_white-200 dark:border-primary_dark-200 hover:text-primary_dark-200 dark:hover:text-primary_white-200 bg-primary_white-50 dark:bg-primary_dark-50"
         >
           <LoginIcon />
         </div>

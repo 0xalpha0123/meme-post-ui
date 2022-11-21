@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useWeb3React } from "@web3-react/core";
+import { Web3Provider } from "@ethersproject/providers";
+
 import Avatar from "../Avatar";
 import Divider from "../Divider";
 import {
@@ -12,12 +15,14 @@ import {
 
 import { ProfileList } from "./profileList";
 import Typography from "../Typography";
+import Web3Connect from "../Web3Connect";
 
 const ToggleThemeIcon = dynamic(() => import("./ToggleThemeIcon"), {
   ssr: false,
 });
 
 const RightHeader = () => {
+  const { deactivate, active } = useWeb3React<Web3Provider>();
   const drop = useRef<HTMLDivElement>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -42,27 +47,31 @@ const RightHeader = () => {
   return (
     <div className="flex my-auto gap-6">
       <div className="relative" ref={drop} id="profile">
-        <div className="flex cursor-pointer" onClick={handleDropDown}>
-          <Avatar
-            type="image"
-            avatar="https://i.ibb.co/fxZz28p/48px.png"
-            style="circle"
-            size={40}
-          />
-          <div className="flex flex-col ml-4 my-auto">
-            <Typography
-              text="Hey!"
-              textColor="text-primary_white-400 dark:text-primary_dark-400"
-              size="miniDescription"
+        {active ? (
+          <div className="flex cursor-pointer" onClick={handleDropDown}>
+            <Avatar
+              type="image"
+              avatar="https://i.ibb.co/fxZz28p/48px.png"
+              style="circle"
+              size={40}
             />
-            <Typography
-              text="Steve"
-              textColor="text-primary_white-400 dark:text-primary_dark-400 hover:text-primary_white-800 dark:hover:text-primary_dark-800"
-              size="textBold"
-            />
+            <div className="flex flex-col ml-4 my-auto">
+              <Typography
+                text="Hey!"
+                textColor="text-primary_white-400 dark:text-primary_dark-400"
+                size="miniDescription"
+              />
+              <Typography
+                text="Steve"
+                textColor="text-primary_white-400 dark:text-primary_dark-400 hover:text-primary_white-800 dark:hover:text-primary_dark-800"
+                size="textBold"
+              />
+            </div>
+            <ArrowDownIcon className="ml-4 my-auto" />
           </div>
-          <ArrowDownIcon className="ml-4 my-auto" />
-        </div>
+        ) : (
+          <Web3Connect />
+        )}
         <div
           className={`${
             dropdownOpen ? `opacity-100 visible` : "invisible opacity-0"
@@ -82,12 +91,17 @@ const RightHeader = () => {
             </Link>
           ))}
           <Divider className="w-4/5 h-[1px] mx-auto my-1 bg-bg_white_secondary dark:bg-bg_dark_secondary" />
-          <Link href="/">
-            <div className="whitespace-nowrap py-4 pl-6 pr-10 font-normal items-center text-sm text-body-color rounded-lg flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-800 dark:hover:text-primary_dark-800">
-              <LogOutIcon />
-              <div className="ml-4">Log out</div>
-            </div>
-          </Link>
+
+          <div
+            className="whitespace-nowrap py-4 pl-6 pr-10 font-normal items-center text-sm text-body-color rounded-lg flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-800 dark:hover:text-primary_dark-800"
+            onClick={() => {
+              deactivate();
+              setDropdownOpen(false);
+            }}
+          >
+            <LogOutIcon />
+            <div className="ml-4">Log out</div>
+          </div>
         </div>
       </div>
       <ToggleThemeIcon />

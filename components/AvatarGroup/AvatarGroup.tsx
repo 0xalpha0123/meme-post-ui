@@ -26,7 +26,7 @@ const AvatarGroup = (props: AvatarGroupProps) => {
   const users = props.users;
 
   return (
-    <div className={`flex animate duration-300 ${space} ${className}`}>
+    <div className={`flex animate duration-100 ${space} ${className}`}>
       {users.map((user, i) => (
         <Avatar
           key={i}

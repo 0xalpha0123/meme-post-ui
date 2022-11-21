@@ -34,7 +34,7 @@ const ScrollToTop = () => {
         onClick={scrollToTop}
         className={`${
           isVisible ? "block" : "hidden"
-        } animate-bounce duration-300 inline-flex items-center rounded-full p-3 shadow-sm border border-primary_white-200 dark:border-primary_dark-200 bg-primary_white-300 dark:bg-primary_dark-200 hover:bg-primary_white-400 dark:hover:bg-primary_dark-300 focus:outline-none focus:ring-0 text-primary_white-1000 dark:text-primary_dark-1000`}
+        } animate-bounce duration-100 inline-flex items-center rounded-full p-3 shadow-sm border border-primary_white-200 dark:border-primary_dark-200 bg-primary_white-300 dark:bg-primary_dark-200 hover:bg-primary_white-400 dark:hover:bg-primary_dark-300 focus:outline-none focus:ring-0 text-primary_white-1000 dark:text-primary_dark-1000`}
       >
         <ArrowUpIcon className="stroke-current" />
       </button>

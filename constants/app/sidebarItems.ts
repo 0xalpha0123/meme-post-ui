@@ -8,7 +8,7 @@ import {
   LayerIcon,
   SunIcon,
   SwapIcon,
-} from "../icons";
+} from "../../icons";
 
 export const sidebarItems = [
   {

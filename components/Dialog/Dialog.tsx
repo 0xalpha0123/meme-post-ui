@@ -20,6 +20,7 @@ const Dialog = (
       controls.start({
         display: "block",
         opacity: 1,
+        zIndex: 99,
         transition: { duration: 0.2 },
       });
     } else {
@@ -37,15 +38,15 @@ const Dialog = (
   return (
     <motion.div
       animate={controls}
-      className="fixed inset-0 overflow-y-auto hidden"
+      className="fixed inset-0 overflow-y-auto z-999 hidden"
     >
       <div
         className="fixed inset-0 w-full h-full bg-black opacity-40"
         onClick={() => handleDismiss()}
       ></div>
       <div className="flex items-center min-h-screen px-4 py-8">
-        <div className="relative w-full max-w-lg p-4 mx-auto rounded-md shadow-lg border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
-          {content && <div className="mt-3 sm:flex">{content}</div>}
+        <div className="relative w-full max-w-lg p-6 mx-auto rounded-lg shadow-lg border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+          {content && <div className="sm:flex">{content}</div>}
           {footer && (
             <div className="items-center gap-2 mt-3 sm:flex">{footer}</div>
           )}

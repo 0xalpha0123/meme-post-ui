@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button";
 
-import { categoryItems } from "../../constants/categoryItems";
+import { categoryItems } from "../../constants/app/categoryItems";
 
 const CategoryHeader = () => {
   return (
@@ -15,7 +15,10 @@ const CategoryHeader = () => {
           {item.title}
         </div>
       ))}
-      <Button component="Create New" className="py-2 px-4" />
+      <Button
+        component="Create New"
+        customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent text-secondary"
+      />
     </div>
   );
 };

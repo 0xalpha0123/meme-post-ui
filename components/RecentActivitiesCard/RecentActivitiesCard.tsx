@@ -38,7 +38,7 @@ const recentActivitiesList = [
 
 const RecentActivitiesCard = () => {
   return (
-    <div className="flex flex-col animate duration-300 items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
+    <div className="flex flex-col animate duration-100 items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
       <div className="w-full flex justify-between mb-4">
         <Typography
           text="Recent Activities"

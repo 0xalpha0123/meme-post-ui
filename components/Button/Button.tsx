@@ -59,7 +59,7 @@ const Button = (props: ButtonProps) => {
   return (
     <button
       type="button"
-      className={`font-medium text-center rounded-lg animate duration-300 ${totalClass}`}
+      className={`font-medium text-center rounded-lg animate duration-100 ${totalClass}`}
       onClick={callBack}
     >
       {props.component}

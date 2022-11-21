@@ -65,7 +65,7 @@ const Avatar = (props: AvatarProps) => {
   const fontSize = `text-${textSize[size]}`;
 
   return (
-    <button onClick={callback} className="relative animate duration-300">
+    <button onClick={callback} className="relative animate duration-100">
       {type === "image" && !!props.avatar && (
         <img className={avatarClass} src={props.avatar} alt="" />
       )}
