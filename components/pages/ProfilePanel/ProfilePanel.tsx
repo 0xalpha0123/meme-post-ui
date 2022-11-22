@@ -1,8 +1,8 @@
 import React from "react";
 
 import SocialLinks from "../SocialLinks";
-import { Input, Typography, Button, Checkbox } from "../../base";
-import { GalleryIcon } from "../../../icons";
+import DragDropZone from "../DragDropZone";
+import { Input, Button } from "../../base";
 
 const profile = {
   avatar: "https://i.postimg.cc/HnyBQYs2/Rectangle-6321.png",
@@ -30,26 +30,9 @@ const ProfilePanel = () => {
     <div className="flex gap-6 p-6 rounded-lg transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <div className="flex flex-col max-w-[250px] w-full gap-6">
         <div className="w-full p-1 border border-bg_white_secondary dark:border-bg_dark_secondary rounded-xl">
-          <img src={profile.avatar} className="w-full rounded-xl" />
+          <img src={profile.avatar} className="w-full rounded-xl h-" />
         </div>
-        <div className="flex flex-col gap-3 items-center w-full p-5 cursor-pointer rounded-xl border border-dashed border-bg_white_secondary dark:border-bg_dark_secondary">
-          <GalleryIcon size="w-8 h-8 text-secondary" />
-          <Typography
-            text={
-              <>
-                Drop your image here, or{" "}
-                <span className="text-secondary">browse</span>
-              </>
-            }
-            textColor="text-primary_white-600 dark:text-primary_dark-600"
-            size="description"
-          />
-          <Typography
-            text={<>JPG,PNG and GIF files are allowed</>}
-            textColor="text-primary_white-600 dark:text-primary_dark-600"
-            size="miniDescription"
-          />
-        </div>
+        <DragDropZone height="h-32" />
       </div>
       <div className="flex flex-col w-full gap-8">
         <div className="flex gap-3 w-full">
@@ -115,7 +98,6 @@ const ProfilePanel = () => {
             className="py-2 text-sm bg-gray-600 dark:bg-gray-700"
           />
         </div>
-        <Checkbox />
       </div>
     </div>
   );

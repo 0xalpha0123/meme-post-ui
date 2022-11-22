@@ -1,19 +1,20 @@
 import React, { useEffect, ReactElement } from "react";
-import { motion } from "framer-motion";
-import { useAnimation } from "framer-motion";
+import cx from "clsx";
+import { motion, useAnimation } from "framer-motion";
 
 interface dialogProps {
   isOpen: boolean;
   handleDismiss: Function;
   content?: ReactElement;
   footer?: ReactElement;
+  width?: string;
 }
 
-const Dialog = (
-  props: dialogProps = { isOpen: false, handleDismiss: () => {} }
-) => {
+const Dialog = (props: dialogProps) => {
   const { isOpen, handleDismiss, content, footer } = props;
   const controls = useAnimation();
+
+  const width = props.width || "max-w-lg";
 
   useEffect(() => {
     if (isOpen) {
@@ -35,6 +36,8 @@ const Dialog = (
     }
   }, [isOpen]);
 
+  console.log("width", props);
+
   return (
     <motion.div
       animate={controls}
@@ -45,7 +48,12 @@ const Dialog = (
         onClick={() => handleDismiss()}
       ></div>
       <div className="flex items-center min-h-screen px-4 py-8">
-        <div className="relative w-full max-w-lg p-6 mx-auto rounded-lg shadow-lg border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+        <div
+          className={cx(
+            "relative w-full p-6 mx-auto rounded-lg shadow-lg border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark",
+            width
+          )}
+        >
           {content && <div className="sm:flex">{content}</div>}
           {footer && (
             <div className="items-center gap-2 mt-3 sm:flex">{footer}</div>
