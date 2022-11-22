@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "clsx";
 
 import { IconProps } from "./";
 
@@ -8,7 +9,7 @@ const MoonIcon = (props: IconProps) => {
 
   return (
     <svg
-      className={`${size} ${className}`}
+      className={cx(size, className)}
       viewBox="0 0 24 24"
       stroke="currentColor"
       fill="none"

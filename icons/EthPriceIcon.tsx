@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "clsx";
 
 import { IconProps } from "./";
 
@@ -8,7 +9,7 @@ const EthPriceIcon = (props: IconProps) => {
 
   return (
     <svg
-      className={`${size} ${className}`}
+      className={cx(size, className)}
       viewBox="0 0 10 14"
       xmlns="http://www.w3.org/2000/svg"
     >

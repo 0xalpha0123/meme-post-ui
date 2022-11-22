@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "clsx";
 
 import { IconProps } from "./";
 
@@ -8,7 +9,7 @@ const LinkedInIcon = (props: IconProps) => {
 
   return (
     <svg
-      className={`${size} ${className}`}
+      className={cx(size, className)}
       fill="currentColor"
       viewBox="0 0 27 26"
       xmlns="http://www.w3.org/2000/svg"

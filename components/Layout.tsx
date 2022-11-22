@@ -4,15 +4,17 @@ import Head from "next/head";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 
-import ScrollToTop from "./ScrollToTop";
-import Header from "./Header";
-import Breadcrumb from "./Breadcrumb";
-import Footer from "./Footer";
-import Sidebar from "./Sidebar";
-import FundManageCard from "./FundManageCard";
-import TopCreatorsCard from "./TopCreatorsCard";
-import RecentActivitiesCard from "./RecentActivitiesCard";
-import JoinCommunity from "./JoinCommunity";
+import { ScrollToTop } from "./base";
+import {
+  Header,
+  Breadcrumb,
+  Footer,
+  Sidebar,
+  FundManageCard,
+  TopCreatorsCard,
+  RecentActivitiesCard,
+  JoinCommunity,
+} from "./pages";
 
 import { useEagerConnect, useInactiveListener } from "../hooks";
 

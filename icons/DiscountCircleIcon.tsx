@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "clsx";
 
 import { IconProps } from "./";
 
@@ -8,7 +9,7 @@ const DiscountCircleIcon = (props: IconProps) => {
 
   return (
     <svg
-      className={`${size} ${className}`}
+      className={cx(size, className)}
       stroke="currentColor"
       viewBox="0 0 20 20"
       fill="none"

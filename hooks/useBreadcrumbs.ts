@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 
-import { sidebarItems } from "../constants/app/sidebarItems";
+import { breadcrumbItems } from "../constants/app/breadcrumbItems";
 
 const useBreadcrumbs = () => {
   const router = useRouter();
@@ -16,8 +16,8 @@ const useBreadcrumbs = () => {
     const breadcrumbs = pathArray.map((path, index) => {
       const href = "/" + pathArray.slice(0, index + 1).join("/");
       let label = "";
-      for (let i = 0; i < sidebarItems.length; i++) {
-        sidebarItems[i].items.find((x) => {
+      for (let i = 0; i < breadcrumbItems.length; i++) {
+        breadcrumbItems[i].items.find((x) => {
           if (x.id === path) {
             label = x.breadcrumbText;
             return;

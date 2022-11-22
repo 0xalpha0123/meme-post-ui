@@ -18,10 +18,6 @@ const Component: FC<NetworkGuardProps> = ({
   const isInValid =
     error instanceof UnsupportedChainIdError ||
     (!!chainId && !!account && !networks.includes(chainId));
-  console.log(
-    "isInValid",
-    !!chainId && !!account && !networks.includes(chainId)
-  );
   return (
     <>
       {isInValid && (
