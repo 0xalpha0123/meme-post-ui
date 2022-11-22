@@ -50,6 +50,8 @@ module.exports = {
           900: "#EAEAF4",
           1000: "#F1F1F1",
         },
+        pink: "#f338c3",
+        blue: "#0993ec",
         "custom-blue": "#2775FF",
         "custom-green": "#50D1B2",
         "custom-violet": "#7747CA",

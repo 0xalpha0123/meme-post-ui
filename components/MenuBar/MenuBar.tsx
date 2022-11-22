@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
+
 import AvatarGroup from "../AvatarGroup";
 import Divider from "../Divider";
 import Typography from "../Typography";
 import UserAvatar from "../UserAvatar";
 
-import { MenuBarList } from "./menubarList";
+import { MenuBarList } from "../../constants/app/menubarList";
 
 const users = [
   {

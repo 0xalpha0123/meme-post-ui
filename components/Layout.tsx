@@ -1,4 +1,5 @@
 import React from "react";
+import type { ReactElement } from "react";
 import Head from "next/head";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
@@ -7,14 +8,12 @@ import ScrollToTop from "./ScrollToTop";
 import Header from "./Header";
 import Breadcrumb from "./Breadcrumb";
 import Footer from "./Footer";
-
 import Sidebar from "./Sidebar";
 import FundManageCard from "./FundManageCard";
 import TopCreatorsCard from "./TopCreatorsCard";
 import RecentActivitiesCard from "./RecentActivitiesCard";
-
-import type { ReactElement } from "react";
 import JoinCommunity from "./JoinCommunity";
+
 import { useEagerConnect, useInactiveListener } from "../hooks";
 
 interface LayoutProps {
@@ -66,7 +65,7 @@ const Layout = (props: LayoutProps) => {
   useInactiveListener(!triedEager || !!activatingConnector);
 
   return (
-    <div className="flex flex-col animate duration-100 bg-primary_white-50 dark:bg-primary_dark-50 text-primary_white-400 dark:text-primary_dark-400">
+    <div className="flex flex-col transition-all duration-100 bg-primary_white-50 dark:bg-primary_dark-50 text-primary_white-600 dark:text-primary_dark-600">
       <Head>
         <title>{`${title} | Meme DAO`}</title>
         {!!description && <meta name="description" content={description} />}

@@ -1,9 +1,12 @@
+import { useWeb3React } from "@web3-react/core";
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { DocumentDownloadIcon } from "../../icons";
+
 import Avatar from "../Avatar";
 import Button from "../Button";
 import Typography from "../Typography";
+import Web3Connect from "../Web3Connect";
+import { DocumentDownloadIcon } from "../../icons";
 
 interface StakePanelProps {
   token: {
@@ -79,6 +82,8 @@ const options = {
 };
 
 const StakePanel = (props: StakePanelProps) => {
+  const { active } = useWeb3React();
+
   const data = {
     labels: [
       "Oct 01",
@@ -159,20 +164,20 @@ const StakePanel = (props: StakePanelProps) => {
     return gradient;
   }
   return (
-    <div className="flex flex-col items-center justify-between gap-12 px-12 py-6 rounded-lg animate duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col items-center justify-between gap-12 px-12 py-6 rounded-lg transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <div className="w-full flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
           <Avatar style="circle" avatar={props.token.imgUrl} type="image" />
           <div className="flex flex-col gap-1 cursor-pointer">
             <Typography
               text={props.token.symbol}
-              textColor="text-primary_white-400 dark:text-primary_dark-400"
+              textColor="text-primary_white-600 dark:text-primary_dark-600"
               size="h6"
             />
             <div className="flex gap-2">
               <Typography
                 text="$1.00 USD"
-                textColor="text-primary_white-400 dark:text-primary_dark-400"
+                textColor="text-primary_white-600 dark:text-primary_dark-600"
                 size="text"
               />
               <Typography text="0.11%" textColor="text-secondary" size="text" />
@@ -183,7 +188,7 @@ const StakePanel = (props: StakePanelProps) => {
           <DocumentDownloadIcon size="w-5 h-5" />
           <Typography
             text="Download Docs"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
             size="text"
           />
         </div>
@@ -256,7 +261,7 @@ const StakePanel = (props: StakePanelProps) => {
         <div className="flex flex-col gap-3">
           <Typography
             text="Assets Under Management"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
             size="subtitle"
           />
           <Typography
@@ -268,7 +273,7 @@ const StakePanel = (props: StakePanelProps) => {
         <div className="flex flex-col gap-3">
           <Typography
             text="Depositors"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
             size="subtitle"
           />
           <Typography
@@ -334,16 +339,14 @@ const StakePanel = (props: StakePanelProps) => {
             textColor="text-primary_white-800 dark:text-primary_dark-800"
             size="h7"
           />
-          <Button
-            component={
-              <Typography
-                text="Connect Wallet"
-                textColor="text-secondary"
-                size="h7"
-              />
-            }
-            customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-          />
+          {active ? (
+            <Button
+              component="Stake"
+              customClass="border-2 border-secondary text-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
+            />
+          ) : (
+            <Web3Connect />
+          )}
         </div>
       </div>
     </div>

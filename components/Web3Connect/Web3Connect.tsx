@@ -8,12 +8,16 @@ import Dialog from "../Dialog";
 import Dots from "../Dots";
 import Typography from "../Typography";
 
+import useToast from "../../hooks/useToast";
 import { getErrorMessage } from "../../helpers/wallets";
 
 import { ConnectorNames, connectorsByName } from "../../constants/wallets";
-import useToast from "../../hooks/useToast";
 
-const Web3Connect = () => {
+interface Web3ConnectProps {
+  className?: string;
+}
+
+const Web3Connect = (props: Web3ConnectProps = { className: "" }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { emitToast } = useToast();
@@ -46,7 +50,7 @@ const Web3Connect = () => {
         <Typography
           text="Connect Wallet"
           size="h5"
-          textColor="text-primary_white-400 dark:text-primary_dark-400"
+          textColor="text-primary_white-600 dark:text-primary_dark-600"
           className="mb-4"
         />
         {Object.keys(connectorsByName)
@@ -122,7 +126,7 @@ const Web3Connect = () => {
       <Button
         component="Connect Wallet"
         onClick={() => toggleModal(true)}
-        customClass="text-sm px-2 border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent text-secondary"
+        customClass={`border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent text-secondary ${props.className}`}
       />
       <Dialog
         isOpen={isModalOpen}

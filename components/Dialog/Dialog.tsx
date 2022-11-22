@@ -38,7 +38,7 @@ const Dialog = (
   return (
     <motion.div
       animate={controls}
-      className="fixed inset-0 overflow-y-auto z-999 hidden"
+      className="fixed inset-0 overflow-y-auto hidden"
     >
       <div
         className="fixed inset-0 w-full h-full bg-black opacity-40"

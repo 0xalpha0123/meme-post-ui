@@ -1,6 +1,7 @@
 import { ChartData, ScatterDataPoint } from "chart.js";
 import React from "react";
 import { Line } from "react-chartjs-2";
+
 import Typography from "../Typography";
 
 interface StatusProps {
@@ -40,12 +41,12 @@ const options = {
 
 const StatusCard = (props: StatusProps) => {
   return (
-    <div className="flex flex-col py-6 px-3 gap-6 rounded-lg animate duration-100 bg-primary_white-100 dark:bg-primary_dark-200">
+    <div className="flex flex-col py-6 px-3 gap-6 rounded-lg transition duration-100 bg-primary_white-100 dark:bg-primary_dark-200">
       <div className="flex items-center gap-1">
         <span className="w-2 h-2 bg-secondary rounded-full"></span>
         <Typography
           text={props.title}
-          textColor="text-primary_white-400 dark:text-primary_dark-400"
+          textColor="text-primary_white-600 dark:text-primary_dark-600"
           size="textBold"
         />
       </div>

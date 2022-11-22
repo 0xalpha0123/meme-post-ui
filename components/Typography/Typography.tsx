@@ -46,7 +46,7 @@ const Typography = (props: TypographyProps) => {
   const size = props.size || "text";
   return (
     <div
-      className={`animate duration-100 ${className} ${textColor} ${fontSizes[size]}`}
+      className={`transition duration-100 ${className} ${textColor} ${fontSizes[size]}`}
     >
       {text}
     </div>

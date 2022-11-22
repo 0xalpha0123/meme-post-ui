@@ -1,13 +1,16 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
 import Divider from "../Divider";
 import TrialCard from "../TrialCard";
-import { LoginIcon } from "../../icons";
 import useBreadcrumbs from "../../hooks/useBreadcrumbs";
-import { sidebarItems } from "../../constants/app/sidebarItems";
+import { LoginIcon } from "../../icons";
+
 import useToggleSidebar from "../../hooks/useToggleSidebar";
-import { motion } from "framer-motion";
+
+import { sidebarItems } from "../../constants/app/sidebarItems";
 
 const Logo = dynamic(() => import("./Logo"), {
   ssr: false,
@@ -29,7 +32,7 @@ const Sidebar = () => {
       animate={controls}
       className={`${
         active ? "min-w-[275px]" : "min-w-[60px]"
-      } relative flex flex-col py-10 min-h-screen group border-r border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark`}
+      } transition-all duration-100 relative flex flex-col py-10 min-h-screen group border-r border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark`}
     >
       {active && (
         <div

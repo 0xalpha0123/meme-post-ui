@@ -1,4 +1,5 @@
 import React from "react";
+
 import Button from "../Button";
 import Typography from "../Typography";
 import UserAvatar from "../UserAvatar";
@@ -38,12 +39,12 @@ const creatorsList = [
 
 const TopCreatorsCard = () => {
   return (
-    <div className="animate duration-100 flex flex-col items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
+    <div className="transition duration-100 flex flex-col items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
       <div className="w-full flex justify-between mb-4">
         <Typography
           text="Top Creators"
           className="my-auto"
-          textColor="text-primary_white-400 dark:text-primary_dark-400"
+          textColor="text-primary_white-600 dark:text-primary_dark-600"
           size="textBold"
         />
         <Typography

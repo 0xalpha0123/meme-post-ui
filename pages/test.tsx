@@ -1,9 +1,11 @@
 import React from "react";
-import type { NextPage } from "next";
 
 import { Layout, Web3Connect } from "../components";
 
-const Test: NextPage = () => {
+import NetworkGuard from "../guards/network";
+import { ChainId } from "../constants/network";
+
+const Test = () => {
   const metaInfo = {
     title: "Test",
   };
@@ -16,5 +18,8 @@ const Test: NextPage = () => {
     </Layout>
   );
 };
+
+// eslint-disable-next-line new-cap
+Test.Guard = NetworkGuard([ChainId.POLYGON, ChainId.MAINNET]);
 
 export default Test;

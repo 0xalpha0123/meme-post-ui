@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import React, { useState } from "react";
 import Masonry2 from "react-masonry-css";
+
+import Typography from "../Typography";
 import {
   ArrowDownIcon,
   BitcoinIcon,
@@ -12,7 +14,7 @@ import {
   PopcornIcon,
   SettingIcon,
 } from "../../icons";
-import Typography from "../Typography";
+
 const MemeCard = dynamic(() => import("./MemeCard"), { ssr: false });
 
 const trendings = [
@@ -198,7 +200,7 @@ const TrendingMemes = () => {
           <Typography
             text="Trending Memes"
             size="textBold"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
           />
           <ArrowDownIcon />
         </div>
@@ -208,7 +210,7 @@ const TrendingMemes = () => {
             <Typography
               text="Filters"
               size="textBold"
-              textColor="text-primary_white-400 dark:text-primary_dark-400"
+              textColor="text-primary_white-600 dark:text-primary_dark-600"
             />
           </div>
           <div onClick={() => setIsWaterfall(!isWaterfall)}>

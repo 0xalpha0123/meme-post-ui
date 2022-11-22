@@ -1,11 +1,12 @@
 import React from "react";
+
+import SocialLinkItem from "./SocialLinkItem";
 import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
 } from "../../icons";
-import SocialLinkItem from "./SocialLinkItem";
 
 interface SocialLinksProps {
   socials: {

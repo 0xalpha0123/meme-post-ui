@@ -1,5 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+
 import Button from "../Button";
 import Typography from "../Typography";
 
@@ -114,10 +115,10 @@ const FundManageCard = () => {
     return gradient;
   }
   return (
-    <div className="flex flex-col animate duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark p-6 rounded-lg">
+    <div className="flex flex-col transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark p-6 rounded-lg">
       <Typography
         text="Main Balance"
-        textColor="text-primary_white-400 dark:text-primary_dark-400"
+        textColor="text-primary_white-600 dark:text-primary_dark-600"
         size="text"
       />
       <Typography

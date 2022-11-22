@@ -1,7 +1,8 @@
 import React from "react";
+
 import Button from "../Button";
-import { CloseIcon } from "../../icons";
 import Typography from "../Typography";
+import { CloseIcon } from "../../icons";
 
 const TrialCard = () => {
   return (

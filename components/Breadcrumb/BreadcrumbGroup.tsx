@@ -10,7 +10,7 @@ const BreadcrumbGroup = (props: BreadcrumbGroupProps) => {
   const className = props.className || "";
 
   return (
-    <nav className={`${className} mx-8 my-4`} aria-label="breadcrumb">
+    <nav className={`${className}`} aria-label="breadcrumb">
       <ol className="flex items-center">{childrenArray}</ol>
     </nav>
   );

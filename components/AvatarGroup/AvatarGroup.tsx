@@ -1,4 +1,5 @@
 import React from "react";
+
 import Avatar from "../Avatar/Avatar";
 
 interface AvatarGroupProps {
@@ -26,7 +27,7 @@ const AvatarGroup = (props: AvatarGroupProps) => {
   const users = props.users;
 
   return (
-    <div className={`flex animate duration-100 ${space} ${className}`}>
+    <div className={`flex transition duration-100 ${space} ${className}`}>
       {users.map((user, i) => (
         <Avatar
           key={i}

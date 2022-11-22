@@ -28,10 +28,6 @@ const Button = (props: ButtonProps) => {
           : "bg-white text-[#4D4D4D]"
       } cursor-not-allowed`
     : "";
-  const focusClass =
-    type === "default"
-      ? "focus:outline-none focus:ring-0"
-      : "focus:outline-none focus:ring-0";
   const hoverClass =
     type === "default"
       ? "bg-secondary hover:bg-[#189E43]"
@@ -51,15 +47,13 @@ const Button = (props: ButtonProps) => {
   const totalClass = `${padding} ${textSize} ${
     customClass !== ""
       ? customClass
-      : `${textColor} ${focusClass} ${roundedClass} ${
-          disabled ? disabledClass : hoverClass
-        }`
+      : `${textColor} ${roundedClass} ${disabled ? disabledClass : hoverClass}`
   } ${className}`;
 
   return (
     <button
       type="button"
-      className={`font-medium text-center rounded-lg animate duration-100 ${totalClass}`}
+      className={`font-medium text-center rounded-lg transition-all duration-100 focus:transition-none focus:outline-none focus:ring-0 ${totalClass}`}
       onClick={callBack}
     >
       {props.component}

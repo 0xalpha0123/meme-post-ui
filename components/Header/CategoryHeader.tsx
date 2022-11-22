@@ -1,4 +1,5 @@
 import React from "react";
+
 import Button from "../Button";
 
 import { categoryItems } from "../../constants/app/categoryItems";
@@ -17,7 +18,7 @@ const CategoryHeader = () => {
       ))}
       <Button
         component="Create New"
-        customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent text-secondary"
+        customClass="text-sm px-2 border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent text-secondary"
       />
     </div>
   );

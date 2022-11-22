@@ -46,5 +46,3 @@ export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.Magic]: magic,
   [ConnectorNames.Portis]: portis,
 };
-
-export const NetworkContextName = "NETWORK";

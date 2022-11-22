@@ -3,8 +3,8 @@ import {
   FavoriteChartIcon,
   SunIcon,
   UserIcon,
+  TradeIcon,
 } from "../../icons";
-import TradeIcon from "../../icons/TradeIcon";
 
 export const ProfileList = [
   {

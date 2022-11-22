@@ -1,4 +1,5 @@
 import React from "react";
+
 import Typography from "../Typography";
 import BondItem from "./BondItem";
 
@@ -43,7 +44,7 @@ const bondArray = [
 
 const BondCard = () => {
   return (
-    <div className="flex flex-col gap-8 rounded-lg py-6 px-12 animate duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col gap-8 rounded-lg py-6 px-12 transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <Typography
         text="Bond Carbon"
         textColor="text-primary_white-800 dark:text-primary_dark-800"
@@ -51,7 +52,7 @@ const BondCard = () => {
       />
       <Typography
         text="The best way to buy KLIMA. Commit carbon to our treasury, and receive KLIMA at a discount. All bonds (except inverse bonds) have a mandatory 5 day vesting period."
-        textColor="text-primary_white-400 dark:text-primary_dark-400"
+        textColor="text-primary_white-600 dark:text-primary_dark-600"
         size="description"
         className="-mt-4"
       />
@@ -60,7 +61,7 @@ const BondCard = () => {
           <span className="w-2 h-2 bg-secondary rounded-full"></span>
           <Typography
             text="Your Meme Balance"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
             size="h7"
           />
         </div>
@@ -74,12 +75,12 @@ const BondCard = () => {
           <Typography
             text="Choose a bond"
             className="uppercase"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
           />
           <Typography
             text="Discount"
             className="uppercase"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
           />
         </div>
         {bondArray.map((bond) => (

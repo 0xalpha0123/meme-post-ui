@@ -1,4 +1,5 @@
 import React from "react";
+
 import Typography from "../Typography";
 import UserAvatar from "../UserAvatar";
 
@@ -38,12 +39,12 @@ const recentActivitiesList = [
 
 const RecentActivitiesCard = () => {
   return (
-    <div className="flex flex-col animate duration-100 items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
+    <div className="flex flex-col transition duration-100 items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
       <div className="w-full flex justify-between mb-4">
         <Typography
           text="Recent Activities"
           className="my-auto"
-          textColor="text-primary_white-400 dark:text-primary_dark-400"
+          textColor="text-primary_white-600 dark:text-primary_dark-600"
           size="textBold"
         />
         <Typography

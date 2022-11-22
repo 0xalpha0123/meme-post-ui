@@ -52,6 +52,7 @@ import SunIcon from "./SunIcon";
 import SwapIcon from "./SwapIcon";
 import ThumbUpIcon from "./ThumbUpIcon";
 import TimerIcon from "./TimerIcon";
+import TradeIcon from "./TradeIcon";
 import TrendUpIcon from "./TrendUpIcon";
 import TwitterIcon from "./TwitterIcon";
 import UserIcon from "./UserIcon";
@@ -119,6 +120,7 @@ export {
   SwapIcon,
   ThumbUpIcon,
   TimerIcon,
+  TradeIcon,
   TrendUpIcon,
   TwitterIcon,
   UserIcon,

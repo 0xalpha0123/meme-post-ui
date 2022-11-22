@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Button from "../Button";
 import Input from "../Input";
 import Slider from "../Slider";
@@ -109,10 +110,10 @@ const TaxTracker = () => {
   };
 
   return (
-    <div className="flex flex-col w-full rounded-lg py-6 px-12 gap-12 animate duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col w-full rounded-lg py-6 px-12 gap-12 transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <Typography
         text="Estimate Your Tax"
-        textColor="text-primary_white-400 dark:text-primary_dark-400"
+        textColor="text-primary_white-600 dark:text-primary_dark-600"
         size="description"
       />
       <Typography
@@ -153,7 +154,7 @@ const TaxTracker = () => {
         <div className="flex justify-between items-center">
           <Typography
             text="Exit Tax:"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
             size="subtitleBold"
           />
           <Typography
@@ -165,7 +166,7 @@ const TaxTracker = () => {
         <div className="flex justify-between items-center">
           <Typography
             text="Distribution Amount:"
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
             size="subtitleBold"
           />
           <Typography

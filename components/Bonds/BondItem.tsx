@@ -1,4 +1,5 @@
 import React from "react";
+
 import Button from "../Button";
 import Typography from "../Typography";
 
@@ -27,7 +28,7 @@ const BondItem = (props: BondItemProps) => {
           />
           <Typography
             text={props.description}
-            textColor="text-primary_white-400 dark:text-primary_dark-400"
+            textColor="text-primary_white-600 dark:text-primary_dark-600"
           />
         </div>
         <div>

@@ -21,11 +21,10 @@ const RPC_URLS: { [chainId: number]: string } = {
 export const injected = new InjectedConnector({
   supportedChainIds: [
     1, // mainnet
-    3, // ropsten
-    4, // rinkeby
-    31337, // localhost
     5, // goreli
-    42, // kovan
+    137, // polygon
+    80001, // mumbai
+    31337, // localhost
   ],
 });
 

@@ -1,13 +1,14 @@
 import React from "react";
+
+import Typography from "../Typography";
+import UserAvatar from "../UserAvatar";
+import PriceCard from "./PriceCard";
 import {
   ArrowCircleDownIcon,
   FrameIcon,
   MessageTextIcon,
   PlayIcon,
 } from "../../icons";
-import Typography from "../Typography";
-import UserAvatar from "../UserAvatar";
-import PriceCard from "./PriceCard";
 
 interface MemeProps {
   url: string;
@@ -34,7 +35,7 @@ const MemeCard = (props: MemeCardProps) => {
     <>
       {meme && (
         <div
-          className={`animate duration-100 flex flex-col justify-between gap-6 p-6 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark rounded-lg ${
+          className={`transition duration-100 flex flex-col justify-between gap-6 p-6 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark rounded-lg ${
             isWaterfall && "mt-6"
           }`}
         >

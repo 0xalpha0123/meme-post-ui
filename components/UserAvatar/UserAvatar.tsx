@@ -1,4 +1,5 @@
 import React from "react";
+
 import Avatar from "../Avatar";
 import Typography from "../Typography";
 
@@ -54,7 +55,7 @@ const UserAvatar = (props: UserAvatarProps) => {
   const subtitleSize = props.subtitleSize || "miniButton";
 
   return (
-    <div className="flex cursor-pointer animate duration-100">
+    <div className="flex cursor-pointer transition duration-100">
       <Avatar
         username={username}
         type={!!imageUrl ? "image" : "initials"}

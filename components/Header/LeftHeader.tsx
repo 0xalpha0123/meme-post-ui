@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+
 import {
   SearchNormalIcon,
   Microphone2Icon,
@@ -39,7 +40,7 @@ const LeftHeader = () => {
         </div>
         <input
           type="text"
-          className="border animate duration-100 text-sm rounded-lg block w-full px-10 py-2.5 bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none"
+          className="border transition duration-100 text-sm rounded-lg block w-full px-10 py-2.5 bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none"
           placeholder="Search for meme, artworks ..."
         />
         <div className="flex absolute inset-y-0 right-0 items-center pr-3 cursor-pointer">

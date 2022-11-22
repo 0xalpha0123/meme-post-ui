@@ -6,6 +6,8 @@ import { Web3Provider } from "@ethersproject/providers";
 
 import Avatar from "../Avatar";
 import Divider from "../Divider";
+import Typography from "../Typography";
+import Web3Connect from "../Web3Connect";
 import {
   ArrowDownIcon,
   LogOutIcon,
@@ -13,9 +15,7 @@ import {
   NotificationBing,
 } from "../../icons";
 
-import { ProfileList } from "./profileList";
-import Typography from "../Typography";
-import Web3Connect from "../Web3Connect";
+import { ProfileList } from "../../constants/app/profileList";
 
 const ToggleThemeIcon = dynamic(() => import("./ToggleThemeIcon"), {
   ssr: false,
@@ -58,19 +58,19 @@ const RightHeader = () => {
             <div className="flex flex-col ml-4 my-auto">
               <Typography
                 text="Hey!"
-                textColor="text-primary_white-400 dark:text-primary_dark-400"
+                textColor="text-primary_white-600 dark:text-primary_dark-600"
                 size="miniDescription"
               />
               <Typography
                 text="Steve"
-                textColor="text-primary_white-400 dark:text-primary_dark-400 hover:text-primary_white-800 dark:hover:text-primary_dark-800"
+                textColor="text-primary_white-600 dark:text-primary_dark-600"
                 size="textBold"
               />
             </div>
             <ArrowDownIcon className="ml-4 my-auto" />
           </div>
         ) : (
-          <Web3Connect />
+          <Web3Connect className="text-sm px-2" />
         )}
         <div
           className={`${

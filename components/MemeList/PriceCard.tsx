@@ -1,4 +1,5 @@
 import React from "react";
+
 import { EthPriceIcon } from "../../icons";
 
 const PriceCard = ({ price }: { price: number }) => {

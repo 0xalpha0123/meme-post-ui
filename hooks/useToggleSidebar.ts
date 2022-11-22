@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useMemo } from "react";
+import { useAnimation, useUnmountEffect } from "framer-motion";
+
 import { RootState } from "../store";
 import { toggleSlider } from "../store/slices/appSlice";
-import { useAnimation, useUnmountEffect } from "framer-motion";
 
 const useToggleSidebar = () => {
   const dispatch = useDispatch();
