@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import cx from "clsx";
@@ -15,6 +15,7 @@ import {
 } from "../../../icons";
 
 import { ProfileList } from "../../../constants/app/profileList";
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
 
 const ToggleThemeIcon = dynamic(() => import("./ToggleThemeIcon"), {
   ssr: false,
@@ -25,22 +26,12 @@ const RightHeader = () => {
   const drop = useRef<HTMLDivElement>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    document.addEventListener("click", handleClick);
-    return () => {
-      document.removeEventListener("click", handleClick);
-    };
+  useOnClickOutside(drop, () => {
+    setDropdownOpen(false);
   });
 
   const handleDropDown = () => {
     setDropdownOpen(!dropdownOpen);
-  };
-
-  const handleClick = (e: any) => {
-    if (!drop.current) return;
-    if (!e.target.closest(`#${drop.current.id}`) && dropdownOpen) {
-      setDropdownOpen(false);
-    }
   };
 
   return (

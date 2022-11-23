@@ -7,8 +7,10 @@ import BitcoinCardIcon from "./BitcoinCardIcon";
 import CategoryIcon from "./CategoryIcon";
 import ChartIcon from "./ChartIcon";
 import Chart2Icon from "./Chart2Icon";
+import CloseCircleIcon from "./CloseCircleIcon";
 import CloseIcon from "./CloseIcon";
 import ComputingIcon from "./ComputingIcon";
+import DangerIcon from "./DangerIcon";
 import DiscountCircleIcon from "./DiscountCircleIcon";
 import DocumentDownloadIcon from "./DocumentDownloadIcon";
 import DocumentTextIcon from "./DocumentTextIcon";
@@ -51,6 +53,7 @@ import ShareIcon from "./ShareIcon";
 import SunIcon from "./SunIcon";
 import SwapIcon from "./SwapIcon";
 import ThumbUpIcon from "./ThumbUpIcon";
+import TickCircle from "./TickCircle";
 import TimerIcon from "./TimerIcon";
 import TradeIcon from "./TradeIcon";
 import TrendUpIcon from "./TrendUpIcon";
@@ -75,8 +78,10 @@ export {
   CategoryIcon,
   ChartIcon,
   Chart2Icon,
+  CloseCircleIcon,
   CloseIcon,
   ComputingIcon,
+  DangerIcon,
   DiscountCircleIcon,
   DocumentDownloadIcon,
   DocumentTextIcon,
@@ -119,6 +124,7 @@ export {
   SunIcon,
   SwapIcon,
   ThumbUpIcon,
+  TickCircle,
   TimerIcon,
   TradeIcon,
   TrendUpIcon,

@@ -2,11 +2,15 @@ import { Web3Provider } from "@ethersproject/providers";
 import { useWeb3React } from "@web3-react/core";
 import React from "react";
 
-import { Dots, Typography } from "../../components";
+import { Button, Dots, Typography } from "../../components";
 
 import useToast from "../../hooks/useToast";
-import { getErrorMessage, WALLET_ERROR } from "../../helpers/wallets";
-import { ConnectorNames, connectorsByName } from "../../constants/wallets";
+import {
+  ConnectorNames,
+  connectorsByName,
+  WALLET_ERROR,
+} from "../../constants/network";
+import { getErrorMessage, swithNetwork } from "../../helpers/network";
 
 export const handleError = (error: any) => {
   const { emitToast } = useToast();
@@ -26,7 +30,16 @@ export const handleError = (error: any) => {
         </p>
       )}
       {getErrorMessage(error).code === WALLET_ERROR.UNSUPPORTED_NETWORK && (
-        <p>You&apos;re connected to an unsupported network.</p>
+        <div>
+          <div className="flex gap-3 items-center">
+            You&apos;re connected to an unsupported network.
+          </div>
+          <div className="flex justify-end mt-2">
+            <Button onClick={() => swithNetwork()} size="xs">
+              Switch Network
+            </Button>
+          </div>
+        </div>
       )}
       {getErrorMessage(error).code === WALLET_ERROR.UNKNOWN && (
         <p>An unknown error occurred. Check the console for more details.</p>

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import SocialLinks from "../SocialLinks";
 import DragDropZone from "../DragDropZone";
-import { Input, Button, RadioGroup } from "../../base";
+import { Input, Button, RadioGroup, Select, Typography } from "../../base";
+
+import {
+  formattedCountryList,
+  formattedStateList,
+} from "../../../helpers/utils";
 
 const profile = {
   avatar: "https://i.postimg.cc/HnyBQYs2/Rectangle-6321.png",
@@ -26,6 +31,17 @@ const profile = {
 };
 
 const ProfilePanel = () => {
+  const [country, setCountry] = useState(null);
+  const [state, setState] = useState(null);
+
+  const handleCountryChange = (value: any) => {
+    setCountry(value);
+  };
+
+  const handleStateChange = (value: any) => {
+    setState(value);
+  };
+
   return (
     <div className="flex gap-6 p-6 rounded transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <div className="flex flex-col max-w-[250px] w-full gap-6">
@@ -68,16 +84,30 @@ const ProfilePanel = () => {
           <Input placeHolder={profile.phone} className="w-1/2" label="Phone" />
         </div>
         <div className="flex gap-3 w-full">
-          <Input
-            placeHolder={profile.country}
-            className="w-1/2"
-            label="Country"
-          />
-          <Input
-            placeHolder={profile.state_region}
-            className="w-1/2"
-            label="State / Region"
-          />
+          <div className="w-1/2 flex flex-col justify-start">
+            <Typography
+              text="Country"
+              textColor="text-primary_white-700 dark:text-primary_dark-700"
+              className="text-sm font-medium mb-2"
+            />
+            <Select
+              value={country}
+              onChange={handleCountryChange}
+              options={formattedCountryList()}
+            />
+          </div>
+          <div className="w-1/2 flex flex-col justify-start">
+            <Typography
+              text="State / Region"
+              textColor="text-primary_white-700 dark:text-primary_dark-700"
+              className="text-sm font-medium mb-2"
+            />
+            <Select
+              value={state}
+              onChange={handleStateChange}
+              options={formattedStateList(country)}
+            />
+          </div>
         </div>
         <div className="flex gap-3 w-full">
           <Input

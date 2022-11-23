@@ -60,6 +60,7 @@ const MyApp = ({
           <Guard>
             <Component {...pageProps} />
             <ToastContainer
+              icon={false}
               position="top-right"
               autoClose={5000}
               hideProgressBar={false}

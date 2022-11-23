@@ -1,4 +1,8 @@
 import { useRef } from "react";
+import { Country, State, ICountry } from "country-state-city";
+
+// console.log(Country.getAllCountries());
+// console.log(State.getAllStates());
 
 export function randomId() {
   return `meme-${Math.random().toString(36).substr(2, 9)}`;
@@ -52,4 +56,23 @@ export const setColor = (color?: string, variant?: string) => {
     return "border-purple-800 text-purple-800 bg-purple-100";
   else if (color === "pink") return "border-pink-800 text-pink-800 bg-pink-100";
   return "border-gray-800 text-gray-800 bg-gray-100";
+};
+
+export const formattedCountryList = () => {
+  return Country.getAllCountries().map((country) => ({
+    ...country,
+    label: `${country.flag} ${country.name}`,
+    value: country.isoCode,
+  }));
+};
+
+export const formattedStateList = (country: ICountry | null) => {
+  if (country === null) {
+    return [];
+  }
+  return State.getStatesOfCountry(country.isoCode).map((state) => ({
+    ...state,
+    label: state.name,
+    value: state.isoCode,
+  }));
 };

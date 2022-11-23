@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import cx from "clsx";
 
@@ -9,28 +9,20 @@ import {
   ArrowDownIcon,
 } from "../../../icons";
 
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
+
 import { categoryItems } from "../../../constants/app/categoryItems";
 
 const LeftHeader = () => {
   const drop = useRef<HTMLDivElement>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    document.addEventListener("click", handleClick);
-    return () => {
-      document.removeEventListener("click", handleClick);
-    };
+  useOnClickOutside(drop, () => {
+    setDropdownOpen(false);
   });
 
   const handleDropDown = () => {
     setDropdownOpen(!dropdownOpen);
-  };
-
-  const handleClick = (e: any) => {
-    if (!drop.current) return;
-    if (!e.target.closest(`#${drop.current.id}`) && dropdownOpen) {
-      setDropdownOpen(false);
-    }
   };
 
   return (
