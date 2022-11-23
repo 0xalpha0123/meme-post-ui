@@ -39,7 +39,7 @@ const recentActivitiesList = [
 
 const RecentActivitiesCard = () => {
   return (
-    <div className="flex flex-col transition duration-100 items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
+    <div className="flex flex-col transition duration-100 items-center p-6 rounded border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
       <div className="w-full flex justify-between mb-4">
         <Typography
           text="Recent Activities"
@@ -56,10 +56,10 @@ const RecentActivitiesCard = () => {
       {recentActivitiesList.map((item, i) => (
         <div className="flex justify-between items-center w-full" key={i}>
           <UserAvatar
-            size={48}
-            username={item.username}
+            size="12"
+            name={item.username}
             subtitle={`@${item.activity}`}
-            avatar={item.avatar}
+            src={item.avatar}
             subtitleSize="miniDescription"
           />
           <Typography

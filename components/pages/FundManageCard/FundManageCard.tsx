@@ -114,7 +114,7 @@ const FundManageCard = () => {
     return gradient;
   }
   return (
-    <div className="flex flex-col transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark p-6 rounded-lg">
+    <div className="flex flex-col transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark p-6 rounded">
       <Typography
         text="Main Balance"
         textColor="text-primary_white-600 dark:text-primary_dark-600"
@@ -136,26 +136,10 @@ const FundManageCard = () => {
         className="my-6"
       />
       <div className="flex justify-around">
-        <Button
-          component={
-            <Typography
-              text="Add Funds"
-              textColor="text-secondary"
-              size="textBold"
-            />
-          }
-          customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-        />
-        <Button
-          component={
-            <Typography
-              text="Withdraw"
-              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-              size="textBold"
-            />
-          }
-          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-        />
+        <Button variant="outline" color="green">
+          Add Funds
+        </Button>
+        <Button variant="transparent">Withdraw</Button>
       </div>
     </div>
   );

@@ -48,7 +48,7 @@ const Dialog = (props: dialogProps) => {
       <div className="flex items-center min-h-screen px-4 py-8">
         <div
           className={cx(
-            "relative w-full p-6 mx-auto rounded-lg shadow-lg border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark",
+            "relative w-full p-6 mx-auto rounded shadow-lg border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark",
             width
           )}
         >

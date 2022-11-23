@@ -39,16 +39,12 @@ const BondItem = (props: BondItemProps) => {
             />
           ) : (
             <Button
-              component={
-                <Typography
-                  text={`${props.discount} %`}
-                  textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-                  size="button"
-                  className="px-6"
-                />
-              }
-              customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-            />
+              variant="outline"
+              color="green"
+              className="px-8 text-md font-bold"
+            >
+              {props.discount}&nbsp;&nbsp;&nbsp;%
+            </Button>
           )}
         </div>
       </div>

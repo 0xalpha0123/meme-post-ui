@@ -33,7 +33,7 @@ const Input = (props: InputProps) => {
         <input
           value={props.value}
           className={cx(
-            "border transition-all duration-100 focus:transition-none text-sm rounded-lg block w-full p-2.5 bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none",
+            "border transition-all duration-100 focus:transition-none text-sm rounded block w-full p-2.5 bg-primary_white-50 dark:bg-primary_dark-50 border-primary_white-200 dark:border-primary_dark-200 text-primary_white-700 dark:text-primary_dark-700 placeholder-primary_white-200 dark:placeholder-primary_dark-200 focus:border-primary_white-300 dark:focus:border-primary_dark-300 focus:outline-none dark:focus:outline-none",
             props.endLabel && "pr-20"
           )}
           placeholder={placeHolder}

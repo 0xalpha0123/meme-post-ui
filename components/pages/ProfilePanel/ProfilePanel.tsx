@@ -27,7 +27,7 @@ const profile = {
 
 const ProfilePanel = () => {
   return (
-    <div className="flex gap-6 p-6 rounded-lg transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+    <div className="flex gap-6 p-6 rounded transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
       <div className="flex flex-col max-w-[250px] w-full gap-6">
         <div className="w-full p-1 border border-bg_white_secondary dark:border-bg_dark_secondary rounded-xl">
           <img src={profile.avatar} className="w-full rounded-xl h-" />
@@ -88,15 +88,15 @@ const ProfilePanel = () => {
         </div>
         <SocialLinks socials={profile.socials_link} />
         <div className="flex gap-3">
-          <Button component="Update" className="py-2 text-sm" />
-          <Button
-            component="Delete"
-            className="py-2 text-sm bg-red-600 hover:bg-red-700"
-          />
-          <Button
-            component="Cancel"
-            className="py-2 text-sm bg-gray-600 dark:bg-gray-700"
-          />
+          <Button size="md" color="green">
+            Update
+          </Button>
+          <Button size="md" color="red">
+            Delete
+          </Button>
+          <Button size="md" color="gray">
+            Cancel
+          </Button>
         </div>
       </div>
     </div>

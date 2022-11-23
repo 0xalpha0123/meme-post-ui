@@ -121,7 +121,7 @@ const DragDropZone = ({ height }: { height: string }) => {
           <img
             src={URL.createObjectURL(files[0])}
             onClick={removeImage}
-            className="h-full w-full z-10 absolute inset-0 rounded-lg"
+            className="h-full w-full z-10 absolute inset-0 rounded"
           />
         )}
       </div>

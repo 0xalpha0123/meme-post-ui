@@ -30,13 +30,14 @@ const Web3Connect = (props: Web3ConnectProps = { className: "" }) => {
   return (
     <>
       <Button
-        component="Connect Wallet"
         onClick={() => toggleModal(true)}
-        customClass={cx(
-          "border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent text-secondary",
-          props.className
-        )}
-      />
+        className={props.className}
+        variant="outline"
+        color="green"
+        size="md"
+      >
+        Connect Wallet
+      </Button>
       <Dialog
         isOpen={isModalOpen}
         handleDismiss={() => toggleModal(false)}

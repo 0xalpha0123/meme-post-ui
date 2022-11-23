@@ -1,95 +1,115 @@
 import React, { MouseEventHandler } from "react";
 import cx from "clsx";
+import { DefaultProps } from "../../../helpers/utils";
 
-import { getInitName } from "../../../helpers/stringUtils";
-
-interface AvatarProps {
-  style?: string;
-  size?: 64 | 48 | 40 | 36 | 32 | 28 | 24 | 20 | 16;
-  type?: string;
-  avatar?: string;
-  username?: string;
-  status?: true | false;
-  className?: string;
+interface AvatarProps extends DefaultProps {
+  size?: "28" | "24" | "20" | "16" | "14" | "12" | "8" | "6" | "4";
+  dot?: string;
+  name?: string;
+  src?: string;
+  rounded?: boolean;
   onClick?: MouseEventHandler;
 }
 
-const Avatar = (props: AvatarProps) => {
-  const size = props.size || 48;
-  const style = props.style || "square";
-  const type = props.type || "initials";
-  const username = props.username || "Guest";
-  const callback = props.onClick || function () {};
-  const textSize = {
-    16: "xs",
-    20: "sm",
-    24: "sm",
-    28: "base",
-    32: "base",
-    36: "base",
-    40: "lg",
-    48: "xl",
-    64: "2xl",
-  };
-  const avatarSizes = {
-    16: "w-4 h-4",
-    20: "w-5 h-5",
-    24: "w-6 h-6",
-    28: "w-7 h-7",
-    32: "w-8 h-8",
-    36: "w-9 h-9",
-    40: "w-10 h-10",
-    48: "w-12 h-12",
-    64: "w-16 h-16",
-  };
-  const statusSizes = {
-    16: "top-4 w-1 h-1",
-    20: "top-4 w-1.5 h-1.5",
-    24: "top-5 w-2 h-2",
-    28: "top-6 w-2 h-2",
-    32: "top-7 w-2.5 h-2.5",
-    36: "top-8 w-2.5 h-2.5",
-    40: "top-9 w-3 h-3",
-    48: "top-10 w-3 h-3",
-    64: "top-14 w-3.5 h-3.5",
-  };
-  const avatarClass = `${avatarSizes[size]} ${
-    style === "circle" ? "rounded-full" : "rounded-md"
-  } ${!!props.className && props.className}`;
-  const statusClass = `${
-    style === "square" ? "-right-1" : size === 64 ? "right-2" : "right-1"
-  } ${
-    props.status
-      ? "bg-custom-green border-green-500"
-      : "bg-red-400 border-red-500"
-  } ${statusSizes[size]}`;
-  const fontSize = `text-${textSize[size]}`;
+const setSize = (size?: string) => {
+  if (size === "4") return "w-4 h-4 text-xs";
+  if (size === "6") return "w-6 h-6 text-xs";
+  if (size === "8") return "w-8 h-8 text-xs";
+  if (size === "12") return "w-12 h-12 text-sm";
+  if (size === "14") return "w-14 h-14 text-base";
+  if (size === "16") return "w-16 h-16 text-lg";
+  if (size === "20") return "w-20 h-20 text-xl";
+  if (size === "24") return "w-24 h-24 text-2xl";
+  if (size === "28") return "w-28 h-28 text-3xl";
+  return "w-10 h-10 text-sm";
+};
+
+const setIconSize = (size?: string) => {
+  if (size === "4") return "w-2 h-2";
+  if (size === "6") return "w-3 h-3";
+  if (size === "8") return "w-4 h-4";
+  if (size === "12") return "w-6 h-6";
+  if (size === "14") return "w-6 h-6";
+  if (size === "16") return "w-8 h-8";
+  if (size === "20") return "w-10 h-10";
+  if (size === "24") return "w-12 h-12";
+  if (size === "28") return "w-14 h-14";
+  return "w-5 h-5";
+};
+
+const setDotSize = (size?: string) => {
+  if (size === "4") return "w-1 h-1 ring";
+  if (size === "6") return "w-1.5 h-1.5 ring";
+  if (size === "14") return "w-3 h-3 ring";
+  if (size === "16") return "w-3.5 h-3.5 ring";
+  if (size === "20") return "w-4 h-4 ring-4";
+  if (size === "24") return "w-5 h-5 ring-4";
+  if (size === "28") return "w-6 h-6 ring-4";
+  return "w-2 h-2 ring";
+};
+
+const renderContent = (
+  src?: string,
+  name?: string,
+  rounded?: boolean,
+  size?: string
+) => {
+  if (src) {
+    return (
+      <img
+        className={cx(
+          "object-cover object-center w-full h-full",
+          rounded ? "rounded" : "rounded-full"
+        )}
+        src={src}
+      />
+    );
+  } else if (name) return name.charAt(0).toUpperCase();
+  return (
+    <svg
+      className={cx("text-gray-400", setIconSize(size))}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h1 1 14H20z" />
+    </svg>
+  );
+};
+
+const Avatar = ({
+  dot,
+  size,
+  name,
+  src,
+  rounded,
+  onClick,
+  className,
+}: AvatarProps) => {
+  const callback = onClick || function () {};
 
   return (
-    <button onClick={callback} className="relative transition-all duration-100">
-      {type === "image" && !!props.avatar && (
-        <img className={avatarClass} src={props.avatar} alt="" />
+    <div
+      onClick={callback}
+      className={cx(
+        className,
+        "relative flex items-center justify-center flex-shrink-0 font-bold text-gray-800 uppercase bg-gray-100 select-none",
+        rounded ? "rounded" : "rounded-full",
+        setSize(size)
       )}
-      {type === "initials" && (
-        <div
-          className={cx(
-            "flex items-center justify-center text-gray-200 bg-gradient-to-tr from-[#C14BFF] to-[#5C8FFF]",
-            avatarClass,
-            fontSize
-          )}
-        >
-          {getInitName(username)}
-        </div>
-      )}
-      {props.status !== undefined && (
+    >
+      {renderContent(src, name, rounded, size)}
+      {dot && (
         <span
+          aria-hidden="true"
           className={cx(
-            "absolute transform -translate-y-1/2 border-2 rounded-full",
-            statusClass
+            "absolute bottom-0 right-0 rounded-full ring-white",
+            dot,
+            setDotSize(size)
           )}
-        ></span>
+        />
       )}
-    </button>
+    </div>
   );
 };
 

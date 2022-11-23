@@ -33,7 +33,7 @@ const Component: FC<NetworkGuardProps> = ({
             >
               &#8203;
             </span>
-            <div className="inline-block align-bottom rounded-lg text-left overflow-hidden transform  sm:my-8 sm:align-middle max-w-sm md:max-w-3xl sm:w-full p-4 sm:p-6">
+            <div className="inline-block align-bottom rounded text-left overflow-hidden transform  sm:my-8 sm:align-middle max-w-sm md:max-w-3xl sm:w-full p-4 sm:p-6">
               <div className="flex flex-col gap-7 justify-center"></div>
               <Typography
                 size="h5"

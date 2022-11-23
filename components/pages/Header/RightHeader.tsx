@@ -48,12 +48,7 @@ const RightHeader = () => {
       <div className="relative" ref={drop} id="profile">
         {active ? (
           <div className="flex cursor-pointer" onClick={handleDropDown}>
-            <Avatar
-              type="image"
-              avatar="https://i.ibb.co/fxZz28p/48px.png"
-              style="circle"
-              size={40}
-            />
+            <Avatar src="https://i.ibb.co/fxZz28p/48px.png" />
             <div className="flex flex-col ml-4 my-auto">
               <Typography
                 text="Hey!"
@@ -79,13 +74,13 @@ const RightHeader = () => {
         ></div>
         <div
           className={cx(
-            "opacity-100 top-14 -right-3 absolute px-6 py-3 z-40 mt-2 rounded-xl shadow-card transition-all bg-white dark:bg-bg_dark border border-primary_white-200 dark:border-primary_dark-200",
+            "opacity-100 top-14 -right-3 absolute px-6 py-3 z-40 mt-2 rounded shadow-card transition-all bg-white dark:bg-bg_dark border border-primary_white-200 dark:border-primary_dark-200",
             dropdownOpen ? "opacity-100 visible" : "invisible opacity-0"
           )}
         >
           {ProfileList.map((item, i) => (
             <Link key={i} href={item.url}>
-              <div className="whitespace-nowrap py-4 pl-6 pr-10 font-normal items-center text-sm text-body-color rounded-lg flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-800 dark:hover:text-primary_dark-800">
+              <div className="whitespace-nowrap py-4 pl-6 pr-10 font-normal items-center text-sm text-body-color rounded flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-800 dark:hover:text-primary_dark-800">
                 <item.icon />
                 <div className="ml-4">{item.name}</div>
               </div>
@@ -94,7 +89,7 @@ const RightHeader = () => {
           <Divider className="w-4/5 h-[1px] mx-auto my-1 bg-bg_white_secondary dark:bg-bg_dark_secondary" />
 
           <div
-            className="whitespace-nowrap py-4 pl-6 pr-10 font-normal items-center text-sm text-body-color rounded-lg flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-800 dark:hover:text-primary_dark-800"
+            className="whitespace-nowrap py-4 pl-6 pr-10 font-normal items-center text-sm text-body-color rounded flex cursor-pointer hover:bg-primary_white-50 dark:hover:bg-primary_dark-50 hover:text-primary_white-800 dark:hover:text-primary_dark-800"
             onClick={() => {
               deactivate();
               setDropdownOpen(false);

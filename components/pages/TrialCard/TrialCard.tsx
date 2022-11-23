@@ -18,7 +18,7 @@ const TrialCard = () => {
           textColor="text-primary_white-0 font-extrabold dark:text-primary_dark-1000 px-3"
           className="text-lg"
         />
-        <Button className="mt-4" component="Try Free Trial" size="small" />
+        <Button size="sm">Try Free Trial</Button>
       </div>
     </div>
   );

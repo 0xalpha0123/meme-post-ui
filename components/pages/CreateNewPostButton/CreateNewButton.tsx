@@ -12,11 +12,9 @@ const CreateNewPostButton = () => {
 
   return (
     <>
-      <Button
-        onClick={() => toggleModal(true)}
-        component="Create New"
-        customClass="text-sm px-2 border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent text-secondary"
-      />
+      <Button onClick={() => toggleModal(true)} variant="outline" color="green">
+        Create New{" "}
+      </Button>
       <Dialog
         isOpen={isModalOpen}
         handleDismiss={() => toggleModal(false)}

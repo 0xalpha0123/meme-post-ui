@@ -2,9 +2,9 @@ import React from "react";
 import cx from "clsx";
 import { DefaultProps, Sizes, useId } from "../../../helpers/utils";
 
-interface CheckboxProps
+interface RadioProps
   extends DefaultProps,
-    Omit<React.ComponentPropsWithoutRef<"input">, "type" | "size"> {
+    Omit<React.ComponentPropsWithoutRef<"input">, "size"> {
   id?: string;
   size?: Sizes;
   color?: string;
@@ -12,17 +12,16 @@ interface CheckboxProps
   elementRef?: React.ForwardedRef<HTMLInputElement>;
 }
 
-function Checkbox({
+function Radio({
   id,
   size,
   color,
   label,
-  onChange,
   disabled,
   className,
   elementRef,
   ...others
-}: CheckboxProps) {
+}: RadioProps) {
   const uuid = useId(id);
 
   return (
@@ -30,13 +29,12 @@ function Checkbox({
       <input
         id={uuid}
         {...others}
-        type="checkbox"
+        type="radio"
         ref={elementRef}
-        onChange={onChange}
         disabled={disabled}
         className={cx(
           className,
-          "transition rounded shadow-sm focus:ring focus:ring-offset-0 focus:ring-opacity-75 cursor-pointer border-gray-300 focus:border-gray-300 focus:ring-gray-200",
+          "transition rounded-full border-gray-300 shadow-sm focus:border-gray-300 focus:ring focus:ring-offset-0 focus:ring-gray-200 focus:ring-opacity-50 cursor-pointer",
           color ? color : "text-gray-600"
         )}
       />
@@ -49,4 +47,4 @@ function Checkbox({
   );
 }
 
-export default Checkbox;
+export default Radio;

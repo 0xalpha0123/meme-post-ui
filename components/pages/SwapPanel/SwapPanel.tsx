@@ -65,11 +65,7 @@ const SwapPanel = () => {
             className="tracking-wide"
           />
         </div>
-        <Button
-          component={
-            <Typography text="Swap" textColor="text-white" size="h7" />
-          }
-        />
+        <Button color="green">Swap</Button>
       </div>
     </div>
   );

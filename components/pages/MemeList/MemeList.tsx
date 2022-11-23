@@ -174,7 +174,7 @@ const memes = [
 const TrendingMemes = () => {
   const [isWaterfall, setIsWaterfall] = useState(false);
   return (
-    <div className="mt-3 flex flex-col gap-6 rounded-lg">
+    <div className="mt-3 flex flex-col gap-6 rounded">
       <div className="flex justify-between">
         <div className="flex flex-grow justify-around">
           {trendings.map((trending) => (

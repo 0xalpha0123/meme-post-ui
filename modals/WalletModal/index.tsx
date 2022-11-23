@@ -47,7 +47,7 @@ const WalletModal = ({ isModalOpen }: { isModalOpen: boolean }) => {
           return (
             <div
               key={name}
-              className="w-full flex p-3 rounded-lg items-center gap-6 transition-all duration-200 cursor-pointer bg-primary_white-200 dark:bg-primary_dark-200 hover:bg-primary_white-300 hover:dark:bg-primary_dark-300"
+              className="w-full flex p-3 rounded items-center gap-6 transition-all duration-200 cursor-pointer bg-primary_white-200 dark:bg-primary_dark-200 hover:bg-primary_white-300 hover:dark:bg-primary_dark-300"
               onClick={() => {
                 if (!disabled) {
                   setActivatingConnector(currentConnector);
@@ -65,7 +65,7 @@ const WalletModal = ({ isModalOpen }: { isModalOpen: boolean }) => {
             >
               <img
                 src={`/images/wallets/${name.toLowerCase()}.png`}
-                className="w-12 h-12 rounded-lg"
+                className="w-12 h-12 rounded"
               />
               <div className="flex flex-col">
                 <Typography

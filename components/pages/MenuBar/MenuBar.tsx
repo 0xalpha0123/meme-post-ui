@@ -33,10 +33,9 @@ const MenuBar = () => {
   return (
     <div className="flex flex-col items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-bg_white_secondary dark:border-bg_dark_secondary">
       <UserAvatar
-        status={true}
-        username="Steven Jobs"
+        name="Steven Jobs"
         subtitle="2mins ago"
-        avatar="https://i.ibb.co/DgdyKCr/Ellipse-3.png"
+        src="https://i.ibb.co/DgdyKCr/Ellipse-3.png"
       />
       <Divider className="w-full h-[1px] mx-auto my-4 bg-bg_white_secondary dark:bg-bg_dark_secondary" />
       {MenuBarList.map((item, i) => (
@@ -54,7 +53,6 @@ const MenuBar = () => {
       />
       <AvatarGroup
         users={users.slice(0, 3)}
-        size={36}
         space="-space-x-3"
         className="w-full m-2"
         overflow="+1"

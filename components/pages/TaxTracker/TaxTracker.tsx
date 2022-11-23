@@ -136,7 +136,7 @@ const TaxTracker = () => {
           endLabel="CURRENT"
         />
       </div>
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-6 items-center">
         <Slider
           label="69 Days"
           secondLabel="1440 Epoch"
@@ -145,7 +145,9 @@ const TaxTracker = () => {
           value={currentEpoch}
           onChange={handleEpochChange}
         />
-        <Button component={<Typography text="Calculate Tax" size="h7" />} />
+        <Button color="green" className="h-10">
+          Calculate Tax
+        </Button>
       </div>
       <div className="grid grid-cols-2 gap-6">
         <div className="flex justify-between items-center">

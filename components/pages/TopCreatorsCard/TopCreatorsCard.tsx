@@ -38,7 +38,7 @@ const creatorsList = [
 
 const TopCreatorsCard = () => {
   return (
-    <div className="transition duration-100 flex flex-col items-center p-6 rounded-xl border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
+    <div className="transition duration-100 flex flex-col items-center p-6 rounded border bg-white dark:bg-bg_dark border-primary_white-200 dark:border-primary_dark-200 gap-6">
       <div className="w-full flex justify-between mb-4">
         <Typography
           text="Top Creators"
@@ -55,23 +55,17 @@ const TopCreatorsCard = () => {
       {creatorsList.map((item, i) => (
         <div className="flex justify-between items-center w-full" key={i}>
           <UserAvatar
-            size={48}
-            username={item.username}
+            size="12"
+            name={item.username}
             subtitle={`@${item.userid}`}
-            avatar={item.avatar}
+            src={item.avatar}
           />
           <Button
-            component={
-              <Typography
-                text={`${item.followed ? "Follow" : "Following"}`}
-                textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-                size="miniButton"
-              />
-            }
-            customClass={`bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent px-3 ${
-              item.followed ? "" : "border-2 border-secondary"
-            }`}
-          />
+            variant={item.followed ? "transparent" : "outline"}
+            color="green"
+          >
+            {item.followed ? "Follow" : "Following"}
+          </Button>
         </div>
       ))}
     </div>

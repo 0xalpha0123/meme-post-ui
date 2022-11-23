@@ -3,12 +3,12 @@ import React from "react";
 import { Avatar, Typography } from "../../base";
 
 interface UserAvatarProps {
-  size?: 64 | 48 | 40 | 36 | 32 | 28 | 24 | 20 | 16;
-  username: string;
+  size?: "28" | "24" | "20" | "16" | "14" | "12" | "8" | "6" | "4";
+  name: string;
   subtitle?: string;
-  avatar?: string;
+  src?: string;
   className?: string;
-  status?: true | false;
+  status?: string;
   usernameSize?:
     | "h1"
     | "h2"
@@ -44,9 +44,9 @@ interface UserAvatarProps {
 }
 
 const UserAvatar = (props: UserAvatarProps) => {
-  const size = props.size || 40;
-  const username = props.username;
-  const imageUrl = props.avatar || "";
+  const size = props.size;
+  const name = props.name;
+  const imageUrl = props.src;
   const className = props.className || "";
   const status = props.status;
   const subtitle = props.subtitle || "";
@@ -56,18 +56,16 @@ const UserAvatar = (props: UserAvatarProps) => {
   return (
     <div className="flex cursor-pointer transition duration-100">
       <Avatar
-        username={username}
-        type={!!imageUrl ? "image" : "initials"}
-        style="circle"
+        name={name}
         size={size}
-        avatar={imageUrl}
+        src={imageUrl}
         className={className}
-        status={status}
+        dot={status}
       />
       <div className="flex flex-col gap-1 ml-2 my-auto">
         <Typography
           size={usernameSize}
-          text={username}
+          text={name}
           textColor="text-primary_white-1000 dark:text-primary_dark-1000"
         />
         <Typography

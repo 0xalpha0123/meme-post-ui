@@ -37,7 +37,7 @@ const MemeCard = (props: MemeCardProps) => {
       {meme && (
         <div
           className={cx(
-            "transition duration-100 flex flex-col justify-between gap-6 p-6 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark rounded-lg",
+            "transition duration-100 flex flex-col justify-between gap-6 p-6 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark rounded",
             isWaterfall && "mt-6"
           )}
         >
@@ -69,10 +69,10 @@ const MemeCard = (props: MemeCardProps) => {
               </div>
               <div className="flex justify-between items-center">
                 <UserAvatar
-                  size={48}
-                  username={meme.username}
+                  size="12"
+                  name={meme.username}
                   subtitle={`@${meme.userId}`}
-                  avatar={meme.avatar}
+                  src={meme.avatar}
                 />
                 <PriceCard price={meme.price} />
               </div>
@@ -90,7 +90,7 @@ const MemeCard = (props: MemeCardProps) => {
                     key={index}
                     text={keyword}
                     textColor="text-primary_white-300 dark:text-primary_dark-300"
-                    className="bg-blue-200 dark:bg-primary_dark-100 rounded-lg px-3 py-2"
+                    className="bg-blue-200 dark:bg-primary_dark-100 rounded px-3 py-2"
                   />
                 ))}
               </div>

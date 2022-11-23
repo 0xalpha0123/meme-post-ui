@@ -174,7 +174,7 @@ const StakePanel = () => {
       />
       <div className="w-full flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <Avatar style="circle" avatar={token.imgUrl} type="image" />
+          <Avatar src={token.imgUrl} size="12" />
           <div className="flex flex-col gap-1 cursor-pointer">
             <Typography
               text={token.symbol}
@@ -201,61 +201,21 @@ const StakePanel = () => {
         </div>
       </div>
       <div className="w-full flex gap-3 -mt-6">
-        <Button
-          component={
-            <Typography
-              text="1D"
-              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-              size="textBold"
-            />
-          }
-          size="small"
-          customClass="border-2 border-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-        />
-        <Button
-          component={
-            <Typography
-              text="1W"
-              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-              size="textBold"
-            />
-          }
-          size="small"
-          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-        />
-        <Button
-          component={
-            <Typography
-              text="1M"
-              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-              size="textBold"
-            />
-          }
-          size="small"
-          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-        />
-        <Button
-          component={
-            <Typography
-              text="1Y"
-              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-              size="textBold"
-            />
-          }
-          size="small"
-          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-        />
-        <Button
-          component={
-            <Typography
-              text="ALL"
-              textColor="text-primary_white-800 dark:text-primary_dark-800 hover:text-primary_white-900 hover:dark:text-primary_dark-900"
-              size="textBold"
-            />
-          }
-          size="small"
-          customClass="bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-        />
+        <Button variant="outline" color="green" size="sm">
+          1 D
+        </Button>
+        <Button variant="transparent" size="sm">
+          1 W
+        </Button>
+        <Button variant="transparent" size="sm">
+          1 M
+        </Button>
+        <Button variant="transparent" size="sm">
+          1 Y
+        </Button>
+        <Button variant="transparent" size="sm">
+          ALL
+        </Button>
       </div>
       <Line
         data={data}
@@ -347,10 +307,9 @@ const StakePanel = () => {
             size="h7"
           />
           {active ? (
-            <Button
-              component="Stake"
-              customClass="border-2 border-secondary text-secondary bg-transparent dark:bg-transparent hover:bg-transparent hover:dark:bg-transparent"
-            />
+            <Button variant="outline" color="green">
+              Stake
+            </Button>
           ) : (
             <Web3Connect />
           )}

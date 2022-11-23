@@ -41,7 +41,7 @@ const options = {
 
 const StatusCard = (props: StatusProps) => {
   return (
-    <div className="flex flex-col py-6 px-3 gap-6 rounded-lg transition duration-100 bg-primary_white-100 dark:bg-primary_dark-200">
+    <div className="flex flex-col py-6 px-3 gap-6 rounded transition duration-100 bg-primary_white-100 dark:bg-primary_dark-200">
       <div className="flex items-center gap-1">
         <span className="w-2 h-2 bg-secondary rounded-full"></span>
         <Typography

@@ -2,28 +2,28 @@ import React from "react";
 import cx from "clsx";
 
 import Avatar from "../Avatar";
+import { DefaultProps } from "../../../helpers/utils";
 
-interface AvatarGroupProps {
-  size?: 64 | 48 | 40 | 36 | 32 | 28 | 24 | 20 | 16;
+interface AvatarGroupProps extends DefaultProps {
+  size?: "28" | "24" | "20" | "16" | "14" | "12" | "8" | "6" | "4";
   limit?: number;
   users: AvatarGroupItemProps[];
   space?: string;
-  className?: string;
+  rounded?: boolean;
   overflow?: string;
 }
 
-interface AvatarGroupItemProps {
+interface AvatarGroupItemProps extends DefaultProps {
   style: string;
   type: string;
   avatar?: string;
   username?: string;
-  status?: true | false;
-  className?: string;
+  status?: string;
 }
 
 const AvatarGroup = (props: AvatarGroupProps) => {
   const space = props.space || "-space-x-8";
-  const size = props.size || 48;
+  const size = props.size || "12";
   const className = props.className || "";
   const users = props.users;
 
@@ -33,21 +33,19 @@ const AvatarGroup = (props: AvatarGroupProps) => {
         <Avatar
           key={i}
           size={size}
-          style={user.style}
-          type={user.type}
-          avatar={user.avatar}
-          username={user.username}
-          status={user.status}
+          src={user.avatar}
+          name={user.username}
+          dot={user.status}
           className={user.className}
+          rounded={props.rounded}
         />
       ))}
       {!!props.overflow && (
         <Avatar
           size={size}
-          style={props.users[0].style}
-          type="initials"
-          username={props.overflow}
+          name={props.overflow}
           className={props.users[0].className}
+          rounded={props.rounded}
         />
       )}
     </div>

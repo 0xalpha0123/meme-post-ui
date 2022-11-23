@@ -43,7 +43,7 @@ const IconButton = (props: IconButtonProps) => {
     size === "default" ? "p-2.5" : size === "small" ? "p-2" : "p-3";
   const textColor = type !== "ghost" ? "text-white" : "text-primary_white-900";
   const textSize = size !== "large" ? "text-sm" : "text-base";
-  const roundedClass = rounded ? "rounded-full" : "rounded-lg";
+  const roundedClass = rounded ? "rounded-full" : "rounded";
   const totalClass = `${roundedClass} ${textColor} ${focusClass} ${className} ${padding} ${textSize} ${
     customClass !== ""
       ? customClass

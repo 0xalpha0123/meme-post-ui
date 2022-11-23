@@ -19,7 +19,7 @@ const SwapInput = (props: SwapInputProps) => {
           textColor="text-primary_white-600 dark:text-primary_dark-600"
         />
         <div className="flex items-center gap-6">
-          <Avatar style="circle" avatar={props.token.imgUrl} type="image" />
+          <Avatar src={props.token.imgUrl} size="12" />
           <div className="flex gap-3 cursor-pointer items-center">
             <Typography
               text={props.token.symbol}

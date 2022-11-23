@@ -32,7 +32,7 @@ const TokenManagePanel = () => {
           );
         })}
       </div>
-      <div className="-mt-4 px-12 py-10 rounded-lg rounded-tl-none items-center transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+      <div className="-mt-4 px-12 py-10 rounded rounded-tl-none items-center transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
         {activeTab.id === "stake" && <StakePanel />}
         {activeTab.id === "bond" && <BondCard />}
         {activeTab.id === "swap" && <SwapPanel />}
