@@ -59,7 +59,18 @@ const MyApp = ({
         <Web3ReactProvider getLibrary={getLibrary}>
           <Guard>
             <Component {...pageProps} />
-            <ToastContainer theme="colored" />
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+              closeOnClick={false}
+            />
           </Guard>
         </Web3ReactProvider>
       </Provider>

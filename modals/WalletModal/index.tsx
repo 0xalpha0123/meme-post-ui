@@ -1,16 +1,46 @@
 import { Web3Provider } from "@ethersproject/providers";
 import { useWeb3React } from "@web3-react/core";
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Dots, Typography } from "../../components";
 
 import useToast from "../../hooks/useToast";
-import { getErrorMessage } from "../../helpers/wallets";
+import { getErrorMessage, WALLET_ERROR } from "../../helpers/wallets";
 import { ConnectorNames, connectorsByName } from "../../constants/wallets";
 
-const WalletModal = ({ isModalOpen }: { isModalOpen: boolean }) => {
-  const { connector, activate, error } = useWeb3React<Web3Provider>();
+export const handleError = (error: any) => {
   const { emitToast } = useToast();
+  emitToast(
+    <>
+      {getErrorMessage(error).code === WALLET_ERROR.INSTALL_METAMASK && (
+        <p>
+          No Ethereum browser extension detected, install{" "}
+          <a
+            className="text-yellow-400"
+            href="https://metamask.io/"
+            target="__blank"
+          >
+            MetaMask
+          </a>{" "}
+          on desktop or visit from a dApp browser on mobile.
+        </p>
+      )}
+      {getErrorMessage(error).code === WALLET_ERROR.UNSUPPORTED_NETWORK && (
+        <p>You&apos;re connected to an unsupported network.</p>
+      )}
+      {getErrorMessage(error).code === WALLET_ERROR.UNKNOWN && (
+        <p>An unknown error occurred. Check the console for more details.</p>
+      )}
+      {getErrorMessage(error).code === WALLET_ERROR.CONNECT_WALLET && (
+        <p>Please authorize this website to access your Ethereum account.</p>
+      )}
+    </>,
+    "error"
+  );
+};
+
+const WalletModal = ({ isModalOpen }: { isModalOpen: boolean }) => {
+  const { connector, error, activate } = useWeb3React<Web3Provider>();
 
   // handle logic to recognize the connector currently being activated
   const [activatingConnector, setActivatingConnector] = React.useState<any>();
@@ -20,12 +50,6 @@ const WalletModal = ({ isModalOpen }: { isModalOpen: boolean }) => {
       setActivatingConnector(undefined);
     }
   }, [activatingConnector, connector]);
-
-  useEffect(() => {
-    if (!!error) {
-      emitToast(getErrorMessage(error), "error");
-    }
-  }, [error]);
 
   return (
     <div className="w-full flex flex-col gap-3">
@@ -41,26 +65,19 @@ const WalletModal = ({ isModalOpen }: { isModalOpen: boolean }) => {
           const currentConnector: any =
             connectorsByName[name as ConnectorNames];
           const activating = currentConnector === activatingConnector;
-          const connected = currentConnector === connector;
-          const disabled = !!activatingConnector || connected || !!error;
 
           return (
             <div
               key={name}
               className="w-full flex p-3 rounded items-center gap-6 transition-all duration-200 cursor-pointer bg-primary_white-200 dark:bg-primary_dark-200 hover:bg-primary_white-300 hover:dark:bg-primary_dark-300"
               onClick={() => {
-                if (!disabled) {
-                  setActivatingConnector(currentConnector);
-                  activate(
-                    connectorsByName[name as ConnectorNames],
-                    (error) => {
-                      if (error) {
-                        setActivatingConnector(undefined);
-                        emitToast(getErrorMessage(error), "error");
-                      }
-                    }
-                  );
-                }
+                setActivatingConnector(currentConnector);
+                activate(connectorsByName[name as ConnectorNames], (error) => {
+                  if (error) {
+                    setActivatingConnector(undefined);
+                    handleError(error);
+                  }
+                });
               }}
             >
               <img
@@ -92,7 +109,7 @@ const WalletModal = ({ isModalOpen }: { isModalOpen: boolean }) => {
         })}
       {!!error && (
         <h4 style={{ marginTop: "1rem", marginBottom: "0" }}>
-          {getErrorMessage(error)}
+          {getErrorMessage(error).msg}
         </h4>
       )}
     </div>

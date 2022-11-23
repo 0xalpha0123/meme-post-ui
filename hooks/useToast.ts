@@ -1,18 +1,19 @@
+import { ReactElement } from "react";
 import { toast } from "react-toastify";
 
 const useToast = () => {
   return {
-    emitToast: (msg: string, type: string) => {
+    emitToast: (msg: string | ReactElement, type: string, option?: any) => {
       if (type === "success") {
-        toast.success(msg);
+        toast.success(msg, option);
       } else if (type === "info") {
-        toast.info(msg);
+        toast.info(msg, option);
       } else if (type === "warning") {
-        toast.warning(msg);
+        toast.warning(msg, option);
       } else if (type === "error") {
-        toast.error(msg);
+        toast.error(msg, option);
       } else {
-        toast(msg);
+        toast(msg, option);
       }
     },
   };

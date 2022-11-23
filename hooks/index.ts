@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 
 import { injected } from "../helpers/connectors";
+import { handleError } from "../modals/WalletModal";
 
 export function useEagerConnect() {
   const { activate, active } = useWeb3React();
@@ -38,21 +39,25 @@ export function useInactiveListener(suppress: boolean = false) {
     if (ethereum && ethereum.on && !active && !error && !suppress) {
       const handleConnect = () => {
         console.log("Handling 'connect' event");
-        activate(injected);
+        activate(injected).catch((error) => console.log(error));
       };
       const handleChainChanged = (chainId: string | number) => {
         console.log("Handling 'chainChanged' event with payload", chainId);
-        activate(injected);
+        activate(injected).catch((error) => console.log(error));
       };
       const handleAccountsChanged = (accounts: string[]) => {
         console.log("Handling 'accountsChanged' event with payload", accounts);
         if (accounts.length > 0) {
-          activate(injected);
+          activate(injected, undefined, true).catch((error) =>
+            console.log(error)
+          );
         }
       };
       const handleNetworkChanged = (networkId: string | number) => {
         console.log("Handling 'networkChanged' event with payload", networkId);
-        activate(injected);
+        activate(injected, undefined, true).catch((error) =>
+          console.log(error)
+        );
       };
 
       ethereum.on("connect", handleConnect);
@@ -68,6 +73,8 @@ export function useInactiveListener(suppress: boolean = false) {
           ethereum.removeListener("networkChanged", handleNetworkChanged);
         }
       };
+    } else if (!!error) {
+      handleError(error);
     }
   }, [active, error, suppress, activate]);
 }
