@@ -6,13 +6,11 @@ import Web3Connect from "../Web3Connect";
 import { Avatar, Button, Typography } from "../../base";
 import { DocumentDownloadIcon } from "../../../icons";
 
-interface StakePanelProps {
-  token: {
-    symbol: string;
-    imgUrl: string;
-    address: string;
-  };
-}
+const token = {
+  symbol: "USDC",
+  imgUrl: "/images/tokens/usdc.png",
+  address: "",
+};
 
 const options = {
   plugins: {
@@ -79,7 +77,7 @@ const options = {
   },
 };
 
-const StakePanel = (props: StakePanelProps) => {
+const StakePanel = () => {
   const { active } = useWeb3React();
 
   const data = {
@@ -162,13 +160,24 @@ const StakePanel = (props: StakePanelProps) => {
     return gradient;
   }
   return (
-    <div className="flex flex-col items-center justify-between gap-12 px-12 py-6 rounded-lg transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col justify-between gap-12 transition duration-100">
+      <Typography
+        text="Stake Your MEME"
+        textColor="text-primary_white-800 dark:text-primary_dark-800"
+        size="h6"
+      />
+      <Typography
+        text="The best way to earn MEME. Commit carbon to our treasury, and receive KLIMA at a discount. All bonds (except inverse bonds) have a mandatory 5 day vesting period."
+        textColor="text-primary_white-600 dark:text-primary_dark-600"
+        size="description"
+        className="-mt-8"
+      />
       <div className="w-full flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <Avatar style="circle" avatar={props.token.imgUrl} type="image" />
+          <Avatar style="circle" avatar={token.imgUrl} type="image" />
           <div className="flex flex-col gap-1 cursor-pointer">
             <Typography
-              text={props.token.symbol}
+              text={token.symbol}
               textColor="text-primary_white-600 dark:text-primary_dark-600"
               size="h6"
             />

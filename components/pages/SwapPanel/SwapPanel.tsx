@@ -19,7 +19,20 @@ const tokenLists = [
 
 const SwapPanel = () => {
   return (
-    <div className="flex flex-col gap-12 px-12 py-6 rounded-lg items-center transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col gap-12 items-center transition duration-100">
+      <div className="flex flex-col gap-12">
+        <Typography
+          text="Swap Tokens"
+          textColor="text-primary_white-800 dark:text-primary_dark-800"
+          size="h6"
+        />
+        <Typography
+          text="The best way to swap MEME in our Pools. Commit carbon to our treasury, and receive KLIMA at a discount. All bonds (except inverse bonds) have a mandatory 5 day vesting period."
+          textColor="text-primary_white-600 dark:text-primary_dark-600"
+          size="description"
+          className="-mt-8"
+        />
+      </div>
       <SwapInput isFrom={true} tokenLists={tokenLists} token={tokenLists[0]} />
       <IconButton
         component={<SwapIcon size="w-6 h-6" />}

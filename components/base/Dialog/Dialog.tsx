@@ -36,8 +36,6 @@ const Dialog = (props: dialogProps) => {
     }
   }, [isOpen]);
 
-  console.log("width", props);
-
   return (
     <motion.div
       animate={controls}

@@ -107,17 +107,17 @@ const TaxTracker = () => {
   };
 
   return (
-    <div className="flex flex-col w-full rounded-lg py-6 px-12 gap-12 transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col w-full gap-12 transition duration-100">
       <Typography
         text="Estimate Your Tax"
-        textColor="text-primary_white-600 dark:text-primary_dark-600"
-        size="description"
+        textColor="text-primary_white-800 dark:text-primary_dark-800"
+        size="h6"
       />
       <Typography
         text="Tax Tracker"
-        textColor="text-primary_white-800 dark:text-primary_dark-800"
         className="-mt-8"
-        size="h6"
+        textColor="text-primary_white-600 dark:text-primary_dark-600"
+        size="description"
       />
       <div className="w-full grid grid-cols-3 gap-6">
         {statuses.map((status, index) => (

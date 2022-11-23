@@ -44,7 +44,7 @@ const bondArray = [
 
 const BondCard = () => {
   return (
-    <div className="flex flex-col gap-8 rounded-lg py-6 px-12 transition duration-100 border border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark">
+    <div className="flex flex-col gap-12 transition duration-100">
       <Typography
         text="Bond Carbon"
         textColor="text-primary_white-800 dark:text-primary_dark-800"
@@ -54,7 +54,7 @@ const BondCard = () => {
         text="The best way to buy KLIMA. Commit carbon to our treasury, and receive KLIMA at a discount. All bonds (except inverse bonds) have a mandatory 5 day vesting period."
         textColor="text-primary_white-600 dark:text-primary_dark-600"
         size="description"
-        className="-mt-4"
+        className="-mt-8"
       />
       <div className="w-4/5 mx-auto flex flex-col gap-8">
         <div className="flex items-center gap-1">

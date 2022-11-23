@@ -16,14 +16,12 @@ const useBreadcrumbs = () => {
     const breadcrumbs = pathArray.map((path, index) => {
       const href = "/" + pathArray.slice(0, index + 1).join("/");
       let label = "";
-      for (let i = 0; i < breadcrumbItems.length; i++) {
-        breadcrumbItems[i].items.find((x) => {
-          if (x.id === path) {
-            label = x.breadcrumbText;
-            return;
-          }
-        });
-      }
+      breadcrumbItems.find((x) => {
+        if (x.id === path) {
+          label = x.breadcrumbText;
+          return;
+        }
+      });
       return {
         href,
         label,

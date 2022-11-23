@@ -17,8 +17,8 @@ import SocialLinks from "./SocialLinks";
 import StakePanel from "./StakePanel";
 import StatusCard from "./StatusCard";
 import SwapPanel from "./SwapPanel";
-import TabsPanel from "./TabsPanel";
 import TaxTracker from "./TaxTracker";
+import TokenManagePanel from "./TokenManagePanel";
 import TopCreatorsCard from "./TopCreatorsCard";
 import TrialCard from "./TrialCard";
 import UserAvatar from "./UserAvatar";
@@ -44,8 +44,8 @@ export {
   StakePanel,
   StatusCard,
   SwapPanel,
-  TabsPanel,
   TaxTracker,
+  TokenManagePanel,
   TopCreatorsCard,
   TrialCard,
   UserAvatar,

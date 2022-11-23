@@ -74,7 +74,8 @@ const Sidebar = () => {
                     ((breadcrumbs.length === 0 &&
                       item.breadcrumbText === "Home") ||
                       (breadcrumbs.length !== 0 &&
-                        breadcrumbs[0].label === item.breadcrumbText)) &&
+                        breadcrumbs[breadcrumbs.length - 1].label ===
+                          item.breadcrumbText)) &&
                       "border-l-4 border-secondary"
                   )}
                 >

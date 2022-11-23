@@ -1,13 +1,11 @@
 import {
+  BitcoinCardIcon,
   CategoryIcon,
   ChartIcon,
-  ComputingIcon,
-  DiscountCircleIcon,
   DocumentTextIcon,
   HomeIcon,
-  LayerIcon,
   SunIcon,
-  SwapIcon,
+  UserIcon,
 } from "../../icons";
 
 export const sidebarItems = [
@@ -22,14 +20,14 @@ export const sidebarItems = [
         isValiable: true,
         url: "/",
       },
-      // {
-      //   id: "dashboard",
-      //   title: "Dashboard",
-      //   breadcrumbText: "Dashboard",
-      //   icon: CategoryIcon,
-      //   isValiable: false,
-      //   url: "/test",
-      // },
+      {
+        id: "dashboard",
+        title: "Dashboard",
+        breadcrumbText: "Dashboard",
+        icon: CategoryIcon,
+        isValiable: false,
+        url: "/dashboard",
+      },
       {
         id: "analytics",
         title: "Analytics",
@@ -37,38 +35,6 @@ export const sidebarItems = [
         icon: ChartIcon,
         isValiable: false,
         url: "/analytics",
-      },
-      {
-        id: "stake",
-        title: "Stake",
-        breadcrumbText: "Stake",
-        icon: LayerIcon,
-        isValiable: true,
-        url: "/stake",
-      },
-      {
-        id: "swap",
-        title: "Swap",
-        breadcrumbText: "Swap Tokens",
-        icon: SwapIcon,
-        isValiable: true,
-        url: "/swap",
-      },
-      {
-        id: "bond",
-        title: "Bond",
-        breadcrumbText: "Bond",
-        icon: DiscountCircleIcon,
-        isValiable: true,
-        url: "/bond",
-      },
-      {
-        id: "tracker",
-        title: "Tracker",
-        breadcrumbText: "Tax Tracker",
-        icon: ComputingIcon,
-        isValiable: true,
-        url: "/tracker",
       },
       {
         id: "test",
@@ -84,6 +50,22 @@ export const sidebarItems = [
     name: "Account",
     items: [
       {
+        id: "profile",
+        title: "Profile",
+        breadcrumbText: "Profile",
+        icon: UserIcon,
+        isValiable: true,
+        url: "/profile",
+      },
+      {
+        id: "tokens",
+        title: "Token Manage",
+        breadcrumbText: "Token Manage",
+        icon: BitcoinCardIcon,
+        isValiable: true,
+        url: "/tokens",
+      },
+      {
         id: "preference",
         title: "Preference",
         breadcrumbText: "Preference",
@@ -91,6 +73,11 @@ export const sidebarItems = [
         isValiable: false,
         url: "/account",
       },
+    ],
+  },
+  {
+    name: "Social",
+    items: [
       {
         id: "docs",
         title: "Docs",

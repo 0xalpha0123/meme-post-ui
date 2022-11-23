@@ -1,20 +1,20 @@
 import React from "react";
 import type { NextPage } from "next";
 
-import { Layout, BondCard } from "../components";
+import { Layout, TokenManagePanel } from "../components";
 
-const Bonds: NextPage = () => {
+const Tokens: NextPage = () => {
   const metaInfo = {
-    title: "Bonds",
+    title: "Your Tokens",
   };
 
   return (
     <Layout metaInfo={metaInfo}>
       <div className="p-3 flex flex-col gap-3">
-        <BondCard />
+        <TokenManagePanel />
       </div>
     </Layout>
   );
 };
 
-export default Bonds;
+export default Tokens;
