@@ -1,45 +1,39 @@
 import React from "react";
 import cx from "clsx";
-import { DefaultProps, Sizes, useId } from "../../../helpers/utils";
+
+import { DefaultProps, useId } from "../../../helpers/utils";
 
 interface RadioProps
   extends DefaultProps,
     Omit<React.ComponentPropsWithoutRef<"input">, "size"> {
   id?: string;
-  size?: Sizes;
   color?: string;
   label?: React.ReactNode;
-  elementRef?: React.ForwardedRef<HTMLInputElement>;
+  checked?: boolean;
 }
 
-function Radio({
-  id,
-  size,
-  color,
-  label,
-  disabled,
-  className,
-  elementRef,
-  ...others
-}: RadioProps) {
+function Radio({ id, color, label, checked = false, ...others }: RadioProps) {
   const uuid = useId(id);
 
   return (
-    <div className="inline-flex items-center space-x-1.5">
-      <input
-        id={uuid}
-        {...others}
-        type="radio"
-        ref={elementRef}
-        disabled={disabled}
+    <div
+      {...others}
+      className="group inline-flex items-center space-x-1.5 cursor-pointer"
+    >
+      <span
         className={cx(
-          className,
-          "transition rounded-full border-gray-300 shadow-sm focus:border-gray-300 focus:ring focus:ring-offset-0 focus:ring-gray-200 focus:ring-opacity-50 cursor-pointer",
-          color ? color : "text-gray-600"
+          "w-3 h-3 inline-block mr-1 border border-grey transition-all duration-200 group-hover:scale-110",
+          checked ? "bg-secondary shadow-checkbox" : ""
         )}
-      />
+      ></span>
       {label && (
-        <label htmlFor={uuid} className="text-sm text-gray-800 cursor-pointer">
+        <label
+          htmlFor={uuid}
+          className={cx(
+            "text-sm cursor-pointer transition-all duration-200",
+            color ? color : "text-primary_white-600 dark:text-primary_dark-600"
+          )}
+        >
           {label}
         </label>
       )}

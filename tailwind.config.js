@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        checkbox: "0px 0px 0px 1px white inset",
+      },
       fontSize: {
         "9px": ".5625rem",
         "40px": "2.5rem",

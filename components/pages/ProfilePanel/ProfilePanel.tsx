@@ -2,7 +2,7 @@ import React from "react";
 
 import SocialLinks from "../SocialLinks";
 import DragDropZone from "../DragDropZone";
-import { Input, Button } from "../../base";
+import { Input, Button, RadioGroup } from "../../base";
 
 const profile = {
   avatar: "https://i.postimg.cc/HnyBQYs2/Rectangle-6321.png",
@@ -40,6 +40,11 @@ const ProfilePanel = () => {
             placeHolder={profile.full_name}
             className="w-1/2"
             label="Full Name"
+          />
+          <RadioGroup
+            options={["Male", "Female", "Other"]}
+            className="w-1/2"
+            label="Gender"
           />
         </div>
         <div className="flex gap-3 w-full">

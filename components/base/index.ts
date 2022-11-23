@@ -10,6 +10,7 @@ import Dots from "./Dots";
 import IconButton from "./IconButton";
 import Input from "./Input";
 import Radio from "./Radio";
+import RadioGroup from "./RadioGroup";
 import ScrollToTop from "./ScrollToTop";
 import Select from "./Select";
 import Slider from "./Slider";
@@ -29,6 +30,7 @@ export {
   IconButton,
   Input,
   Radio,
+  RadioGroup,
   ScrollToTop,
   Select,
   Slider,
