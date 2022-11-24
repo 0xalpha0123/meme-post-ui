@@ -48,7 +48,7 @@ const Layout = (props: LayoutProps) => {
   const hideFundManage = props.layoutConfig?.hideFundManage || false;
   const hideTopCreator = props.layoutConfig?.hideTopCreator || false;
   const hideRecentActivity = props.layoutConfig?.hideRecentActivity || false;
-  const hideSwapWidget = props.layoutConfig?.hideSwapWidget || false;
+  // const hideSwapWidget = props.layoutConfig?.hideSwapWidget || false;
 
   const { connector } = useWeb3React<Web3Provider>();
 
@@ -82,11 +82,11 @@ const Layout = (props: LayoutProps) => {
               {!hideBreadcrumb && <Breadcrumb />}
               {props.children}
             </div>
-            <div className="min-w-[375px] gap-6 flex flex-col">
+            <div className="min-w-[375px] gap-3 flex flex-col">
               {!hideFundManage && <FundManageCard />}
               {!hideTopCreator && <TopCreatorsCard />}
               {!hideRecentActivity && <RecentActivitiesCard />}
-              {!hideSwapWidget && <RecentActivitiesCard />}
+              {/* {!hideSwapWidget && <RecentActivitiesCard />} */}
               <JoinCommunity />
             </div>
           </main>

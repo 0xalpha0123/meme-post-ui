@@ -20,6 +20,11 @@ export const breadcrumbItems = [
     url: "/tokens",
   },
   {
+    id: "posts",
+    breadcrumbText: "Posts",
+    url: "/posts",
+  },
+  {
     id: "test",
     breadcrumbText: "Test",
     url: "/test",

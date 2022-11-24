@@ -2,6 +2,7 @@ import {
   BitcoinCardIcon,
   CategoryIcon,
   ChartIcon,
+  DocumentLikeIcon,
   DocumentTextIcon,
   HomeIcon,
   SunIcon,
@@ -35,6 +36,14 @@ export const sidebarItems = [
         icon: ChartIcon,
         isValiable: false,
         url: "/analytics",
+      },
+      {
+        id: "posts",
+        title: "Posts",
+        breadcrumbText: "Posts",
+        icon: DocumentLikeIcon,
+        isValiable: true,
+        url: "/posts",
       },
       {
         id: "test",

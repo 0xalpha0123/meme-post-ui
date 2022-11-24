@@ -23,7 +23,7 @@ interface AvatarGroupItemProps extends DefaultProps {
 
 const AvatarGroup = (props: AvatarGroupProps) => {
   const space = props.space || "-space-x-8";
-  const size = props.size || "12";
+  const size = props.size;
   const className = props.className || "";
   const users = props.users;
 

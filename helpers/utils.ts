@@ -72,7 +72,7 @@ export const formattedStateList = (country: ICountry | null) => {
   }
   return State.getStatesOfCountry(country.isoCode).map((state) => ({
     ...state,
-    label: state.name,
+    label: `${state.name} (${state.isoCode})`,
     value: state.isoCode,
   }));
 };

@@ -10,6 +10,7 @@ import HeroCarousel from "./HeroCarousel";
 import JoinCommunity from "./JoinCommunity";
 import MemeList from "./MemeList";
 import MenuBar from "./MenuBar";
+import PostList, { Post, TopUsers } from "./Posts";
 import ProfilePanel from "./ProfilePanel";
 import RecentActivitiesCard from "./RecentActivitiesCard";
 import Sidebar from "./Sidebar";
@@ -37,6 +38,8 @@ export {
   JoinCommunity,
   MemeList,
   MenuBar,
+  Post,
+  PostList,
   ProfilePanel,
   RecentActivitiesCard,
   Sidebar,
@@ -47,6 +50,7 @@ export {
   TaxTracker,
   TokenManagePanel,
   TopCreatorsCard,
+  TopUsers,
   TrialCard,
   UserAvatar,
   Web3Connect,

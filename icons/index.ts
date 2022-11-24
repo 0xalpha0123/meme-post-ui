@@ -13,6 +13,7 @@ import ComputingIcon from "./ComputingIcon";
 import DangerIcon from "./DangerIcon";
 import DiscountCircleIcon from "./DiscountCircleIcon";
 import DocumentDownloadIcon from "./DocumentDownloadIcon";
+import DocumentLikeIcon from "./DocumentLikeIcon";
 import DocumentTextIcon from "./DocumentTextIcon";
 import DotsHorizondalIcon from "./DotsHorizondalIcon";
 import EmojiHappyIcon from "./EmojiHappyIcon";
@@ -84,6 +85,7 @@ export {
   DangerIcon,
   DiscountCircleIcon,
   DocumentDownloadIcon,
+  DocumentLikeIcon,
   DocumentTextIcon,
   DotsHorizondalIcon,
   EmojiHappyIcon,
