@@ -2,11 +2,12 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import Spinner from "./Spinner";
 import { ChevronIcon, CloseIcon } from "./Icons";
-import useOnClickOutside from "../../../hooks/useOnClickOutside";
 import SearchInput from "./SearchInput";
 import Options from "./Options";
 import { Option, Options as ListOption } from "./type";
 import SelectProvider from "./SelectProvider";
+
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
 
 interface SelectProps {
   options: ListOption;

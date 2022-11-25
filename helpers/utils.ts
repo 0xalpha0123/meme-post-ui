@@ -1,9 +1,6 @@
 import { useRef } from "react";
 import { Country, State, ICountry } from "country-state-city";
 
-// console.log(Country.getAllCountries());
-// console.log(State.getAllStates());
-
 export function randomId() {
   return `meme-${Math.random().toString(36).substr(2, 9)}`;
 }

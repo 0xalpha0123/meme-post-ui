@@ -14,8 +14,9 @@ import {
   NotificationBing,
 } from "../../../icons";
 
-import { ProfileList } from "../../../constants/app/profileList";
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
+
+import { ProfileList } from "../../../constants/app/profileList";
 
 const ToggleThemeIcon = dynamic(() => import("./ToggleThemeIcon"), {
   ssr: false,

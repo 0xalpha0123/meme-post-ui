@@ -6,6 +6,7 @@ import {
 } from "@web3-react/injected-connector";
 import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } from "@web3-react/walletconnect-connector";
 import { UserRejectedRequestError as UserRejectedRequestErrorFrame } from "@web3-react/frame-connector";
+
 import { ChainId, NetworksInfo, WALLET_ERROR } from "../constants/network";
 
 const switchRequest = (chain: ChainId) => {

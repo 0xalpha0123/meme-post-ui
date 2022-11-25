@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 
-import { injected } from "../helpers/connectors";
 import { handleError } from "../modals/WalletModal";
+
+import { injected } from "../helpers/connectors";
 
 export function useEagerConnect() {
   const { activate, active } = useWeb3React();

@@ -1,9 +1,9 @@
 import React from "react";
-import { ProfilePanel } from "../components";
+import type { NextPage } from "next";
 
-import Layout from "../components/Layout";
+import { Layout, ProfilePanel } from "../components";
 
-const Profile = () => {
+const Profile: NextPage = () => {
   const metaInfo = {
     title: "Profile",
   };

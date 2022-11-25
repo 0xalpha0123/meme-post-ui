@@ -4,7 +4,6 @@ import Head from "next/head";
 import { useWeb3React } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 
-import { ScrollToTop } from "./base";
 import {
   Header,
   Breadcrumb,
@@ -15,42 +14,42 @@ import {
   RecentActivitiesCard,
   JoinCommunity,
 } from "./pages";
+import { ScrollToTop } from "./base";
 
 import { useEagerConnect, useInactiveListener } from "../hooks";
 
-interface LayoutProps {
+const defaultLayout = {
+  header: true,
+  breadcrumb: true,
+  footer: true,
+  fundManage: true,
+  topCreator: true,
+  recentActivity: true,
+  swapWidget: false,
+};
+
+const Layout = ({
+  children,
+  metaInfo: { title = "", description, keywords },
+  layoutConfig = defaultLayout,
+}: {
   children: ReactElement;
-  metaInfo: MetaInfo;
-  layoutConfig?: LayoutConfig;
-}
-
-interface MetaInfo {
-  title: string | undefined;
-  description?: string | undefined;
-  keywords?: string | undefined;
-}
-
-interface LayoutConfig {
-  hideHeader?: boolean;
-  hideBreadcrumb?: boolean;
-  hideFooter?: boolean;
-  hideFundManage?: boolean;
-  hideTopCreator?: boolean;
-  hideRecentActivity?: boolean;
-  hideSwapWidget?: boolean;
-}
-
-const Layout = (props: LayoutProps) => {
-  const { title, keywords, description } = props.metaInfo;
-  const hideHeader = props.layoutConfig?.hideHeader || false;
-  const hideBreadcrumb = props.layoutConfig?.hideBreadcrumb || false;
-  const hideFooter = props.layoutConfig?.hideFooter || false;
-  const hideFundManage = props.layoutConfig?.hideFundManage || false;
-  const hideTopCreator = props.layoutConfig?.hideTopCreator || false;
-  const hideRecentActivity = props.layoutConfig?.hideRecentActivity || false;
-  // const hideSwapWidget = props.layoutConfig?.hideSwapWidget || false;
-
-  const { connector } = useWeb3React<Web3Provider>();
+  metaInfo: {
+    title: string | undefined;
+    description?: string | undefined;
+    keywords?: string | undefined;
+  };
+  layoutConfig?: {
+    header?: boolean;
+    breadcrumb?: boolean;
+    footer?: boolean;
+    fundManage?: boolean;
+    topCreator?: boolean;
+    recentActivity?: boolean;
+    swapWidget?: boolean;
+  };
+}) => {
+  const { connector, active } = useWeb3React<Web3Provider>();
 
   // handle logic to recognize the connector currently being activated
   const [activatingConnector, setActivatingConnector] = React.useState<any>();
@@ -76,23 +75,23 @@ const Layout = (props: LayoutProps) => {
       <div className="w-full flex">
         <Sidebar />
         <div className="flex flex-grow flex-col">
-          {!hideHeader && <Header />}
+          {defaultLayout.header && <Header />}
           <main className="w-full flex gap-6 p-6">
             <div className="grow">
-              {!hideBreadcrumb && <Breadcrumb />}
-              {props.children}
+              {defaultLayout.breadcrumb && <Breadcrumb />}
+              {children}
             </div>
             <div className="min-w-[375px] gap-3 flex flex-col">
-              {!hideFundManage && <FundManageCard />}
-              {!hideTopCreator && <TopCreatorsCard />}
-              {!hideRecentActivity && <RecentActivitiesCard />}
-              {/* {!hideSwapWidget && <RecentActivitiesCard />} */}
+              {defaultLayout.fundManage && active && <FundManageCard />}
+              {defaultLayout.topCreator && <TopCreatorsCard />}
+              {defaultLayout.recentActivity && <RecentActivitiesCard />}
+              {defaultLayout.swapWidget && <RecentActivitiesCard />}
               <JoinCommunity />
             </div>
           </main>
         </div>
       </div>
-      {!hideFooter && <Footer />}
+      {defaultLayout.footer && <Footer />}
       <ScrollToTop />
     </div>
   );

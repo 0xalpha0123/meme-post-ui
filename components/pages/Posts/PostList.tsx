@@ -1,13 +1,11 @@
 import React from "react";
 
+import { Post } from "./Post";
 import PostAction from "./PostAction";
 import PostComment from "./PostComment";
 import UserAvatar from "../UserAvatar";
 import { AvatarGroup, Divider, Typography } from "../../base";
-
 import { DotsHorizondalIcon } from "../../../icons";
-
-import { Post } from "./Post";
 
 export interface PostListProps {
   posts: Post[];

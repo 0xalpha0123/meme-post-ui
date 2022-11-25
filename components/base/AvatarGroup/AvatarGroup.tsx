@@ -2,6 +2,7 @@ import React from "react";
 import cx from "clsx";
 
 import Avatar from "../Avatar";
+
 import { DefaultProps } from "../../../helpers/utils";
 
 interface AvatarGroupProps extends DefaultProps {

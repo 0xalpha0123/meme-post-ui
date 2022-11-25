@@ -23,27 +23,6 @@ const Item: React.FC<ItemProps> = ({ item }) => {
     );
   }, [item.value, value]);
 
-  // const textHoverColor = useMemo(() => {
-  //   // @ts-ignore
-  //   return COLORS.includes(primaryColor)
-  //     ? THEME_DATA.textHover[primaryColor]
-  //     : THEME_DATA.textHover[DEFAULT_THEME];
-  // }, [primaryColor]);
-
-  // const bgColor = useMemo(() => {
-  //   // @ts-ignore
-  //   return COLORS.includes(primaryColor)
-  //     ? THEME_DATA.bg[primaryColor]
-  //     : THEME_DATA.bg[DEFAULT_THEME];
-  // }, [primaryColor]);
-
-  // const bgHoverColor = useMemo(() => {
-  //   // @ts-ignore
-  //   return COLORS.includes(primaryColor)
-  //     ? THEME_DATA.bgHover[primaryColor]
-  //     : THEME_DATA.bgHover[DEFAULT_THEME];
-  // }, [primaryColor]);
-
   return (
     <>
       {item.disabled ? (

@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Avatar, Typography } from "../../base";
 
 const TopUsers = () => {

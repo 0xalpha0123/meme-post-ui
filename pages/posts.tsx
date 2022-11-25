@@ -1,8 +1,7 @@
 import React from "react";
+import type { NextPage } from "next";
 
-import { Post, PostList, TopUsers } from "../components";
-
-import Layout from "../components/Layout";
+import { Layout, Post, PostList, TopUsers } from "../components";
 
 const posts = [
   {
@@ -107,7 +106,7 @@ const posts = [
   },
 ];
 
-const Posts = () => {
+const Posts: NextPage = () => {
   const metaInfo = {
     title: "Posts List",
   };

@@ -1,9 +1,13 @@
 import React from "react";
+import { Web3Provider } from "@ethersproject/providers";
+import { useWeb3React } from "@web3-react/core";
 
-import { categoryItems } from "../../../constants/app/categoryItems";
 import CreateNewPostButton from "../CreateNewPostButton";
 
+import { categoryItems } from "../../../constants/app/categoryItems";
+
 const CategoryHeader = () => {
+  const { active } = useWeb3React<Web3Provider>();
   return (
     <div className="flex my-auto gap-8">
       {categoryItems.map((item) => (
@@ -15,7 +19,7 @@ const CategoryHeader = () => {
           {item.title}
         </div>
       ))}
-      <CreateNewPostButton />
+      {active && <CreateNewPostButton />}
     </div>
   );
 };

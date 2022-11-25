@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+
 import { Avatar, Button, Input } from "../../base";
 import { GalleryIcon, MessageIcon, VideoIcon } from "../../../icons";
 

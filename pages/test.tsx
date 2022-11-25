@@ -1,8 +1,9 @@
 import React from "react";
+import type { NextPage } from "next";
 
 import { Layout, Tooltip } from "../components";
 
-const Test = () => {
+const Test: NextPage = () => {
   const metaInfo = {
     title: "Test",
   };

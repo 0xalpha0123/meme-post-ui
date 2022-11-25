@@ -1,5 +1,7 @@
 import React from "react";
+import { useWeb3React } from "@web3-react/core";
 
+import Web3Connect from "../Web3Connect";
 import { Button, Typography } from "../../base";
 
 interface BondItemProps {
@@ -12,6 +14,8 @@ interface BondItemProps {
 }
 
 const BondItem = (props: BondItemProps) => {
+  const { active } = useWeb3React();
+
   return (
     <div className="p-3 flex gap-6 w-full items-center">
       <div className="flex relative aspect-square h-8">
@@ -37,7 +41,7 @@ const BondItem = (props: BondItemProps) => {
               textColor="text-primary_white-600 dark:text-primary_dark-600"
               size="button"
             />
-          ) : (
+          ) : active ? (
             <Button
               variant="outline"
               color="green"
@@ -45,6 +49,8 @@ const BondItem = (props: BondItemProps) => {
             >
               {props.discount}&nbsp;&nbsp;&nbsp;%
             </Button>
+          ) : (
+            <Web3Connect />
           )}
         </div>
       </div>

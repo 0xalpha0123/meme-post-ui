@@ -1,5 +1,6 @@
 import React from "react";
 import cx from "clsx";
+
 import { setColor, DefaultProps } from "../../../helpers/utils";
 
 interface AlertProps extends DefaultProps {

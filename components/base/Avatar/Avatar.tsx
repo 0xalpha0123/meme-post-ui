@@ -1,5 +1,6 @@
 import React, { MouseEventHandler } from "react";
 import cx from "clsx";
+
 import { DefaultProps } from "../../../helpers/utils";
 
 interface AvatarProps extends DefaultProps {

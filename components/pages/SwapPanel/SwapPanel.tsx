@@ -1,7 +1,10 @@
 import React from "react";
+import { useWeb3React } from "@web3-react/core";
 
 import SwapInput from "./SwapInput";
+import Web3Connect from "../Web3Connect";
 import { Button, IconButton, Typography } from "../../base";
+
 import { InfoCircleIcon, SettingIcon, SwapIcon } from "../../../icons";
 
 const tokenLists = [
@@ -18,6 +21,8 @@ const tokenLists = [
 ];
 
 const SwapPanel = () => {
+  const { active } = useWeb3React();
+
   return (
     <div className="flex flex-col gap-12 items-center transition duration-100">
       <div className="flex flex-col gap-12">
@@ -65,7 +70,7 @@ const SwapPanel = () => {
             className="tracking-wide"
           />
         </div>
-        <Button color="green">Swap</Button>
+        {active ? <Button color="green">Swap</Button> : <Web3Connect />}
       </div>
     </div>
   );
