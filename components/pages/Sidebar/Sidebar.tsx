@@ -5,7 +5,7 @@ import cx from "clsx";
 import { motion } from "framer-motion";
 
 import TrialCard from "../TrialCard";
-import { Divider } from "../../base";
+import { Divider, Tooltip } from "../../base";
 import { LoginIcon } from "../../../icons";
 
 import useBreadcrumbs from "../../../hooks/useBreadcrumbs";
@@ -32,7 +32,7 @@ const Sidebar = () => {
     <motion.div
       animate={controls}
       className={cx(
-        "relative flex flex-col py-10 min-h-screen group border-r border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark",
+        "relative flex flex-col py-10 min-h-screen border-r border-primary_white-200 dark:border-primary_dark-200 bg-white dark:bg-bg_dark",
         active ? "min-w-[275px]" : "min-w-[60px]"
       )}
     >
@@ -79,16 +79,31 @@ const Sidebar = () => {
                       "border-l-4 border-secondary"
                   )}
                 >
-                  <item.icon
-                    className={cx(
-                      "text-lg w-5 h-5",
-                      ((breadcrumbs.length === 0 &&
-                        item.breadcrumbText === "Home") ||
-                        (breadcrumbs.length !== 0 &&
-                          breadcrumbs[0].label === item.breadcrumbText)) &&
-                        "text-secondary"
-                    )}
-                  />
+                  {active ? (
+                    <item.icon
+                      className={cx(
+                        "text-lg w-5 h-5",
+                        ((breadcrumbs.length === 0 &&
+                          item.breadcrumbText === "Home") ||
+                          (breadcrumbs.length !== 0 &&
+                            breadcrumbs[0].label === item.breadcrumbText)) &&
+                          "text-secondary"
+                      )}
+                    />
+                  ) : (
+                    <Tooltip tooltipText={item.breadcrumbText} position="right">
+                      <item.icon
+                        className={cx(
+                          "text-lg w-5 h-5",
+                          ((breadcrumbs.length === 0 &&
+                            item.breadcrumbText === "Home") ||
+                            (breadcrumbs.length !== 0 &&
+                              breadcrumbs[0].label === item.breadcrumbText)) &&
+                            "text-secondary"
+                        )}
+                      />
+                    </Tooltip>
+                  )}
                   <motion.p
                     animate={controlTitleText}
                     className="ml-4 text-sm font-bold"

@@ -16,6 +16,7 @@ import {
   Select,
   Slider,
   Spinner,
+  Tooltip,
   Typography,
 } from "./base";
 import {
@@ -68,6 +69,7 @@ export {
   Select,
   Slider,
   Spinner,
+  Tooltip,
   Typography,
 };
 

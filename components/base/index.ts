@@ -15,6 +15,7 @@ import ScrollToTop from "./ScrollToTop";
 import Select from "./Select";
 import Slider from "./Slider";
 import Spinner from "./Spinner";
+import Tooltip from "./Tooltip";
 import Typography from "./Typography";
 
 export {
@@ -35,5 +36,6 @@ export {
   Select,
   Slider,
   Spinner,
+  Tooltip,
   Typography,
 };
